@@ -1,3 +1,9 @@
-LOGIN!
+{% extends 'base.html' %}
 
-<a href="{% url 'perfil:register' %}"> REGISTER </a>
+{% block content %}
+
+LOGIN
+
+<a class="mt-5" href="{% url 'perfil:register' %}"> REGISTER </a>
+
+{% endblock %}

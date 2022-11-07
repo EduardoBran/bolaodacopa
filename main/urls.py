@@ -9,4 +9,7 @@ urlpatterns = [
     path('main/', views.PageMain.as_view(), name='pagemain'),
     path('main/grupoA/<int:pk>', views.PageGrupoA.as_view(), name='pagegrupoA'),
     path('main/grupoB/<int:pk>', views.PageGrupoB.as_view(), name='pagegrupoB'),
+    path('salvartabelagrupoa/', views.SalvarTabelaGrupoA, name='salvartabelagrupoA'),
+    path('salvartabelagrupob/', views.SalvarTabelaGrupoB, name='salvartabelagrupoB'),
+    
 ]

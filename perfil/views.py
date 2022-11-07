@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 
-from main.models import GrupoA, GrupoB
+from main.models import *
 
 from .forms import RegistrationForm
 
@@ -38,6 +38,30 @@ def loginPage(request):
                         )
                     if not GrupoB.objects.filter(usuario=request.user).exists():
                         GrupoB.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoC.objects.filter(usuario=request.user).exists():
+                        GrupoC.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoD.objects.filter(usuario=request.user).exists():
+                        GrupoD.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoE.objects.filter(usuario=request.user).exists():
+                        GrupoE.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoF.objects.filter(usuario=request.user).exists():
+                        GrupoF.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoG.objects.filter(usuario=request.user).exists():
+                        GrupoG.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoH.objects.filter(usuario=request.user).exists():
+                        GrupoH.objects.create(
                             usuario=user
                         )
                         
@@ -107,6 +131,30 @@ def registerPage(request):
                         )
                     if not GrupoB.objects.filter(usuario=request.user).exists():
                         GrupoB.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoC.objects.filter(usuario=request.user).exists():
+                        GrupoC.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoD.objects.filter(usuario=request.user).exists():
+                        GrupoD.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoE.objects.filter(usuario=request.user).exists():
+                        GrupoE.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoF.objects.filter(usuario=request.user).exists():
+                        GrupoF.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoG.objects.filter(usuario=request.user).exists():
+                        GrupoG.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoH.objects.filter(usuario=request.user).exists():
+                        GrupoH.objects.create(
                             usuario=user
                         )
                     return redirect('main:pageindex')

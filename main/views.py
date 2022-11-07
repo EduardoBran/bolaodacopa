@@ -73,7 +73,11 @@ def SalvarTabelaGrupoA(request):
                     res6=res6, res7=res7, res8=res8, res9=res9,
                     res10=res10, res11=res11, res12=res12
                 )
-                
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Sua tabela do Grupo A foi atualizada.'
+            )
             return redirect('main:pagemain')
         
     elif request.method == 'GET':
@@ -112,6 +116,11 @@ def SalvarTabelaGrupoB(request):
                     res6=res6, res7=res7, res8=res8, res9=res9,
                     res10=res10, res11=res11, res12=res12
                 )
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Sua tabela do Grupo B foi atualizada.'
+            )
             return redirect('main:pagemain')
         
     elif request.method == 'GET':

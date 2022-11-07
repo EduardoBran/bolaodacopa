@@ -2,6 +2,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 
+from main.models import GrupoA, GrupoB
+
 from .forms import RegistrationForm
 
 
@@ -23,11 +25,22 @@ def loginPage(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
+                    
                     messages.add_message(
                         request,
                         messages.SUCCESS,
                         f"Bem vindo(a) {username}, você agora está logado e pode..."
                     )
+                    
+                    if not GrupoA.objects.filter(usuario=request.user).exists():
+                        GrupoA.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoB.objects.filter(usuario=request.user).exists():
+                        GrupoB.objects.create(
+                            usuario=user
+                        )
+                        
                     return redirect('main:pageindex')
                 else:
                     return render(request, 'perfil/login.html', {"error": "Sua conta está desabilitada."})
@@ -88,6 +101,14 @@ def registerPage(request):
                         messages.SUCCESS,
                         f"Bem vindo(a) {username}, você agora está cadastrado(a) e pode salvar seus resultados."
                     )
+                    if not GrupoA.objects.filter(usuario=request.user).exists():
+                        GrupoA.objects.create(
+                            usuario=user
+                        )
+                    if not GrupoB.objects.filter(usuario=request.user).exists():
+                        GrupoB.objects.create(
+                            usuario=user
+                        )
                     return redirect('main:pageindex')
             else:
                 messages.add_message(

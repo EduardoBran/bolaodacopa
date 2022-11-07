@@ -14,10 +14,10 @@ class Base(models.Model):
 class GrupoA(Base):
     usuario = models.ForeignKey(
         User, on_delete=models.CASCADE, verbose_name='Usuário')
-    selecao1 = models.CharField(max_length=200, verbose_name='Seleção 1', default='Qatar')
-    selecao2 = models.CharField(max_length=200, verbose_name='Seleção 2', default='Equador')
-    selecao3 = models.CharField(max_length=200, verbose_name='Seleção 3', default='Senegal')
-    selecao4 = models.CharField(max_length=200, verbose_name='Seleção 4', default='Holanda')
+    selecao1 = models.CharField(max_length=200, verbose_name='Seleção 1', default='Qatar', blank=True, null=True)
+    selecao2 = models.CharField(max_length=200, verbose_name='Seleção 2', default='Equador', blank=True, null=True)
+    selecao3 = models.CharField(max_length=200, verbose_name='Seleção 3', default='Senegal', blank=True, null=True)
+    selecao4 = models.CharField(max_length=200, verbose_name='Seleção 4', default='Holanda', blank=True, null=True)
     res1 = models.SmallIntegerField(blank=True, null=True)
     res2 = models.SmallIntegerField(blank=True, null=True)
     res3 = models.SmallIntegerField(blank=True, null=True)

@@ -2,6 +2,38 @@
 
 {% block content %}
 
+{% if request.user.is_authenticated %}
+
+<div class="row mt-4 mb-4">
+    <div class="col-12">
+        <div class="text-center">
+            <h3>Olá <strong>{{ request.user }}</strong></h3>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="ml2">
+            {% for usuario in bolaousergrupoA %}
+            <a href="{% url 'main:pagegrupoA' usuario.id %}">Clique aqui</a> para começar o seu bolão GRUPO A.
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="ml2">
+            {% for usuario in bolaousergrupoB %}
+            <a href="{% url 'main:pagegrupoB' usuario.id %}">Clique aqui</a> para começar o seu bolão GRUPO B.
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
 MAIN
 
 {% endblock %}

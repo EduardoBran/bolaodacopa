@@ -1,8 +1,59 @@
+<style>
+    .alertify-notifier .ajs-message.ajs-success {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .alertify-notifier .ajs-message.ajs-warning {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .alertify-notifier .ajs-message.ajs-error {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .alertify-notifier .ajs-message.ajs-notify {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+</style>
+
 {% if messages %}
-<br>
 {% for message in messages %}
-<div class="alert {{ message.tags }}" role="alert">
-    {{ message }}
-</div>
+
+{% if message.tags == 'alert-success' %}
+<script>
+    alertify.set('notifier', 'position', 'bottom-right');
+    alertify.success('{{ message }}');
+</script>
+{% endif %}
+
+{% if message.tags == 'alert-warning' %}
+<script>
+    alertify.set('notifier', 'position', 'bottom-right');
+    alertify.warning('{{ message }}');
+</script>
+{% endif %}
+
+{% if message.tags == 'alert-danger' %}
+<script>
+    alertify.set('notifier', 'position', 'bottom-right');
+    alertify.error('{{ message }}');
+</script>
+{% endif %}
+
+{% if message.tags == 'alert-info' %}
+<script>
+    alertify.set('notifier', 'position', 'bottom-right');
+    alertify.notify('{{ message }}');
+</script>
+{% endif %}
+
 {% endfor %}
 {% endif %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <div class="text-center">
+            <h3>GRUPO D</h3>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="text-center">
+            <form action="{% url 'main:salvartabelagrupoD' %}" method="POST">
+                {% csrf_token %}
+                <span>{{ info.selecao1 }} <input type="number" min="0" max="10" id="res1" name="res1"
+                        value="{{ info.res1 }}"> x
+                    <input type="number" min="0" max="10" id="res2" name="res2" value="{{ info.res2 }}">
+                    {{ info.selecao2 }}
+                </span>
+                <br />
+                <br />
+                <span>{{ info.selecao3 }} <input type="number" min="0" max="10" id="res3" name="res3"
+                        value="{{ info.res3 }}"> x <input type="number" min="0" max="10" id="res4" name="res4"
+                        value="{{ info.res4 }}"> {{ info.selecao4 }} </span>
+                <br />
+                <br />
+                <span>{{ info.selecao1 }} <input type="number" min="0" max="10" id="res5" name="res5"
+                        value="{{ info.res5 }}"> x <input type="number" min="0" max="10" id="res6" name="res6"
+                        value="{{ info.res6 }}"> {{ info.selecao3 }} </span>
+                <br />
+                <br />
+                <span>{{ info.selecao4 }} <input type="number" min="0" max="10" id="res7" name="res7"
+                        value="{{ info.res7 }}"> x <input type="number" min="0" max="10" id="res8" name="res8"
+                        value="{{ info.res8 }}"> {{ info.selecao2 }} </span>
+                <br />
+                <br />
+                <span>{{ info.selecao4 }} <input type="number" min="0" max="10" id="res9" name="res9"
+                        value="{{ info.res9 }}"> x <input type="number" min="0" max="10" id="res10" name="res10"
+                        value="{{ info.res10 }}"> {{ info.selecao1 }} </span>
+                <br />
+                <br />
+                <span>{{ info.selecao2 }} <input type="number" min="0" max="10" id="res11" name="res11"
+                        value="{{ info.res11 }}"> x <input type="number" min="0" max="10" id="res12" name="res12"
+                        value="{{ info.res12 }}"> {{ info.selecao3 }} </span>
+                <br />
+                <br />
+                <button type="submit" class="btn btn-info btn-lg">
+                    <span class="ml-2">Salvar resultados</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

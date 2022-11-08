@@ -239,166 +239,22 @@ class Eliminatorias(Base):
     usuario = models.ForeignKey(
         User, on_delete=models.CASCADE, verbose_name='Usuário')
     
-    primeiroA = models.CharField(
-        default='Qu',
-        max_length=2,
-        choices=(
-            ('Qu', 'Qatar'),
-            ('Eq', 'Equador'),
-            ('Ho', 'Holanda'),
-            ('Se', 'Senegal'),
-        )
-    )
-    segundoB = models.CharField(
-        default='Pg',
-        max_length=2,
-        choices=(
-            ('Eu', 'Estados Unidos'),
-            ('Pg', 'País de Gales'),
-            ('In', 'Inglaterra'),
-            ('Ir', 'Irâ'),
-        )
-    )
-    primeiroC = models.CharField(
-        default='Ar',
-        max_length=2,
-        choices=(
-            ('Ar', 'Argentina'),
-            ('As', 'Arábia Saudita'),
-            ('Me', 'México'),
-            ('Po', 'Polônia'),
-        )
-    )
-    segundoD = models.CharField(
-        default='Di',
-        max_length=2,
-        choices=(
-            ('Di', 'Dinamarca'),
-            ('Tu', 'Tunísia'),
-            ('Fr', 'França'),
-            ('Au', 'Austrália'),
-        )
-    )
-    primeiroB = models.CharField(
-        default='In',
-        max_length=2,
-        choices=(
-            ('In', 'Inglaterra'),
-            ('Ir', 'Irâ'),
-            ('Eu', 'Estados Unidos'),
-            ('Pg', 'País de Gales'),
-        )
-    )
-    segundoA = models.CharField(
-        default='Eq',
-        max_length=2,
-        choices=(
-            ('Eq', 'Equador'),
-            ('Qu', 'Qatar'),
-            ('Ho', 'Holanda'),
-            ('Se', 'Senegal'),
-        )
-    )
-    primeiroD = models.CharField(
-        default='Fr',
-        max_length=2,
-        choices=(
-            ('Fr', 'França'),
-            ('Au', 'Austrália'),
-            ('Di', 'Dinamarca'),
-            ('Tu', 'Tunísia'),
-        )
-    )
-    segundoC = models.CharField(
-        default='Me',
-        max_length=2,
-        choices=(
-            ('Ar', 'Argentina'),
-            ('As', 'Arábia Saudita'),
-            ('Me', 'México'),
-            ('Po', 'Polônia'),
-        )
-    )
-    primeiroE = models.CharField(
-        default='Al',
-        max_length=2,
-        choices=(
-            ('Al', 'Alemanha'),
-            ('Ja', 'Japão'),
-            ('Es', 'Espanha'),
-            ('Cr', 'Costa Rica'),
-        )
-    )
-    segundoF = models.CharField(
-        default='Ma',
-        max_length=2,
-        choices=(
-            ('Be', 'Bélgica'),
-            ('Ca', 'Canadá'),
-            ('Ma', 'Marrocos'),
-            ('Cr', 'Croácia'),
-        )
-    )
-    primeiroG = models.CharField(
-        default='Br',
-        max_length=2,
-        choices=(
-            ('Br', 'Brasl'),
-            ('Se', 'Sérvia'),
-            ('Su', 'Suiça'),
-            ('Ca', 'Camarões'),
-        )
-    )
-    segundoH = models.CharField(
-        default='Ur',
-        max_length=2,
-        choices=(
-            ('Ur', 'Uruguai'),
-            ('Co', 'Coréia do Sul'),
-            ('Po', 'Portugal'),
-            ('Ga', 'Gana'),
-        )
-    )
-    primeiroF = models.CharField(
-        default='Be',
-        max_length=2,
-        choices=(
-            ('Be', 'Bélgica'),
-            ('Ca', 'Canadá'),
-            ('Ma', 'Marrocos'),
-            ('Cr', 'Croácia'),
-        )
-    )
-    segundoE = models.CharField(
-        default='Es',
-        max_length=2,
-        choices=(
-            ('Al', 'Alemanha'),
-            ('Ja', 'Japão'),
-            ('Es', 'Espanha'),
-            ('Cr', 'Costa Rica'),
-        )
-    )
-    primeiroH = models.CharField(
-        default='Po',
-        max_length=2,
-        choices=(
-            ('Ur', 'Uruguai'),
-            ('Co', 'Coréia do Sul'),
-            ('Po', 'Portugal'),
-            ('Ga', 'Gana'),
-        )
-    )
-    segundoG = models.CharField(
-        default='Se',
-        max_length=2,
-        choices=(
-            ('Br', 'Brasl'),
-            ('Se', 'Sérvia'),
-            ('Su', 'Suiça'),
-            ('Ca', 'Camarões'),
-        )
-    )
+    primeiroA = models.CharField(max_length=200, verbose_name='Primeiro A', default='Primeiro A', blank=True, null=True)
+    segundoB = models.CharField(max_length=200, verbose_name='Segundo B', default='Segundo B', blank=True, null=True)
+    primeiroC = models.CharField(max_length=200, verbose_name='Primeiro C', default='Primeiro C', blank=True, null=True)
+    segundoD = models.CharField(max_length=200, verbose_name='Segundo D', default='Segundo D', blank=True, null=True)
+    primeiroB = models.CharField(max_length=200, verbose_name='Primeiro B', default='Primeiro B', blank=True, null=True)
+    segundoA = models.CharField(max_length=200, verbose_name='Segundo A', default='Segundo A', blank=True, null=True)
+    primeiroD = models.CharField(max_length=200, verbose_name='Primeiro D', default='Primeiro D', blank=True, null=True)
+    segundoC = models.CharField(max_length=200, verbose_name='Segundo C', default='Segundo C', blank=True, null=True)
+    primeiroE = models.CharField(max_length=200, verbose_name='Primeiro E', default='Primeiro E', blank=True, null=True)
+    segundoF = models.CharField(max_length=200, verbose_name='Segundo F', default='Segundo F', blank=True, null=True)
+    primeiroG = models.CharField(max_length=200, verbose_name='Primeiro G', default='Primeiro G', blank=True, null=True)
+    segundoH = models.CharField(max_length=200, verbose_name='Segundo H', default='Segundo H', blank=True, null=True)
+    primeiroF = models.CharField(max_length=200, verbose_name='Primeiro F', default='Primeiro F', blank=True, null=True)
+    segundoE = models.CharField(max_length=200, verbose_name='Segundo E', default='Segundo E', blank=True, null=True)
+    primeiroH = models.CharField(max_length=200, verbose_name='Primeiro H', default='Primeiro H', blank=True, null=True)
+    segundoG = models.CharField(max_length=200, verbose_name='Segundo G', default='Segundo G', blank=True, null=True)
     res1 = models.SmallIntegerField(blank=True, null=True)
     res2 = models.SmallIntegerField(blank=True, null=True)
     res3 = models.SmallIntegerField(blank=True, null=True)

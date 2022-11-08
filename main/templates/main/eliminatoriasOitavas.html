@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <div class="text-center">
+            <h3>Eliminatórias</h3>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="text-center">
+            <h5>Oitavas de Final</h5>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="text-center">
+            <form action="{% url 'main:salvareliminatoriasoitavas' %}" method="POST">
+                {% csrf_token %}
+
+                <p class="lead"><strong>Jogo 49</strong></p>
+                <select id="primeiroA" name="primeiroA">
+                    <option selected value="{{ info.primeiroA }}">{{ info.primeiroA }}</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Equador">Equador</option>
+                    <option value="Holanda">Holanda</option>
+                    <option value="Senegal">Senegal</option>
+                </select>
+
+                <input type="number" min="0" max="10" id="res1" name="res1" value="{{ info.res1 }}"> x
+                <input type="number" min="0" max="10" id="res2" name="res2" value="{{ info.res2 }}">
+
+                <select id="segundoB" name="segundoB">
+                    <option selected value="{{ info.segundoB }}">{{ info.segundoB }}</option>
+                    <option value="Inglaterra">Inglaterra</option>
+                    <option value="Irã">Irã</option>
+                    <option value="Estados Unidos">Estados Unidos</option>
+                    <option value="País de Gales">País de Gales</option>
+                </select>
+                <br />
+                <br />
+
+                <p class="lead"><strong>Jogo 50</strong></p>
+                <select id="primeiroC" name="primeiroC">
+                    <option selected value="{{ info.primeiroC }}">{{ info.primeiroC }}</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Arábia Saudita">Arábia Saudita</option>
+                    <option value="México">México</option>
+                    <option value="Polônia">Polônia</option>
+                </select>
+
+                <input type="number" min="0" max="10" id="res3" name="res3" value="{{ info.res3 }}"> x
+                <input type="number" min="0" max="10" id="res4" name="res4" value="{{ info.res4 }}">
+
+                <select id="segundoD" name="segundoD">
+                    <option selected value="{{ info.segundoD }}">{{ info.segundoD }}</option>
+                    <option value="Dinamarca">Dinamarca</option>
+                    <option value="Tunísia">Tunísia</option>
+                    <option value="França">França</option>
+                    <option value="Austrália">Austrália</option>
+                </select>
+                <br />
+                <br />
+
+                <p class="lead"><strong>Jogo 51</strong></p>
+                <select id="primeiroB" name="primeiroB">
+                    <option selected value="{{ info.primeiroB }}">{{ info.primeiroB }}</option>
+                    <option value="Inglaterra">Inglaterra</option>
+                    <option value="Irã">Irã</option>
+                    <option value="Estados Unidos">Estados Unidos</option>
+                    <option value="País de Gales">País de Gales</option>
+                </select>
+
+                <input type="number" min="0" max="10" id="res5" name="res5" value="{{ info.res5 }}"> x
+                <input type="number" min="0" max="10" id="res6" name="res6" value="{{ info.res6 }}">
+
+                <select id="segundoA" name="segundoA">
+                    <option selected value="{{ info.segundoA }}">{{ info.segundoA }}</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Equador">Equador</option>
+                    <option value="Holanda">Holanda</option>
+                    <option value="Senegal">Senegal</option>
+                </select>
+                <br />
+                <br />
+
+                <p class="lead"><strong>Jogo 52</strong></p>
+                <select id="primeiroD" name="primeiroD">
+                    <option selected value="{{ info.primeiroD }}">{{ info.primeiroD }}</option>
+                    <option value="Dinamarca">Dinamarca</option>
+                    <option value="Tunísia">Tunísia</option>
+                    <option value="França">França</option>
+                    <option value="Austrália">Austrália</option>
+                </select>
+
+                <input type="number" min="0" max="10" id="res7" name="res7" value="{{ info.res7 }}"> x
+                <input type="number" min="0" max="10" id="res8" name="res8" value="{{ info.res8 }}">
+
+                <select id="segundoC" name="segundoC">
+                    <option selected value="{{ info.segundoC }}">{{ info.segundoC }}</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Arábia Saudita">Arábia Saudita</option>
+                    <option value="México">México</option>
+                    <option value="Polônia">Polônia</option>
+                </select>
+                <br />
+                <br />
+
+                <p class="lead"><strong>Jogo 53</strong></p>
+                <select id="primeiroE" name="primeiroE">
+                    <option selected value="{{ info.primeiroE }}">{{ info.primeiroE }}</option>
+                    <option value="Alemanha">Alemanha</option>
+                    <option value="Japão">Japão</option>
+                    <option value="Espanha">Espanha</option>
+                    <option value="Costa Rica">Costa Rica</option>
+                </select>
+
+                <input type="number" min="0" max="10" id="res9" name="res9" value="{{ info.res9 }}"> x
+                <input type="number" min="0" max="10" id="res10" name="res10" value="{{ info.res10 }}">
+
+                <select id="segundoF" name="segundoF">
+                    <option selected value="{{ info.segundoF }}">{{ info.segundoF }}</option>
+                    <option value="Bélgica">Bélgica</option>
+                    <option value="Canadá">Canadá</option>
+                    <option value="Marrocos">Marrocos</option>
+                    <option value="Croácia">Croácia</option>
+                </select>
+                <br />
+                <br />
+
+                <p class="lead"><strong>Jogo 54</strong></p>
+                <select id="primeiroG" name="primeiroG">
+                    <option selected value="{{ info.primeiroG }}">{{ info.primeiroG }}</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Sérvia">Sérvia</option>
+                    <option value="Suiça">Suiça</option>
+                    <option value="Camarões">Camarões</option>
+                </select>
+
+                <input type="number" min="0" max="10" id="res11" name="res11" value="{{ info.res11 }}"> x
+                <input type="number" min="0" max="10" id="res12" name="res12" value="{{ info.res12 }}">
+
+                <select id="segundoH" name="segundoH">
+                    <option selected value="{{ info.segundoH }}">{{ info.segundoH }}</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Gana">Gana</option>
+                    <option value="Uruguai">Uruguai</option>
+                    <option value="Marrocos">Marrocos</option>
+                </select>
+                <br />
+                <br />
+
+                <p class="lead"><strong>Jogo 55</strong></p>
+                <select id="primeiroF" name="primeiroF">
+                    <option selected value="{{ info.primeiroF }}">{{ info.primeiroF }}</option>
+                    <option value="Bélgica">Bélgica</option>
+                    <option value="Canadá">Canadá</option>
+                    <option value="Marrocos">Marrocos</option>
+                    <option value="Croácia">Croácia</option>
+                </select>
+
+                <input type="number" min="0" max="10" id="res13" name="res13" value="{{ info.res13 }}"> x
+                <input type="number" min="0" max="10" id="res14" name="res14" value="{{ info.res14 }}">
+
+                <select id="segundoE" name="segundoE">
+                    <option selected value="{{ info.segundoE }}">{{ info.segundoE }}</option>
+                    <option value="Alemanha">Alemanha</option>
+                    <option value="Japão">Japão</option>
+                    <option value="Espanha">Espanha</option>
+                    <option value="Costa Rica">Costa Rica</option>
+                </select>
+                <br />
+                <br />
+
+                <p class="lead"><strong>Jogo 56</strong></p>
+                <select id="primeiroH" name="primeiroH">
+                    <option selected value="{{ info.primeiroH }}">{{ info.primeiroH }}</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Gana">Gana</option>
+                    <option value="Uruguai">Uruguai</option>
+                    <option value="Marrocos">Marrocos</option>
+                </select>
+
+                <input type="number" min="0" max="10" id="res15" name="res15" value="{{ info.res15 }}"> x
+                <input type="number" min="0" max="10" id="res16" name="res16" value="{{ info.res16 }}">
+
+                <select id="segundoG" name="segundoG">
+                    <option selected value="{{ info.segundoG }}">{{ info.segundoG }}</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Sérvia">Sérvia</option>
+                    <option value="Suiça">Suiça</option>
+                    <option value="Camarões">Camarões</option>
+                </select>
+                <br />
+                <br />
+
+                <button type="submit" class="btn btn-info btn-lg">
+                    <span class="ml-2">Salvar resultados</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

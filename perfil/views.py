@@ -64,6 +64,10 @@ def loginPage(request):
                         GrupoH.objects.create(
                             usuario=user
                         )
+                    if not Eliminatorias.objects.filter(usuario=request.user).exists():
+                        Eliminatorias.objects.create(
+                            usuario=user
+                        )
                         
                     return redirect('main:pageindex')
                 else:
@@ -157,6 +161,10 @@ def registerPage(request):
                         GrupoH.objects.create(
                             usuario=user
                         )
+                    if not Eliminatorias.objects.filter(usuario=request.user).exists():
+                        Eliminatorias.objects.create(
+                            usuario=user
+                    )
                     return redirect('main:pageindex')
             else:
                 messages.add_message(

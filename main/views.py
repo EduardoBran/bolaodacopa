@@ -47,6 +47,9 @@ class DispatchLoginRequiredMixin(View):
         context["bolaousergrupoH"] = GrupoH.objects.all().filter(
             usuario=self.request.user
         )
+        context["eliminatorias"] = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        )
         return context
     
     def get_queryset(self, *args, **kwargs):
@@ -401,3 +404,68 @@ def SalvarTabelaGrupoH(request):
         
     elif request.method == 'GET':
         return render(request, 'main/grupoH.html', {'form': form})    
+
+
+
+class PageEliminatoriasOitavas(DispatchLoginRequiredMixin, DetailView):
+    model = Eliminatorias
+    template_name = 'main/eliminatoriasOitavas.html'
+    context_object_name = 'info'
+    pk_url_kwarg = 'pk'
+
+def SalvarEliminatoriasOitavas(request):
+    form = ResultadosEliminatoriasOitavas()
+    
+    if request.method == 'POST':
+        form = ResultadosEliminatoriasOitavas(request.POST)
+        
+        if form.is_valid():
+            primeiroA = form.cleaned_data['primeiroA']
+            res1 = form.cleaned_data['res1']
+            res2 = form.cleaned_data['res2']
+            segundoB = form.cleaned_data['segundoB']
+            primeiroC = form.cleaned_data['primeiroC']
+            res3 = form.cleaned_data['res3']
+            res4 = form.cleaned_data['res4']
+            segundoD = form.cleaned_data['segundoD']
+            primeiroB = form.cleaned_data['primeiroB']
+            res5 = form.cleaned_data['res5']
+            res6 = form.cleaned_data['res6']
+            segundoA = form.cleaned_data['segundoA']
+            primeiroD = form.cleaned_data['primeiroD']
+            res7 = form.cleaned_data['res7']
+            res8 = form.cleaned_data['res8']
+            segundoC = form.cleaned_data['segundoC']
+            primeiroE = form.cleaned_data['primeiroE']
+            res9 = form.cleaned_data['res9']
+            res10 = form.cleaned_data['res10']
+            segundoF = form.cleaned_data['segundoF']
+            primeiroG = form.cleaned_data['primeiroG']
+            res11 = form.cleaned_data['res11']
+            res12 = form.cleaned_data['res12']
+            segundoH = form.cleaned_data['segundoH']
+            primeiroF = form.cleaned_data['primeiroF']
+            res13 = form.cleaned_data['res13']
+            res14 = form.cleaned_data['res14']
+            segundoE = form.cleaned_data['segundoE']
+            primeiroH = form.cleaned_data['primeiroH']
+            res15 = form.cleaned_data['res15']
+            res16 = form.cleaned_data['res16']
+            segundoG = form.cleaned_data['segundoG']
+            
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    primeiroA=primeiroA, res1=res1, res2=res2, segundoB=segundoB,
+                    primeiroC=primeiroC, res3=res3, res4=res4, segundoD=segundoD,
+                    primeiroB=primeiroB, res5=res5, res6=res6, segundoA=segundoA,
+                    primeiroD=primeiroD, res7=res7, res8=res8, segundoC=segundoC,
+                    primeiroE=primeiroE, res9=res9, res10=res10, segundoF=segundoF,
+                    primeiroG=primeiroG, res11=res11, res12=res12, segundoH=segundoH,
+                    primeiroF=primeiroF, res13=res13, res14=res14, segundoE=segundoE,
+                    primeiroH=primeiroH, res15=res15, res16=res16, segundoG=segundoG,
+                )
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Sua tabela do Grupo H foi atualizada.'
+            )
+            return redirect('main:pagemain')

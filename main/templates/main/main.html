@@ -92,6 +92,17 @@
     </div>
 </div>
 
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="ml2">
+            {% for usuario in eliminatorias %}
+            <a href="{% url 'main:eliminatoriasOitavas' usuario.id %}">Clique aqui</a> para as eliminatórias das oitavas
+            de final.
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 {% endif %}
 
 {% endblock %}

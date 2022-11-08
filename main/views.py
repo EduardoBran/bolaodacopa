@@ -469,3 +469,199 @@ def SalvarEliminatoriasOitavas(request):
                 'Sua tabela do Grupo H foi atualizada.'
             )
             return redirect('main:pagemain')
+        
+class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
+    model = Eliminatorias
+    template_name = 'main/eliminatoriasQuartas.html'
+    context_object_name = 'info'
+    pk_url_kwarg = 'pk'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        res1 = Eliminatorias.objects.filter(usuario=self.request.user).values('res1')
+        res1 = list(res1)
+        res1 = res1[0]['res1']
+        res2 = Eliminatorias.objects.filter(usuario=self.request.user).values('res2')
+        res2 = list(res2)
+        res2 = res2[0]['res2']
+        res3 = Eliminatorias.objects.filter(usuario=self.request.user).values('res3')
+        res3 = list(res3)
+        res3 = res3[0]['res3']
+        res4 = Eliminatorias.objects.filter(usuario=self.request.user).values('res4')
+        res4 = list(res4)
+        res4 = res4[0]['res4']
+        res5 = Eliminatorias.objects.filter(usuario=self.request.user).values('res5')
+        res5 = list(res5)
+        res5 = res5[0]['res5']
+        res6 = Eliminatorias.objects.filter(usuario=self.request.user).values('res6')
+        res6 = list(res6)
+        res6 = res6[0]['res6']
+        res7 = Eliminatorias.objects.filter(usuario=self.request.user).values('res7')
+        res7 = list(res7)
+        res7 = res7[0]['res7']
+        res8 = Eliminatorias.objects.filter(usuario=self.request.user).values('res8')
+        res8 = list(res8)
+        res8 = res8[0]['res8']
+        res9 = Eliminatorias.objects.filter(usuario=self.request.user).values('res9')
+        res9 = list(res9)
+        res9 = res9[0]['res9']
+        res10 = Eliminatorias.objects.filter(usuario=self.request.user).values('res10')
+        res10 = list(res10)
+        res10 = res10[0]['res10']
+        res11 = Eliminatorias.objects.filter(usuario=self.request.user).values('res11')
+        res11 = list(res11)
+        res11 = res11[0]['res11']
+        res12 = Eliminatorias.objects.filter(usuario=self.request.user).values('res12')
+        res12 = list(res12)
+        res12 = res12[0]['res12']
+        res13 = Eliminatorias.objects.filter(usuario=self.request.user).values('res13')
+        res13 = list(res13)
+        res13 = res13[0]['res13']
+        res14 = Eliminatorias.objects.filter(usuario=self.request.user).values('res14')
+        res14 = list(res14)
+        res14 = res14[0]['res14']
+        res15 = Eliminatorias.objects.filter(usuario=self.request.user).values('res15')
+        res15 = list(res15)
+        res15 = res15[0]['res15']
+        res16 = Eliminatorias.objects.filter(usuario=self.request.user).values('res16')
+        res16 = list(res16)
+        res16 = res16[0]['res16']
+        
+        if res1 > res2:    
+            primeiroA = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroA')
+            primeiroA = list(primeiroA)
+            primeiroA = primeiroA[0]['primeiroA']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao1Quartas=primeiroA
+                )
+            context['selecao1quartas'] = primeiroA 
+        elif res2 > res1:
+            segundoB = Eliminatorias.objects.filter(usuario=self.request.user).values('segundoB')
+            segundoB = list(segundoB)
+            segundoB = segundoB[0]['segundoB']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao1Quartas=segundoB
+                )
+            context['selecao1quartas'] = segundoB
+            
+        if res3 > res4:    
+            primeiroC = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroC')
+            primeiroC = list(primeiroC)
+            primeiroC = primeiroC[0]['primeiroC']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao2Quartas=primeiroC
+                )
+            context['selecao2quartas'] = primeiroC     
+        elif res4 > res3:
+            segundoD = Eliminatorias.objects.filter(usuario=self.request.user).values('segundoD')
+            segundoD = list(segundoD)
+            segundoD = segundoD[0]['segundoD']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao2Quartas=segundoD
+                )
+            context['selecao2quartas'] = segundoD
+        
+        if res5 > res6:    
+            primeiroB = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroB')
+            primeiroB = list(primeiroB)
+            primeiroB = primeiroB[0]['primeiroB']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao3Quartas=primeiroB
+                )
+            context['selecao3quartas'] = primeiroB     
+        elif res6 > res5:
+            segundoA = Eliminatorias.objects.filter(usuario=self.request.user).values('segundoA')
+            segundoA = list(segundoA)
+            segundoA = segundoA[0]['segundoA']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao3Quartas=segundoA
+                )
+            context['selecao3quartas'] = segundoA
+        
+        if res7 > res8:    
+            primeiroD = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroD')
+            primeiroD = list(primeiroD)
+            primeiroD = primeiroD[0]['primeiroD']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao4Quartas=primeiroD
+                )
+            context['selecao4quartas'] = primeiroD     
+        elif res8 > res7:
+            segundoC = Eliminatorias.objects.filter(usuario=self.request.user).values('segundoC')
+            segundoC = list(segundoC)
+            segundoC = segundoC[0]['segundoC']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao4Quartas=segundoC
+                )
+            context['selecao4quartas'] = segundoC
+        
+        if res9 > res10:    
+            primeiroE = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroE')
+            primeiroE = list(primeiroE)
+            primeiroE = primeiroE[0]['primeiroE']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao5Quartas=primeiroE
+                )
+            context['selecao5quartas'] = primeiroE     
+        elif res10 > res9:
+            segundoF = Eliminatorias.objects.filter(usuario=self.request.user).values('segundoF')
+            segundoF = list(segundoF)
+            segundoF = segundoF[0]['segundoF']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao5Quartas=segundoF
+                )
+            context['selecao5quartas'] = segundoF
+        
+        if res11 > res12:    
+            primeiroG = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroG')
+            primeiroG = list(primeiroG)
+            primeiroG = primeiroG[0]['primeiroG']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao6Quartas=primeiroG
+                )
+            context['selecao6quartas'] = primeiroG     
+        elif res12 > res11:
+            segundoH = Eliminatorias.objects.filter(usuario=self.request.user).values('segundoH')
+            segundoH = list(segundoH)
+            segundoH = segundoH[0]['segundoH']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao6Quartas=segundoH
+                )
+            context['selecao6quartas'] = segundoH
+        
+        if res13 > res14:    
+            primeiroF = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroF')
+            primeiroF = list(primeiroF)
+            primeiroF = primeiroF[0]['primeiroF']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao7Quartas=primeiroF
+                )
+            context['selecao7quartas'] = primeiroF     
+        elif res14 > res13:
+            segundoE = Eliminatorias.objects.filter(usuario=self.request.user).values('segundoE')
+            segundoE = list(segundoE)
+            segundoE = segundoE[0]['segundoE']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao7Quartas=segundoE
+                )
+            context['selecao7quartas'] = segundoE
+        
+        if res15 > res16:    
+            primeiroH = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroH')
+            primeiroH = list(primeiroH)
+            primeiroH = primeiroH[0]['primeiroH']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao8Quartas=primeiroH
+                )
+            context['selecao8quartas'] = primeiroH     
+        elif res16 > res15:
+            segundoG = Eliminatorias.objects.filter(usuario=self.request.user).values('segundoG')
+            segundoG = list(segundoG)
+            segundoG = segundoG[0]['segundoG']
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    selecao8Quartas=segundoG
+                )
+            context['selecao8quartas'] = segundoG
+        
+        return context

@@ -58,7 +58,15 @@ class GrupoHAdmin(admin.ModelAdmin):
     list_display_links = (
         'usuario',
     )
+
+class EliminatoriasAdmin(admin.ModelAdmin):
+    list_display = ('usuario',)
     
+    list_display_links = (
+        'usuario',
+    )
+    
+
 admin.site.register(GrupoA, GrupoAAdmin)
 admin.site.register(GrupoB, GrupoBAdmin)
 admin.site.register(GrupoC, GrupoCAdmin)
@@ -67,3 +75,4 @@ admin.site.register(GrupoE, GrupoEAdmin)
 admin.site.register(GrupoF, GrupoFAdmin)
 admin.site.register(GrupoG, GrupoGAdmin)
 admin.site.register(GrupoH, GrupoHAdmin)
+admin.site.register(Eliminatorias, EliminatoriasAdmin)

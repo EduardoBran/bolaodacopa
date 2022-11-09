@@ -788,3 +788,29 @@ class PageEliminatoriasSemi(DispatchLoginRequiredMixin, DetailView):
             context['selecao4Semi'] = selecao8Quartas
         
         return context
+    
+def SalvarEliminatoriasSemi(request):
+    form = ResultadosEliminatoriasSemiForm()
+    
+    if request.method == 'POST':
+        form = ResultadosEliminatoriasSemiForm(request.POST)
+        
+        if form.is_valid():
+            res25 = form.cleaned_data['res25']
+            res26 = form.cleaned_data['res26']
+            res27 = form.cleaned_data['res27']
+            res28 = form.cleaned_data['res28']
+            
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res25=res25, res26=res26, res27=res27, res28=res28
+                )
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Sua tabela da semi final foi atualizada.'
+            )
+            return redirect('main:pagemain')
+        
+    elif request.method == 'GET':
+        return render(request, 'main/eliminatoriasSemi.html', {'form': form})
+    

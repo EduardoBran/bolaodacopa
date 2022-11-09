@@ -28,5 +28,5 @@ urlpatterns = [
     path('salvartabelagrupoh/', views.SalvarTabelaGrupoH, name='salvartabelagrupoH'),
     path('salvareliminatoriasoitavas/', views.SalvarEliminatoriasOitavas, name='salvareliminatoriasoitavas'),
     path('salvareliminatoriasquartas/', views.SalvarEliminatoriasQuartas, name='salvareliminatoriasquartas'),
-    
+    path('salvareliminatoriassemi/', views.SalvarEliminatoriasSemi, name='salvareliminatoriassemi'),
 ]

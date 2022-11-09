@@ -21,7 +21,7 @@
 <div class="row mt-4">
     <div class="col-12">
         <div class="text-center">
-            <form action="{% url 'main:salvareliminatoriasquartas' %}" method="POST">
+            <form action="{% url 'main:salvareliminatoriassemi' %}" method="POST">
                 {% csrf_token %}
                 <span>{{ selecao1Semi }} <input type="number" min="0" max="10" id="res25" name="res25"
                         value="{{ info.res25 }}"> x

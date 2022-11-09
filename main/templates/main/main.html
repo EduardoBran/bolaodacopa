@@ -125,6 +125,17 @@
     </div>
 </div>
 
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="ml2">
+            {% for usuario in eliminatorias %}
+            <a href="{% url 'main:eliminatoriasFinal' usuario.id %}">Clique aqui</a> para a disputa de 3 lugar e
+            final.
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 {% endif %}
 
 {% endblock %}

@@ -813,4 +813,61 @@ def SalvarEliminatoriasSemi(request):
         
     elif request.method == 'GET':
         return render(request, 'main/eliminatoriasSemi.html', {'form': form})
+
+
+class PageEliminatoriasFinal(DispatchLoginRequiredMixin, DetailView):
+    model = Eliminatorias
+    template_name = 'main/eliminatoriasFinal.html'
+    context_object_name = 'info'
+    pk_url_kwarg = 'pk'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        res25 = list(Eliminatorias.objects.filter(usuario=self.request.user).values('res25'))
+        res25 = res25[0]['res25']
+        res26 = list(Eliminatorias.objects.filter(usuario=self.request.user).values('res26'))
+        res26 = res26[0]['res26']
+        res27 = list(Eliminatorias.objects.filter(usuario=self.request.user).values('res27'))
+        res27 = res27[0]['res27']
+        res28 = list(Eliminatorias.objects.filter(usuario=self.request.user).values('res28'))
+        res28 = res28[0]['res28']
+        
+        selecao1Semi = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao1Semi'))
+        selecao1Semi = selecao1Semi[0]['selecao1Semi']
+        selecao2Semi = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao2Semi'))
+        selecao2Semi = selecao2Semi[0]['selecao2Semi']
+        selecao3Semi = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao3Semi'))
+        selecao3Semi = selecao3Semi[0]['selecao3Semi']
+        selecao4Semi = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao4Semi'))
+        selecao4Semi = selecao4Semi[0]['selecao4Semi']
+            
+        
+        if res25 > res26:
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                selecao1Final=selecao1Semi, selecao1TerceiroLugar=selecao2Semi
+            )
+            context['selecao1Final'] = selecao1Semi
+            context['selecao1TerceiroLugar'] = selecao2Semi
+        elif res26 > res25:
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                selecao1Final=selecao2Semi, selecao1TerceiroLugar=selecao1Semi
+            )
+            context['selecao1Final'] = selecao2Semi
+            context['selecao1TerceiroLugar'] = selecao1Semi
+            
+        if res27 > res28:
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                selecao2Final=selecao3Semi, selecao2TerceiroLugar=selecao4Semi
+            )
+            context['selecao2Final'] = selecao3Semi
+            context['selecao2TerceiroLugar'] = selecao4Semi
+        elif res28 > res27:
+            Eliminatorias.objects.filter(usuario=self.request.user).update(
+                selecao1Final=selecao4Semi, selecao1TerceiroLugar=selecao3Semi
+            )
+            context['selecao2Final'] = selecao4Semi
+            context['selecao2TerceiroLugar'] = selecao3Semi
+            
+        return context
     

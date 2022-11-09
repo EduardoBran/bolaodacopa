@@ -17,6 +17,7 @@ urlpatterns = [
     path('main/grupoH/<int:pk>', views.PageGrupoH.as_view(), name='pagegrupoH'),
     path('main/eliminatoriasOitavas/<int:pk>', views.PageEliminatoriasOitavas.as_view(), name='eliminatoriasOitavas'),
     path('main/eliminatoriasQuartas/<int:pk>', views.PageEliminatoriasQuartas.as_view(), name='eliminatoriasQuartas'),
+    path('main/eliminatoriasSemi/<int:pk>', views.PageEliminatoriasSemi.as_view(), name='eliminatoriasSemi'),
     path('salvartabelagrupoa/', views.SalvarTabelaGrupoA, name='salvartabelagrupoA'),
     path('salvartabelagrupob/', views.SalvarTabelaGrupoB, name='salvartabelagrupoB'),
     path('salvartabelagrupoc/', views.SalvarTabelaGrupoC, name='salvartabelagrupoC'),

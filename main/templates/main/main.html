@@ -114,6 +114,17 @@
     </div>
 </div>
 
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="ml2">
+            {% for usuario in eliminatorias %}
+            <a href="{% url 'main:eliminatoriasSemi' usuario.id %}">Clique aqui</a> para as eliminatórias da semi
+            final.
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 {% endif %}
 
 {% endblock %}

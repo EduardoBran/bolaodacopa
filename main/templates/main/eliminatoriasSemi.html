@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <div class="text-center">
+            <h3>Eliminatórias</h3>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="text-center">
+            <h5>Semi Final</h5>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="text-center">
+            <form action="{% url 'main:salvareliminatoriasquartas' %}" method="POST">
+                {% csrf_token %}
+                <span>{{ selecao1Semi }} <input type="number" min="0" max="10" id="res25" name="res25"
+                        value="{{ info.res25 }}"> x
+                    <input type="number" min="0" max="10" id="res26" name="res26" value="{{ info.res26 }}">
+                    {{ selecao2Semi }}
+                </span>
+                <br />
+                <br />
+                <span>{{ selecao3Semi }} <input type="number" min="0" max="10" id="res27" name="res27"
+                        value="{{ info.res27 }}"> x <input type="number" min="0" max="10" id="res28" name="res28"
+                        value="{{ info.res28 }}"> {{ selecao4Semi }} </span>
+                <br />
+                <br />
+
+                <button type="submit" class="btn btn-info btn-lg">
+                    <span class="ml-2">Salvar resultados</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

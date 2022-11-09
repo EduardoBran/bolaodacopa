@@ -23,6 +23,8 @@
         <div class="text-center">
             <form action="{% url 'main:salvareliminatoriasfinal' %}" method="POST">
                 {% csrf_token %}
+
+                <p class="lead"><strong>Jogo 63</strong></p>
                 <span>{{ selecao1TerceiroLugar }} <input type="number" min="0" max="10" id="res29" name="res29"
                         value="{{ info.res29 }}"> x
                     <input type="number" min="0" max="10" id="res30" name="res30" value="{{ info.res30 }}">
@@ -39,6 +41,7 @@
                     </div>
                 </div>
 
+                <p class="lead"><strong>Jogo 64</strong></p>
                 <span>{{ selecao1Final }} <input type="number" min="0" max="10" id="res31" name="res31"
                         value="{{ info.res31 }}"> x
                     <input type="number" min="0" max="10" id="res32" name="res32" value="{{ info.res32 }}">

@@ -23,6 +23,8 @@
         <div class="text-center">
             <form action="{% url 'main:salvareliminatoriassemi' %}" method="POST">
                 {% csrf_token %}
+
+                <p class="lead"><strong>Jogo 61</strong></p>
                 <span>{{ selecao1Semi }} <input type="number" min="0" max="10" id="res25" name="res25"
                         value="{{ info.res25 }}"> x
                     <input type="number" min="0" max="10" id="res26" name="res26" value="{{ info.res26 }}">
@@ -30,6 +32,8 @@
                 </span>
                 <br />
                 <br />
+
+                <p class="lead"><strong>Jogo 62</strong></p>
                 <span>{{ selecao3Semi }} <input type="number" min="0" max="10" id="res27" name="res27"
                         value="{{ info.res27 }}"> x <input type="number" min="0" max="10" id="res28" name="res28"
                         value="{{ info.res28 }}"> {{ selecao4Semi }} </span>

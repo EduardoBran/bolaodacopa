@@ -531,6 +531,17 @@ class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
         res16 = list(res16)
         res16 = res16[0]['res16']
         
+        if res1 == None:
+            context['selecao1quartas'] = 'Vencedor Jogo 49'
+            context['selecao2quartas'] = 'Vencedor Jogo 50'
+            context['selecao3quartas'] = 'Vencedor Jogo 51'
+            context['selecao4quartas'] = 'Vencedor Jogo 52'
+            context['selecao5quartas'] = 'Vencedor Jogo 53'
+            context['selecao6quartas'] = 'Vencedor Jogo 54'
+            context['selecao7quartas'] = 'Vencedor Jogo 55'
+            context['selecao8quartas'] = 'Vencedor Jogo 56' 
+            return context
+        
         if res1 > res2:    
             primeiroA = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroA')
             primeiroA = list(primeiroA)
@@ -727,6 +738,13 @@ class PageEliminatoriasSemi(DispatchLoginRequiredMixin, DetailView):
         res24 = list(Eliminatorias.objects.filter(usuario=self.request.user).values('res24'))
         res24 = res24[0]['res24']
         
+        if res17 == None:
+            context['selecao1Semi'] = 'Vencedor Jogo 57'
+            context['selecao2Semi'] = 'Vencedor Jogo 58'
+            context['selecao3Semi'] = 'Vencedor Jogo 59'
+            context['selecao4Semi'] = 'Vencedor Jogo 60'
+            return context
+        
         if res17 > res18:
             selecao1Quartas = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao1Quartas'))
             selecao1Quartas = selecao1Quartas[0]['selecao1Quartas']
@@ -832,6 +850,13 @@ class PageEliminatoriasFinal(DispatchLoginRequiredMixin, DetailView):
         res27 = res27[0]['res27']
         res28 = list(Eliminatorias.objects.filter(usuario=self.request.user).values('res28'))
         res28 = res28[0]['res28']
+        
+        if res25 == None:
+            context['selecao1Final'] = 'Vencedor Jogo 61'
+            context['selecao2Final'] = 'Vencedor Jogo 62'
+            context['selecao1TerceiroLugar'] = 'Perdedor Jogo 61'
+            context['selecao2TerceiroLugar'] = 'Perdedor Jogo 62'
+            return context
         
         selecao1Semi = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao1Semi'))
         selecao1Semi = selecao1Semi[0]['selecao1Semi']

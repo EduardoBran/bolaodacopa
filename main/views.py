@@ -88,11 +88,14 @@ def SalvarTabelaGrupoA(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoA.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12
+                    res10=res10, res11=res11, res12=res12,
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
                 )
             messages.add_message(
                 request,
@@ -131,11 +134,14 @@ def SalvarTabelaGrupoB(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoB.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12
+                    res10=res10, res11=res11, res12=res12,
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
                 )
             messages.add_message(
                 request,
@@ -174,11 +180,14 @@ def SalvarTabelaGrupoC(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoC.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12
+                    res10=res10, res11=res11, res12=res12,
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
                 )
             messages.add_message(
                 request,
@@ -217,11 +226,14 @@ def SalvarTabelaGrupoD(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoD.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12
+                    res10=res10, res11=res11, res12=res12,
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
                 )
             messages.add_message(
                 request,
@@ -260,11 +272,14 @@ def SalvarTabelaGrupoE(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoE.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12
+                    res10=res10, res11=res11, res12=res12,
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
                 )
             messages.add_message(
                 request,
@@ -303,11 +318,14 @@ def SalvarTabelaGrupoF(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoF.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12
+                    res10=res10, res11=res11, res12=res12,
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
                 )
             messages.add_message(
                 request,
@@ -346,11 +364,14 @@ def SalvarTabelaGrupoG(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoG.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12
+                    res10=res10, res11=res11, res12=res12,
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
                 )
             messages.add_message(
                 request,
@@ -389,11 +410,14 @@ def SalvarTabelaGrupoH(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoH.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12
+                    res10=res10, res11=res11, res12=res12,
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
                 )
             messages.add_message(
                 request,
@@ -412,6 +436,75 @@ class PageEliminatoriasOitavas(DispatchLoginRequiredMixin, DetailView):
     template_name = 'main/eliminatoriasOitavas.html'
     context_object_name = 'info'
     pk_url_kwarg = 'pk'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        primeiroColocadoA = list(GrupoA.objects.filter(usuario=self.request.user).values('primeiroColocado'))
+        primeiroColocadoA = primeiroColocadoA[0]['primeiroColocado']
+        context['primeiroColocadoA'] = primeiroColocadoA
+        segundoColocadoA = list(GrupoA.objects.filter(usuario=self.request.user).values('segundoColocado'))
+        segundoColocadoA = segundoColocadoA[0]['segundoColocado']
+        context['segundoColocadoA'] = segundoColocadoA
+        
+        primeiroColocadoB = list(GrupoB.objects.filter(usuario=self.request.user).values('primeiroColocado'))
+        primeiroColocadoB = primeiroColocadoB[0]['primeiroColocado']
+        context['primeiroColocadoB'] = primeiroColocadoB
+        segundoColocadoB = list(GrupoB.objects.filter(usuario=self.request.user).values('segundoColocado'))
+        segundoColocadoB = segundoColocadoB[0]['segundoColocado']
+        context['segundoColocadoB'] = segundoColocadoB
+        
+        primeiroColocadoC = list(GrupoC.objects.filter(usuario=self.request.user).values('primeiroColocado'))
+        primeiroColocadoC = primeiroColocadoC[0]['primeiroColocado']
+        context['primeiroColocadoC'] = primeiroColocadoC
+        segundoColocadoC = list(GrupoC.objects.filter(usuario=self.request.user).values('segundoColocado'))
+        segundoColocadoC = segundoColocadoC[0]['segundoColocado']
+        context['segundoColocadoC'] = segundoColocadoC
+        
+        primeiroColocadoD = list(GrupoD.objects.filter(usuario=self.request.user).values('primeiroColocado'))
+        primeiroColocadoD = primeiroColocadoD[0]['primeiroColocado']
+        context['primeiroColocadoD'] = primeiroColocadoD
+        segundoColocadoD = list(GrupoD.objects.filter(usuario=self.request.user).values('segundoColocado'))
+        segundoColocadoD = segundoColocadoD[0]['segundoColocado']
+        context['segundoColocadoD'] = segundoColocadoD
+        
+        primeiroColocadoE = list(GrupoE.objects.filter(usuario=self.request.user).values('primeiroColocado'))
+        primeiroColocadoE = primeiroColocadoE[0]['primeiroColocado']
+        context['primeiroColocadoE'] = primeiroColocadoE
+        segundoColocadoE = list(GrupoE.objects.filter(usuario=self.request.user).values('segundoColocado'))
+        segundoColocadoE = segundoColocadoE[0]['segundoColocado']
+        context['segundoColocadoE'] = segundoColocadoE
+        
+        primeiroColocadoF = list(GrupoF.objects.filter(usuario=self.request.user).values('primeiroColocado'))
+        primeiroColocadoF = primeiroColocadoF[0]['primeiroColocado']
+        context['primeiroColocadoF'] = primeiroColocadoF
+        segundoColocadoF = list(GrupoF.objects.filter(usuario=self.request.user).values('segundoColocado'))
+        segundoColocadoF = segundoColocadoF[0]['segundoColocado']
+        context['segundoColocadoF'] = segundoColocadoF
+        
+        primeiroColocadoG = list(GrupoG.objects.filter(usuario=self.request.user).values('primeiroColocado'))
+        primeiroColocadoG = primeiroColocadoG[0]['primeiroColocado']
+        context['primeiroColocadoG'] = primeiroColocadoG
+        segundoColocadoG = list(GrupoG.objects.filter(usuario=self.request.user).values('segundoColocado'))
+        segundoColocadoG = segundoColocadoG[0]['segundoColocado']
+        context['segundoColocadoG'] = segundoColocadoG
+        
+        primeiroColocadoH = list(GrupoH.objects.filter(usuario=self.request.user).values('primeiroColocado'))
+        primeiroColocadoH = primeiroColocadoH[0]['primeiroColocado']
+        context['primeiroColocadoH'] = primeiroColocadoH
+        segundoColocadoH = list(GrupoH.objects.filter(usuario=self.request.user).values('segundoColocado'))
+        segundoColocadoH = segundoColocadoH[0]['segundoColocado']
+        context['segundoColocadoH'] = segundoColocadoH
+        
+        Eliminatorias.objects.filter(usuario=self.request.user).update(
+                    primeiroA=primeiroColocadoA, segundoB=segundoColocadoB, primeiroC=primeiroColocadoC, segundoD=segundoColocadoD,
+                    primeiroB=primeiroColocadoB, segundoA=segundoColocadoA, primeiroD=primeiroColocadoD, segundoC=segundoColocadoC,
+                    primeiroE=primeiroColocadoE, segundoF=segundoColocadoF, primeiroG=primeiroColocadoG, segundoH=segundoColocadoH,
+                    primeiroF=primeiroColocadoF, segundoE=segundoColocadoE, primeiroH=primeiroColocadoH, segundoG=segundoColocadoG,
+                )
+        
+        return context
+    
 
 def SalvarEliminatoriasOitavas(request):
     form = ResultadosEliminatoriasOitavasForm()
@@ -420,48 +513,28 @@ def SalvarEliminatoriasOitavas(request):
         form = ResultadosEliminatoriasOitavasForm(request.POST)
         
         if form.is_valid():
-            primeiroA = form.cleaned_data['primeiroA']
             res1 = form.cleaned_data['res1']
             res2 = form.cleaned_data['res2']
-            segundoB = form.cleaned_data['segundoB']
-            primeiroC = form.cleaned_data['primeiroC']
             res3 = form.cleaned_data['res3']
             res4 = form.cleaned_data['res4']
-            segundoD = form.cleaned_data['segundoD']
-            primeiroB = form.cleaned_data['primeiroB']
             res5 = form.cleaned_data['res5']
             res6 = form.cleaned_data['res6']
-            segundoA = form.cleaned_data['segundoA']
-            primeiroD = form.cleaned_data['primeiroD']
             res7 = form.cleaned_data['res7']
             res8 = form.cleaned_data['res8']
-            segundoC = form.cleaned_data['segundoC']
-            primeiroE = form.cleaned_data['primeiroE']
             res9 = form.cleaned_data['res9']
             res10 = form.cleaned_data['res10']
-            segundoF = form.cleaned_data['segundoF']
-            primeiroG = form.cleaned_data['primeiroG']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
-            segundoH = form.cleaned_data['segundoH']
-            primeiroF = form.cleaned_data['primeiroF']
             res13 = form.cleaned_data['res13']
             res14 = form.cleaned_data['res14']
-            segundoE = form.cleaned_data['segundoE']
-            primeiroH = form.cleaned_data['primeiroH']
             res15 = form.cleaned_data['res15']
             res16 = form.cleaned_data['res16']
-            segundoG = form.cleaned_data['segundoG']
             
             Eliminatorias.objects.filter(usuario=request.user).update(
-                    primeiroA=primeiroA, res1=res1, res2=res2, segundoB=segundoB,
-                    primeiroC=primeiroC, res3=res3, res4=res4, segundoD=segundoD,
-                    primeiroB=primeiroB, res5=res5, res6=res6, segundoA=segundoA,
-                    primeiroD=primeiroD, res7=res7, res8=res8, segundoC=segundoC,
-                    primeiroE=primeiroE, res9=res9, res10=res10, segundoF=segundoF,
-                    primeiroG=primeiroG, res11=res11, res12=res12, segundoH=segundoH,
-                    primeiroF=primeiroF, res13=res13, res14=res14, segundoE=segundoE,
-                    primeiroH=primeiroH, res15=res15, res16=res16, segundoG=segundoG,
+                    res1=res1, res2=res2, res3=res3, res4=res4,
+                    res5=res5, res6=res6, res7=res7, res8=res8, 
+                    res9=res9, res10=res10, res11=res11, res12=res12,
+                    res13=res13, res14=res14, res15=res15, res16=res16
                 )
             messages.add_message(
                 request,
@@ -469,6 +542,7 @@ def SalvarEliminatoriasOitavas(request):
                 'Sua tabela das oitavas de final foi atualizada.'
             )
             return redirect('main:pagemain')
+        
     elif request.method == 'GET':
         return render(request, 'main/eliminatoriasOitavas.html', {'form': form})
     
@@ -534,7 +608,7 @@ class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
         if res1 == None:
             context['selecao1quartas'] = 'Vencedor Jogo 49'
             context['selecao2quartas'] = 'Vencedor Jogo 50'
-            context['selecao3quartas'] = 'Vencedor Jogo 51'
+            context['selecao3quartas'] = 'Vencedor Jogo 51' 
             context['selecao4quartas'] = 'Vencedor Jogo 52'
             context['selecao5quartas'] = 'Vencedor Jogo 53'
             context['selecao6quartas'] = 'Vencedor Jogo 54'

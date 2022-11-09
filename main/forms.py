@@ -9,7 +9,8 @@ class ResultadosGrupoAForm(forms.ModelForm):
         fields = ('res1', 'res2', 'res3',
                   'res4', 'res5', 'res6',
                   'res7', 'res8', 'res9',
-                  'res10', 'res11', 'res12'
+                  'res10', 'res11', 'res12',
+                  'primeiroColocado', 'segundoColocado'
                   )
 
 class ResultadosGrupoBForm(forms.ModelForm):
@@ -18,7 +19,8 @@ class ResultadosGrupoBForm(forms.ModelForm):
         fields = ('res1', 'res2', 'res3',
                   'res4', 'res5', 'res6',
                   'res7', 'res8', 'res9',
-                  'res10', 'res11', 'res12'
+                  'res10', 'res11', 'res12',
+                  'primeiroColocado', 'segundoColocado'
                   )
 
 class ResultadosGrupoCForm(forms.ModelForm):
@@ -27,7 +29,8 @@ class ResultadosGrupoCForm(forms.ModelForm):
         fields = ('res1', 'res2', 'res3',
                   'res4', 'res5', 'res6',
                   'res7', 'res8', 'res9',
-                  'res10', 'res11', 'res12'
+                  'res10', 'res11', 'res12',
+                  'primeiroColocado', 'segundoColocado'
                   )
 
 class ResultadosGrupoDForm(forms.ModelForm):
@@ -36,7 +39,8 @@ class ResultadosGrupoDForm(forms.ModelForm):
         fields = ('res1', 'res2', 'res3',
                   'res4', 'res5', 'res6',
                   'res7', 'res8', 'res9',
-                  'res10', 'res11', 'res12'
+                  'res10', 'res11', 'res12',
+                  'primeiroColocado', 'segundoColocado'
                   )
         
 class ResultadosGrupoEForm(forms.ModelForm):
@@ -45,7 +49,8 @@ class ResultadosGrupoEForm(forms.ModelForm):
         fields = ('res1', 'res2', 'res3',
                   'res4', 'res5', 'res6',
                   'res7', 'res8', 'res9',
-                  'res10', 'res11', 'res12'
+                  'res10', 'res11', 'res12',
+                  'primeiroColocado', 'segundoColocado'
                   )
 
 class ResultadosGrupoFForm(forms.ModelForm):
@@ -54,7 +59,8 @@ class ResultadosGrupoFForm(forms.ModelForm):
         fields = ('res1', 'res2', 'res3',
                   'res4', 'res5', 'res6',
                   'res7', 'res8', 'res9',
-                  'res10', 'res11', 'res12'
+                  'res10', 'res11', 'res12',
+                  'primeiroColocado', 'segundoColocado'
                   )
 
 class ResultadosGrupoGForm(forms.ModelForm):
@@ -63,7 +69,8 @@ class ResultadosGrupoGForm(forms.ModelForm):
         fields = ('res1', 'res2', 'res3',
                   'res4', 'res5', 'res6',
                   'res7', 'res8', 'res9',
-                  'res10', 'res11', 'res12'
+                  'res10', 'res11', 'res12',
+                  'primeiroColocado', 'segundoColocado'
                   )
 
 class ResultadosGrupoHForm(forms.ModelForm):
@@ -72,20 +79,17 @@ class ResultadosGrupoHForm(forms.ModelForm):
         fields = ('res1', 'res2', 'res3',
                   'res4', 'res5', 'res6',
                   'res7', 'res8', 'res9',
-                  'res10', 'res11', 'res12'
+                  'res10', 'res11', 'res12',
+                  'primeiroColocado', 'segundoColocado'
                   )
 
 class ResultadosEliminatoriasOitavasForm(forms.ModelForm):
     class Meta:
         model = Eliminatorias
-        fields = ('primeiroA', 'res1', 'res2', 'segundoB',
-                  'primeiroC', 'res3', 'res4', 'segundoD',
-                  'primeiroB', 'res5', 'res6', 'segundoA',
-                  'primeiroD', 'res7', 'res8', 'segundoC',
-                  'primeiroE', 'res9', 'res10', 'segundoF',
-                  'primeiroG', 'res11', 'res12', 'segundoH',
-                  'primeiroF', 'res13', 'res14', 'segundoE',
-                  'primeiroH', 'res15', 'res16', 'segundoG',
+        fields = ('res1', 'res2', 'res3', 'res4',
+                  'res5', 'res6', 'res7', 'res8',
+                  'res9', 'res10', 'res11', 'res12',
+                  'res13', 'res14', 'res15', 'res16'
                   )
 
 class ResultadosEliminatoriasQuartasForm(forms.ModelForm):

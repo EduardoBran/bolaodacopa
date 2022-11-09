@@ -47,6 +47,27 @@
                         value="{{ info.res12 }}"> {{ info.selecao3 }} </span>
                 <br />
                 <br />
+
+                <span class="lead">1 colocado</span>
+                <select id="primeiroColocado" name="primeiroColocado">
+                    <option selected value="{{ info.primeiroH }}">{{ info.primeiroH }}</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Gana">Gana</option>
+                    <option value="Uruguai">Uruguai</option>
+                    <option value="Marrocos">Marrocos</option>
+                </select>
+
+                <span class="lead">2 colocado</span>
+                <select id="segundoColocado" name="segundoColocado">
+                    <option selected value="{{ info.segundoColocado }}">{{ info.segundoColocado }}</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Gana">Gana</option>
+                    <option value="Uruguai">Uruguai</option>
+                    <option value="Marrocos">Marrocos</option>
+                </select>
+                <br />
+                <br />
+
                 <button type="submit" class="btn btn-info btn-lg">
                     <span class="ml-2">Salvar resultados</span>
                 </button>

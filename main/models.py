@@ -31,6 +31,9 @@ class GrupoA(Base):
     res11 = models.SmallIntegerField(blank=True, null=True)
     res12 = models.SmallIntegerField(blank=True, null=True)
     
+    primeiroColocado = models.CharField(max_length=200, verbose_name='Primeiro Lugar', default='', blank=True, null=True)
+    segundoColocado = models.CharField(max_length=200, verbose_name='Segundo Lugar', default='', blank=True, null=True)
+    
     class Meta:
         verbose_name = 'Grupo A'
         verbose_name_plural = 'Grupo A'
@@ -58,6 +61,9 @@ class GrupoB(Base):
     res10 = models.SmallIntegerField(blank=True, null=True)
     res11 = models.SmallIntegerField(blank=True, null=True)
     res12 = models.SmallIntegerField(blank=True, null=True)
+    
+    primeiroColocado = models.CharField(max_length=200, verbose_name='Primeiro Lugar', default='', blank=True, null=True)
+    segundoColocado = models.CharField(max_length=200, verbose_name='Segundo Lugar', default='', blank=True, null=True)
     
     class Meta:
         verbose_name = 'Grupo B'
@@ -87,6 +93,9 @@ class GrupoC(Base):
     res11 = models.SmallIntegerField(blank=True, null=True)
     res12 = models.SmallIntegerField(blank=True, null=True)
     
+    primeiroColocado = models.CharField(max_length=200, verbose_name='Primeiro Lugar', default='', blank=True, null=True)
+    segundoColocado = models.CharField(max_length=200, verbose_name='Segundo Lugar', default='', blank=True, null=True)
+    
     class Meta:
         verbose_name = 'Grupo C'
         verbose_name_plural = 'Grupo C'
@@ -114,6 +123,9 @@ class GrupoD(Base):
     res10 = models.SmallIntegerField(blank=True, null=True)
     res11 = models.SmallIntegerField(blank=True, null=True)
     res12 = models.SmallIntegerField(blank=True, null=True)
+    
+    primeiroColocado = models.CharField(max_length=200, verbose_name='Primeiro Lugar', default='', blank=True, null=True)
+    segundoColocado = models.CharField(max_length=200, verbose_name='Segundo Lugar', default='', blank=True, null=True)
     
     class Meta:
         verbose_name = 'Grupo D'
@@ -143,6 +155,9 @@ class GrupoE(Base):
     res11 = models.SmallIntegerField(blank=True, null=True)
     res12 = models.SmallIntegerField(blank=True, null=True)
     
+    primeiroColocado = models.CharField(max_length=200, verbose_name='Primeiro Lugar', default='', blank=True, null=True)
+    segundoColocado = models.CharField(max_length=200, verbose_name='Segundo Lugar', default='', blank=True, null=True)
+    
     class Meta:
         verbose_name = 'Grupo E'
         verbose_name_plural = 'Grupo E'
@@ -170,6 +185,9 @@ class GrupoF(Base):
     res10 = models.SmallIntegerField(blank=True, null=True)
     res11 = models.SmallIntegerField(blank=True, null=True)
     res12 = models.SmallIntegerField(blank=True, null=True)
+    
+    primeiroColocado = models.CharField(max_length=200, verbose_name='Primeiro Lugar', default='', blank=True, null=True)
+    segundoColocado = models.CharField(max_length=200, verbose_name='Segundo Lugar', default='', blank=True, null=True)
     
     class Meta:
         verbose_name = 'Grupo F'
@@ -199,6 +217,9 @@ class GrupoG(Base):
     res11 = models.SmallIntegerField(blank=True, null=True)
     res12 = models.SmallIntegerField(blank=True, null=True)
     
+    primeiroColocado = models.CharField(max_length=200, verbose_name='Primeiro Lugar', default='', blank=True, null=True)
+    segundoColocado = models.CharField(max_length=200, verbose_name='Segundo Lugar', default='', blank=True, null=True)
+    
     class Meta:
         verbose_name = 'Grupo G'
         verbose_name_plural = 'Grupo G'
@@ -226,6 +247,9 @@ class GrupoH(Base):
     res10 = models.SmallIntegerField(blank=True, null=True)
     res11 = models.SmallIntegerField(blank=True, null=True)
     res12 = models.SmallIntegerField(blank=True, null=True)
+    
+    primeiroColocado = models.CharField(max_length=200, verbose_name='Primeiro Lugar', default='', blank=True, null=True)
+    segundoColocado = models.CharField(max_length=200, verbose_name='Segundo Lugar', default='', blank=True, null=True)
     
     class Meta:
         verbose_name = 'Grupo H'

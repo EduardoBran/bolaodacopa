@@ -21,7 +21,7 @@
 <div class="row mt-4">
     <div class="col-12">
         <div class="text-center">
-            <form action="{% url 'main:salvartabelagrupoA' %}" method="POST">
+            <form action="{% url 'main:salvareliminatoriasquartas' %}" method="POST">
                 {% csrf_token %}
                 <span>{{ selecao1quartas }} <input type="number" min="0" max="10" id="res17" name="res17"
                         value="{{ info.res17 }}"> x
@@ -41,8 +41,8 @@
                 <br />
                 <br />
                 <span>{{ selecao7quartas }} <input type="number" min="0" max="10" id="res23" name="res23"
-                        value="{{ info.res23 }}"> x <input type="number" min="0" max="10" id="res23" name="res23"
-                        value="{{ info.res23 }}"> {{ selecao8quartas }} </span>
+                        value="{{ info.res23 }}"> x <input type="number" min="0" max="10" id="res24" name="res24"
+                        value="{{ info.res24 }}"> {{ selecao8quartas }} </span>
                 <br />
                 <br />
 

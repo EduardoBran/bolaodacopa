@@ -466,9 +466,12 @@ def SalvarEliminatoriasOitavas(request):
             messages.add_message(
                 request,
                 messages.SUCCESS,
-                'Sua tabela do Grupo H foi atualizada.'
+                'Sua tabela das oitavas de final foi atualizada.'
             )
             return redirect('main:pagemain')
+    elif request.method == 'GET':
+        return render(request, 'main/eliminatoriasOitavas.html', {'form': form})
+    
         
 class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
     model = Eliminatorias
@@ -665,3 +668,34 @@ class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
             context['selecao8quartas'] = segundoG
         
         return context
+
+
+def SalvarEliminatoriasQuartas(request):
+    form = ResultadosEliminatoriasQuartas()
+    
+    if request.method == 'POST':
+        form = ResultadosEliminatoriasQuartas(request.POST)
+        
+        if form.is_valid():
+            res17 = form.cleaned_data['res17']
+            res18 = form.cleaned_data['res18']
+            res19 = form.cleaned_data['res19']
+            res20 = form.cleaned_data['res20']
+            res21 = form.cleaned_data['res21']
+            res22 = form.cleaned_data['res22']
+            res23 = form.cleaned_data['res23']
+            res24 = form.cleaned_data['res24']
+            
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res17=res17, res18=res18, res19=res19, res20=res20,
+                    res21=res21, res22=res22, res23=res23, res24=res24
+                )
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Sua tabela das quartas de final foi atualizada.'
+            )
+            return redirect('main:pagemain')
+        
+    elif request.method == 'GET':
+        return render(request, 'main/eliminatoriasQuartas.html', {'form': form})

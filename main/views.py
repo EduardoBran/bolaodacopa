@@ -414,10 +414,10 @@ class PageEliminatoriasOitavas(DispatchLoginRequiredMixin, DetailView):
     pk_url_kwarg = 'pk'
 
 def SalvarEliminatoriasOitavas(request):
-    form = ResultadosEliminatoriasOitavas()
+    form = ResultadosEliminatoriasOitavasForm()
     
     if request.method == 'POST':
-        form = ResultadosEliminatoriasOitavas(request.POST)
+        form = ResultadosEliminatoriasOitavasForm(request.POST)
         
         if form.is_valid():
             primeiroA = form.cleaned_data['primeiroA']
@@ -671,10 +671,10 @@ class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
 
 
 def SalvarEliminatoriasQuartas(request):
-    form = ResultadosEliminatoriasQuartas()
+    form = ResultadosEliminatoriasQuartasForm()
     
     if request.method == 'POST':
-        form = ResultadosEliminatoriasQuartas(request.POST)
+        form = ResultadosEliminatoriasQuartasForm(request.POST)
         
         if form.is_valid():
             res17 = form.cleaned_data['res17']

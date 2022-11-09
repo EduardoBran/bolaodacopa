@@ -75,7 +75,7 @@ class ResultadosGrupoHForm(forms.ModelForm):
                   'res10', 'res11', 'res12'
                   )
 
-class ResultadosEliminatoriasOitavas(forms.ModelForm):
+class ResultadosEliminatoriasOitavasForm(forms.ModelForm):
     class Meta:
         model = Eliminatorias
         fields = ('primeiroA', 'res1', 'res2', 'segundoB',
@@ -88,7 +88,7 @@ class ResultadosEliminatoriasOitavas(forms.ModelForm):
                   'primeiroH', 'res15', 'res16', 'segundoG',
                   )
 
-class ResultadosEliminatoriasQuartas(forms.ModelForm):
+class ResultadosEliminatoriasQuartasForm(forms.ModelForm):
     class Meta:
         model = Eliminatorias
         fields = ('res17', 'res18', 'res19', 'res20',

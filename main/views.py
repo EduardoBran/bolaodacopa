@@ -842,7 +842,6 @@ class PageEliminatoriasFinal(DispatchLoginRequiredMixin, DetailView):
         selecao4Semi = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao4Semi'))
         selecao4Semi = selecao4Semi[0]['selecao4Semi']
             
-        
         if res25 > res26:
             Eliminatorias.objects.filter(usuario=self.request.user).update(
                 selecao1Final=selecao1Semi, selecao1TerceiroLugar=selecao2Semi
@@ -870,4 +869,29 @@ class PageEliminatoriasFinal(DispatchLoginRequiredMixin, DetailView):
             context['selecao2TerceiroLugar'] = selecao3Semi
             
         return context
+
+
+def SalvarEliminatoriasFinal(request):
+    form = ResultadosEliminatoriasFinaisForm()
     
+    if request.method == 'POST':
+        form = ResultadosEliminatoriasFinaisForm(request.POST)
+        
+        if form.is_valid():
+            res29 = form.cleaned_data['res29']
+            res30 = form.cleaned_data['res30']
+            res31 = form.cleaned_data['res31']
+            res32 = form.cleaned_data['res32']
+            
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res29=res29, res30=res30, res31=res31, res32=res32
+                )
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Sua tabela das finais foi atualizada.'
+            )
+            return redirect('main:pagemain')
+        
+    elif request.method == 'GET':
+        return render(request, 'main/eliminatoriasFinal.html', {'form': form})

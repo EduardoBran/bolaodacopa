@@ -99,3 +99,8 @@ class ResultadosEliminatoriasSemiForm(forms.ModelForm):
     class Meta:
         model = Eliminatorias
         fields = ('res25', 'res26', 'res27', 'res28')
+        
+class ResultadosEliminatoriasFinaisForm(forms.ModelForm):
+    class Meta:
+        model = Eliminatorias
+        fields = ('res29', 'res30', 'res31', 'res32')

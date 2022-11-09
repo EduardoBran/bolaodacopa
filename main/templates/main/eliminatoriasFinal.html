@@ -21,7 +21,7 @@
 <div class="row mt-4">
     <div class="col-12">
         <div class="text-center">
-            <form action="{% url 'main:salvareliminatoriassemi' %}" method="POST">
+            <form action="{% url 'main:salvareliminatoriasfinal' %}" method="POST">
                 {% csrf_token %}
                 <span>{{ selecao1TerceiroLugar }} <input type="number" min="0" max="10" id="res29" name="res29"
                         value="{{ info.res29 }}"> x
@@ -31,27 +31,14 @@
                 <br />
                 <br />
 
-                <button type="submit" class="btn btn-info btn-lg">
-                    <span class="ml-2">Salvar resultados</span>
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="text-center">
+                            <h5>Final</h5>
+                        </div>
+                    </div>
+                </div>
 
-<div class="row">
-    <div class="col">
-        <div class="text-center">
-            <h5>Final</h5>
-        </div>
-    </div>
-</div>
-
-<div class="row mt-4">
-    <div class="col-12">
-        <div class="text-center">
-            <form action="{% url 'main:salvareliminatoriassemi' %}" method="POST">
-                {% csrf_token %}
                 <span>{{ selecao1Final }} <input type="number" min="0" max="10" id="res31" name="res31"
                         value="{{ info.res31 }}"> x
                     <input type="number" min="0" max="10" id="res32" name="res32" value="{{ info.res32 }}">

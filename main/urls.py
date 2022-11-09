@@ -30,4 +30,5 @@ urlpatterns = [
     path('salvareliminatoriasoitavas/', views.SalvarEliminatoriasOitavas, name='salvareliminatoriasoitavas'),
     path('salvareliminatoriasquartas/', views.SalvarEliminatoriasQuartas, name='salvareliminatoriasquartas'),
     path('salvareliminatoriassemi/', views.SalvarEliminatoriasSemi, name='salvareliminatoriassemi'),
+    path('salvareliminatoriasfinal/', views.SalvarEliminatoriasFinal, name='salvareliminatoriasfinal'),
 ]

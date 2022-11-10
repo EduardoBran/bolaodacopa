@@ -25,11 +25,12 @@
                 {% csrf_token %}
 
                 <p class="lead"><strong>Jogo 63</strong></p>
-                <span>{{ selecao1TerceiroLugar }} <input type="number" min="0" max="10" id="res29" name="res29"
-                        value="{{ info.res29 }}" required> x
-                    <input type="number" min="0" max="10" id="res30" name="res30" value="{{ info.res30 }}" required>
-                    {{ selecao2TerceiroLugar }}
-                </span>
+
+                <span id="selecao1TerceiroLugar">{{ selecao1TerceiroLugar }}</span>
+                <input type="number" min="0" max="10" id="res29" name="res29" value="{{ info.res29 }}" required> x
+                <input type="number" min="0" max="10" id="res30" name="res30" value="{{ info.res30 }}" required>
+                <span id="selecao2TerceiroLugar">{{ selecao2TerceiroLugar }}</span>
+
                 <br />
                 <br />
 
@@ -42,11 +43,12 @@
                 </div>
 
                 <p class="lead"><strong>Jogo 64</strong></p>
-                <span>{{ selecao1Final }} <input type="number" min="0" max="10" id="res31" name="res31"
-                        value="{{ info.res31 }}" required> x
-                    <input type="number" min="0" max="10" id="res32" name="res32" value="{{ info.res32 }}" required>
-                    {{ selecao2Final }}
-                </span>
+
+                <span id="selecao1Final">{{ selecao1Final }}</span>
+                <input type="number" min="0" max="10" id="res31" name="res31" value="{{ info.res31 }}" required> x
+                <input type="number" min="0" max="10" id="res32" name="res32" value="{{ info.res32 }}" required>
+                <span id="selecao2Final">{{ selecao2Final }}</span>
+
                 <br />
                 <br />
 
@@ -57,5 +59,27 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    let selecao1TerceiroLugar = document.getElementById('selecao1TerceiroLugar').innerText
+    let selecao2TerceiroLugar = document.getElementById('selecao2TerceiroLugar').innerText
+    let selecao1Final = document.getElementById('selecao1Final').innerText
+    let selecao2Final = document.getElementById('selecao2Final').innerText
+
+    if (selecao1TerceiroLugar.length == 16 || selecao2TerceiroLugar.length == 16) {
+        var input1 = document.querySelector('#res29')
+        var input2 = document.querySelector('#res30')
+        input1.disabled = true
+        input2.disabled = true
+    }
+    if (selecao1Final.length == 16 || selecao2Final.length == 16) {
+        var input1 = document.querySelector('#res31')
+        var input2 = document.querySelector('#res32')
+        input1.disabled = true
+        input2.disabled = true
+    }
+
+</script>
 
 {% endblock %}

@@ -25,18 +25,22 @@
                 {% csrf_token %}
 
                 <p class="lead"><strong>Jogo 61</strong></p>
-                <span>{{ selecao1Semi }} <input type="number" min="0" max="10" id="res25" name="res25"
-                        value="{{ info.res25 }}" required> x
-                    <input type="number" min="0" max="10" id="res26" name="res26" value="{{ info.res26 }}" required>
-                    {{ selecao2Semi }}
-                </span>
+
+                <span id="selecao1Semi">{{ selecao1Semi }}</span>
+                <input type="number" min="0" max="10" id="res25" name="res25" value="{{ info.res25 }}" required> x
+                <input type="number" min="0" max="10" id="res26" name="res26" value="{{ info.res26 }}" required>
+                <span id="selecao2Semi">{{ selecao2Semi }}</span>
+
                 <br />
                 <br />
 
                 <p class="lead"><strong>Jogo 62</strong></p>
-                <span>{{ selecao3Semi }} <input type="number" min="0" max="10" id="res27" name="res27"
-                        value="{{ info.res27 }}" required> x <input type="number" min="0" max="10" id="res28"
-                        name="res28" value="{{ info.res28 }}" required> {{ selecao4Semi }} </span>
+
+                <span id="selecao3Semi">{{ selecao3Semi }}</span>
+                <input type="number" min="0" max="10" id="res27" name="res27" value="{{ info.res27 }}" required> x
+                <input type="number" min="0" max="10" id="res28" name="res28" value="{{ info.res28 }}" required>
+                <span id="selecao4Semi">{{ selecao4Semi }}</span>
+
                 <br />
                 <br />
 
@@ -47,5 +51,25 @@
         </div>
     </div>
 </div>
+
+<script>
+    let selecao1Semi = document.getElementById('selecao1Semi').innerText
+    let selecao2Semi = document.getElementById('selecao2Semi').innerText
+    let selecao3Semi = document.getElementById('selecao3Semi').innerText
+    let selecao4Semi = document.getElementById('selecao4Semi').innerText
+
+    if (selecao1Semi.length == 16 || selecao2Semi.length == 16) {
+        var input1 = document.querySelector('#res25')
+        var input2 = document.querySelector('#res26')
+        input1.disabled = true
+        input2.disabled = true
+    }
+    if (selecao3Semi.length == 16 || selecao4Semi.length == 16) {
+        var input1 = document.querySelector('#res27')
+        var input2 = document.querySelector('#res28')
+        input1.disabled = true
+        input2.disabled = true
+    }
+</script>
 
 {% endblock %}

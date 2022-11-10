@@ -25,32 +25,42 @@
                 {% csrf_token %}
 
                 <p class="lead"><strong>Jogo 57</strong></p>
-                <span>{{ selecao1quartas }} <input type="number" min="0" max="10" id="res17" name="res17"
-                        value="{{ info.res17 }}" required> x
-                    <input type="number" min="0" max="10" id="res18" name="res18" value="{{ info.res18 }}" required>
-                    {{ selecao2quartas }}
-                </span>
+
+                <span id="selecao1quartas">{{ selecao1quartas }}</span>
+                <input type="number" min="0" max="10" id="res17" name="res17" value="{{ info.res17 }}" required> x
+                <input type="number" min="0" max="10" id="res18" name="res18" value="{{ info.res18 }}" required>
+                <span id="selecao2quartas">{{ selecao2quartas }}</span>
+
                 <br />
                 <br />
 
                 <p class="lead"><strong>Jogo 58</strong></p>
-                <span>{{ selecao3quartas }} <input type="number" min="0" max="10" id="res19" name="res19"
-                        value="{{ info.res19 }}" required> x <input type="number" min="0" max="10" id="res20"
-                        name="res20" value="{{ info.res20 }}" required> {{ selecao4quartas }} </span>
+
+                <span id="selecao3quartas">{{ selecao3quartas }}</span>
+                <input type="number" min="0" max="10" id="res19" name="res19" value="{{ info.res19 }}" required> x
+                <input type="number" min="0" max="10" id="res20" name="res20" value="{{ info.res20 }}" required>
+                <span id="selecao4quartas">{{ selecao4quartas }}</span>
+
                 <br />
                 <br />
 
                 <p class="lead"><strong>Jogo 59</strong></p>
-                <span>{{ selecao5quartas }} <input type="number" min="0" max="10" id="res21" name="res21"
-                        value="{{ info.res21 }}" required> x <input type="number" min="0" max="10" id="res22"
-                        name="res22" value="{{ info.res22 }}" required> {{ selecao6quartas }} </span>
+
+                <span id="selecao5quartas">{{ selecao5quartas }}</span>
+                <input type="number" min="0" max="10" id="res21" name="res21" value="{{ info.res21 }}" required> x
+                <input type="number" min="0" max="10" id="res22" name="res22" value="{{ info.res22 }}" required>
+                <span id="selecao6quartas">{{ selecao6quartas }}</span>
+
                 <br />
                 <br />
 
                 <p class="lead"><strong>Jogo 60</strong></p>
-                <span>{{ selecao7quartas }} <input type="number" min="0" max="10" id="res23" name="res23"
-                        value="{{ info.res23 }}" required> x <input type="number" min="0" max="10" id="res24"
-                        name="res24" value="{{ info.res24 }}" required> {{ selecao8quartas }} </span>
+
+                <span id="selecao7quartas">{{ selecao7quartas }}</span>
+                <input type="number" min="0" max="10" id="res23" name="res23" value="{{ info.res23 }}" required> x
+                <input type="number" min="0" max="10" id="res24" name="res24" value="{{ info.res24 }}" required>
+                <span id="selecao8quartas">{{ selecao8quartas }}</span>
+
                 <br />
                 <br />
 
@@ -61,5 +71,41 @@
         </div>
     </div>
 </div>
+
+<script>
+    let selecao1quartas = document.getElementById('selecao1quartas').innerText
+    let selecao2quartas = document.getElementById('selecao2quartas').innerText
+    let selecao3quartas = document.getElementById('selecao3quartas').innerText
+    let selecao4quartas = document.getElementById('selecao4quartas').innerText
+    let selecao5quartas = document.getElementById('selecao5quartas').innerText
+    let selecao6quartas = document.getElementById('selecao6quartas').innerText
+    let selecao7quartas = document.getElementById('selecao7quartas').innerText
+    let selecao8quartas = document.getElementById('selecao8quartas').innerText
+
+    if (selecao1quartas.length == 16 || selecao2quartas.length == 16) {
+        var input1 = document.querySelector('#res17')
+        var input2 = document.querySelector('#res18')
+        input1.disabled = true
+        input2.disabled = true
+    }
+    if (selecao3quartas.length == 16 || selecao4quartas.length == 16) {
+        var input1 = document.querySelector('#res19')
+        var input2 = document.querySelector('#res20')
+        input1.disabled = true
+        input2.disabled = true
+    }
+    if (selecao5quartas.length == 16 || selecao6quartas.length == 16) {
+        var input1 = document.querySelector('#res21')
+        var input2 = document.querySelector('#res22')
+        input1.disabled = true
+        input2.disabled = true
+    }
+    if (selecao7quartas.length == 16 || selecao8quartas.length == 16) {
+        var input1 = document.querySelector('#res23')
+        var input2 = document.querySelector('#res24')
+        input1.disabled = true
+        input2.disabled = true
+    }
+</script>
 
 {% endblock %}

@@ -694,10 +694,10 @@ class PageGrupoH(DispatchLoginRequiredMixin, DetailView):
     
 
 def SalvarTabelaGrupoH(request):
-    form = ResultadosGrupoCForm()
+    form = ResultadosGrupoHForm()
     
     if request.method == 'POST':
-        form = ResultadosGrupoCForm(request.POST)
+        form = ResultadosGrupoHForm(request.POST)
         
         if form.is_valid():
             res1 = form.cleaned_data['res1']
@@ -785,97 +785,97 @@ class PageEliminatoriasOitavas(DispatchLoginRequiredMixin, DetailView):
         
         primeiroColocadoA = list(GrupoA.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoA = primeiroColocadoA[0]['primeiroColocado']
-        context['primeiroColocadoA'] = 'Primeiro Lugar Grupo A'
+        context['primeiroColocadoA'] = '1º Lugar Grupo A'
         if CondicaoNomeSelecaoEliminatorias(primeiroColocadoA):
             context['primeiroColocadoA'] = primeiroColocadoA
         
         segundoColocadoA = list(GrupoA.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoA = segundoColocadoA[0]['segundoColocado']
-        context['segundoColocadoA'] = 'Segundo Lugar Grupo A'
+        context['segundoColocadoA'] = '2º Lugar Grupo A'
         if CondicaoNomeSelecaoEliminatorias(segundoColocadoA):
             context['segundoColocadoA'] = segundoColocadoA
         
         primeiroColocadoB = list(GrupoB.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoB = primeiroColocadoB[0]['primeiroColocado']
-        context['primeiroColocadoB'] = 'Primeiro Lugar Grupo B'
+        context['primeiroColocadoB'] = '1º Lugar Grupo B'
         if CondicaoNomeSelecaoEliminatorias(primeiroColocadoB):
             context['primeiroColocadoB'] = primeiroColocadoB
         
         segundoColocadoB = list(GrupoB.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoB = segundoColocadoB[0]['segundoColocado']
-        context['segundoColocadoB'] = 'Segundo Lugar Grupo B'
+        context['segundoColocadoB'] = '2º Lugar Grupo B'
         if CondicaoNomeSelecaoEliminatorias(segundoColocadoB):
             context['segundoColocadoB'] = segundoColocadoB
         
         primeiroColocadoC = list(GrupoC.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoC = primeiroColocadoC[0]['primeiroColocado']
-        context['primeiroColocadoC'] = 'Primeiro Lugar Grupo C'
+        context['primeiroColocadoC'] = '1º Lugar Grupo C'
         if CondicaoNomeSelecaoEliminatorias(primeiroColocadoC):
             context['primeiroColocadoC'] = primeiroColocadoC
         
         segundoColocadoC = list(GrupoC.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoC = segundoColocadoC[0]['segundoColocado']
-        context['segundoColocadoC'] = 'Segundo Lugar Grupo C'
+        context['segundoColocadoC'] = '2º Lugar Grupo C'
         if CondicaoNomeSelecaoEliminatorias(segundoColocadoC):
             context['segundoColocadoC'] = segundoColocadoC
         
         primeiroColocadoD = list(GrupoD.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoD = primeiroColocadoD[0]['primeiroColocado']
-        context['primeiroColocadoD'] = 'Primeiro Lugar Grupo D'
+        context['primeiroColocadoD'] = '1º Lugar Grupo D'
         if CondicaoNomeSelecaoEliminatorias(primeiroColocadoD):
             context['primeiroColocadoD'] = primeiroColocadoD
         
         segundoColocadoD = list(GrupoD.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoD = segundoColocadoD[0]['segundoColocado']
-        context['segundoColocadoD'] = 'Segundo Lugar Grupo D'
+        context['segundoColocadoD'] = '2º Lugar Grupo D'
         if CondicaoNomeSelecaoEliminatorias(segundoColocadoD):
             context['segundoColocadoD'] = segundoColocadoD
         
         primeiroColocadoE = list(GrupoE.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoE = primeiroColocadoE[0]['primeiroColocado']
-        context['primeiroColocadoE'] = 'Primeiro Lugar Grupo E'
+        context['primeiroColocadoE'] = '1º Lugar Grupo E'
         if CondicaoNomeSelecaoEliminatorias(primeiroColocadoE):
             context['primeiroColocadoE'] = primeiroColocadoE
         
         segundoColocadoE = list(GrupoE.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoE = segundoColocadoE[0]['segundoColocado']
-        context['segundoColocadoE'] = 'Segundo Lugar Grupo E'
+        context['segundoColocadoE'] = '2º Lugar Grupo E'
         if CondicaoNomeSelecaoEliminatorias(segundoColocadoE):
             context['segundoColocadoE'] = segundoColocadoE
         
         primeiroColocadoF = list(GrupoF.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoF = primeiroColocadoF[0]['primeiroColocado']
-        context['primeiroColocadoF'] = 'Primeiro Lugar Grupo F'
+        context['primeiroColocadoF'] = '1º Lugar Grupo F'
         if CondicaoNomeSelecaoEliminatorias(primeiroColocadoF):
             context['primeiroColocadoF'] = primeiroColocadoF
         
         segundoColocadoF = list(GrupoF.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoF = segundoColocadoF[0]['segundoColocado']
-        context['segundoColocadoF'] = 'Segundo Lugar Grupo F'
+        context['segundoColocadoF'] = '2º Lugar Grupo F'
         if CondicaoNomeSelecaoEliminatorias(segundoColocadoF):
             context['segundoColocadoF'] = segundoColocadoF
         
         primeiroColocadoG = list(GrupoG.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoG = primeiroColocadoG[0]['primeiroColocado']
-        context['primeiroColocadoG'] = 'Primeiro Lugar Grupo G'
+        context['primeiroColocadoG'] = '1º Lugar Grupo G'
         if CondicaoNomeSelecaoEliminatorias(primeiroColocadoG):
             context['primeiroColocadoG'] = primeiroColocadoG
         
         segundoColocadoG = list(GrupoG.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoG = segundoColocadoG[0]['segundoColocado']
-        context['segundoColocadoG'] = 'Segundo Lugar Grupo G'
+        context['segundoColocadoG'] = '2º Lugar Grupo G'
         if CondicaoNomeSelecaoEliminatorias(segundoColocadoG):
             context['segundoColocadoG'] = segundoColocadoG
         
         primeiroColocadoH = list(GrupoH.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoH = primeiroColocadoH[0]['primeiroColocado']
-        context['primeiroColocadoH'] = 'Primeiro Lugar Grupo H'
+        context['primeiroColocadoH'] = '1º Lugar Grupo H'
         if CondicaoNomeSelecaoEliminatorias(primeiroColocadoH):
             context['primeiroColocadoH'] = primeiroColocadoH
         
         segundoColocadoH = list(GrupoH.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoH = segundoColocadoH[0]['segundoColocado']
-        context['segundoColocadoH'] = 'Segundo Lugar Grupo H'
+        context['segundoColocadoH'] = '2º Lugar Grupo H'
         if CondicaoNomeSelecaoEliminatorias(segundoColocadoH):
             context['segundoColocadoH'] = segundoColocadoH
         
@@ -988,18 +988,10 @@ class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
         res16 = list(res16)
         res16 = res16[0]['res16']
         
-        if res1 == None:
-            context['selecao1quartas'] = 'Vencedor Jogo 49'
-            context['selecao2quartas'] = 'Vencedor Jogo 50'
-            context['selecao3quartas'] = 'Vencedor Jogo 51' 
-            context['selecao4quartas'] = 'Vencedor Jogo 52'
-            context['selecao5quartas'] = 'Vencedor Jogo 53'
-            context['selecao6quartas'] = 'Vencedor Jogo 54'
-            context['selecao7quartas'] = 'Vencedor Jogo 55'
-            context['selecao8quartas'] = 'Vencedor Jogo 56' 
-            return context
+        if res1 == None or res2 == None:
+            context['selecao1quartas'] = 'Vencedor Jogo 49' 
         
-        if res1 > res2:    
+        elif res1 > res2:    
             primeiroA = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroA')
             primeiroA = list(primeiroA)
             primeiroA = primeiroA[0]['primeiroA']
@@ -1019,8 +1011,11 @@ class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
                     selecao1Quartas=segundoB
                 )
             context['selecao1quartas'] = segundoB
+        
+        if res3 == None or res4 == None:
+            context['selecao2quartas'] = 'Vencedor Jogo 50' 
             
-        if res3 > res4:    
+        elif res3 > res4:    
             primeiroC = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroC')
             primeiroC = list(primeiroC)
             primeiroC = primeiroC[0]['primeiroC']
@@ -1037,7 +1032,10 @@ class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
                 )
             context['selecao2quartas'] = segundoD
         
-        if res5 > res6:    
+        if res5 == None or res6 == None:
+            context['selecao3quartas'] = 'Vencedor Jogo 51'
+        
+        elif res5 > res6:    
             primeiroB = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroB')
             primeiroB = list(primeiroB)
             primeiroB = primeiroB[0]['primeiroB']
@@ -1053,8 +1051,11 @@ class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
                     selecao3Quartas=segundoA
                 )
             context['selecao3quartas'] = segundoA
-        
-        if res7 > res8:    
+            
+        if res7 == None or res8 == None:
+            context['selecao4quartas'] = 'Vencedor Jogo 52'
+            
+        elif res7 > res8:    
             primeiroD = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroD')
             primeiroD = list(primeiroD)
             primeiroD = primeiroD[0]['primeiroD']
@@ -1071,7 +1072,10 @@ class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
                 )
             context['selecao4quartas'] = segundoC
         
-        if res9 > res10:    
+        if res9 == None or res10 == None:
+            context['selecao5quartas'] = 'Vencedor Jogo 53'
+        
+        elif res9 > res10:    
             primeiroE = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroE')
             primeiroE = list(primeiroE)
             primeiroE = primeiroE[0]['primeiroE']
@@ -1088,7 +1092,10 @@ class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
                 )
             context['selecao5quartas'] = segundoF
         
-        if res11 > res12:    
+        if res11 == None or res12 == None:
+            context['selecao6quartas'] = 'Vencedor Jogo 54'
+        
+        elif res11 > res12:    
             primeiroG = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroG')
             primeiroG = list(primeiroG)
             primeiroG = primeiroG[0]['primeiroG']
@@ -1105,7 +1112,10 @@ class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
                 )
             context['selecao6quartas'] = segundoH
         
-        if res13 > res14:    
+        if res13 == None or res14 == None:
+            context['selecao7quartas'] = 'Vencedor Jogo 55'
+        
+        elif res13 > res14:    
             primeiroF = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroF')
             primeiroF = list(primeiroF)
             primeiroF = primeiroF[0]['primeiroF']
@@ -1122,7 +1132,10 @@ class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
                 )
             context['selecao7quartas'] = segundoE
         
-        if res15 > res16:    
+        if res15 == None or res16 == None:
+            context['selecao8quartas'] = 'Vencedor Jogo 56'
+        
+        elif res15 > res16:    
             primeiroH = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroH')
             primeiroH = list(primeiroH)
             primeiroH = primeiroH[0]['primeiroH']
@@ -1199,14 +1212,10 @@ class PageEliminatoriasSemi(DispatchLoginRequiredMixin, DetailView):
         res24 = list(Eliminatorias.objects.filter(usuario=self.request.user).values('res24'))
         res24 = res24[0]['res24']
         
-        if res17 == None:
-            context['selecao1Semi'] = 'Vencedor Jogo 57'
-            context['selecao2Semi'] = 'Vencedor Jogo 58'
-            context['selecao3Semi'] = 'Vencedor Jogo 59'
-            context['selecao4Semi'] = 'Vencedor Jogo 60'
-            return context
+        if res17 == None or res18 == None:
+            context['selecao1Semi'] = 'Vencedor Jogo 57' 
         
-        if res17 > res18:
+        elif res17 > res18:
             selecao1Quartas = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao1Quartas'))
             selecao1Quartas = selecao1Quartas[0]['selecao1Quartas']
             Eliminatorias.objects.filter(usuario=self.request.user).update(
@@ -1221,7 +1230,10 @@ class PageEliminatoriasSemi(DispatchLoginRequiredMixin, DetailView):
             )
             context['selecao1Semi'] = selecao2Quartas
         
-        if res19 > res20:
+        if res19 == None or res20 == None:
+            context['selecao2Semi'] = 'Vencedor Jogo 58'
+        
+        elif res19 > res20:
             selecao3Quartas = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao3Quartas'))
             selecao3Quartas = selecao3Quartas[0]['selecao3Quartas']
             Eliminatorias.objects.filter(usuario=self.request.user).update(
@@ -1236,7 +1248,10 @@ class PageEliminatoriasSemi(DispatchLoginRequiredMixin, DetailView):
             )
             context['selecao2Semi'] = selecao4Quartas
         
-        if res21 > res22:
+        if res21 == None or res22 == None:
+            context['selecao3Semi'] = 'Vencedor Jogo 59'
+        
+        elif res21 > res22:
             selecao5Quartas = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao5Quartas'))
             selecao5Quartas = selecao5Quartas[0]['selecao5Quartas']
             Eliminatorias.objects.filter(usuario=self.request.user).update(
@@ -1251,7 +1266,10 @@ class PageEliminatoriasSemi(DispatchLoginRequiredMixin, DetailView):
             )
             context['selecao3Semi'] = selecao6Quartas
         
-        if res23 > res24:
+        if res23 == None or res24 == None:
+            context['selecao4Semi'] = 'Vencedor Jogo 60'
+        
+        elif res23 > res24:
             selecao7Quartas = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao7Quartas'))
             selecao7Quartas = selecao7Quartas[0]['selecao7Quartas']
             Eliminatorias.objects.filter(usuario=self.request.user).update(
@@ -1312,13 +1330,6 @@ class PageEliminatoriasFinal(DispatchLoginRequiredMixin, DetailView):
         res28 = list(Eliminatorias.objects.filter(usuario=self.request.user).values('res28'))
         res28 = res28[0]['res28']
         
-        if res25 == None:
-            context['selecao1Final'] = 'Vencedor Jogo 61'
-            context['selecao2Final'] = 'Vencedor Jogo 62'
-            context['selecao1TerceiroLugar'] = 'Perdedor Jogo 61'
-            context['selecao2TerceiroLugar'] = 'Perdedor Jogo 62'
-            return context
-        
         selecao1Semi = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao1Semi'))
         selecao1Semi = selecao1Semi[0]['selecao1Semi']
         selecao2Semi = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao2Semi'))
@@ -1327,8 +1338,12 @@ class PageEliminatoriasFinal(DispatchLoginRequiredMixin, DetailView):
         selecao3Semi = selecao3Semi[0]['selecao3Semi']
         selecao4Semi = list(Eliminatorias.objects.filter(usuario=self.request.user).values('selecao4Semi'))
         selecao4Semi = selecao4Semi[0]['selecao4Semi']
+        
+        if res25 == None or res26 == None:
+            context['selecao1Final'] = 'Vencedor Jogo 61'
+            context['selecao1TerceiroLugar'] = 'Perdedor Jogo 61'
             
-        if res25 > res26:
+        elif res25 > res26:
             Eliminatorias.objects.filter(usuario=self.request.user).update(
                 selecao1Final=selecao1Semi, selecao1TerceiroLugar=selecao2Semi
             )
@@ -1340,8 +1355,12 @@ class PageEliminatoriasFinal(DispatchLoginRequiredMixin, DetailView):
             )
             context['selecao1Final'] = selecao2Semi
             context['selecao1TerceiroLugar'] = selecao1Semi
+        
+        if res27 == None or res28 == None:
+            context['selecao2Final'] = 'Vencedor Jogo 62'
+            context['selecao2TerceiroLugar'] = 'Perdedor Jogo 62'
             
-        if res27 > res28:
+        elif res27 > res28:
             Eliminatorias.objects.filter(usuario=self.request.user).update(
                 selecao2Final=selecao3Semi, selecao2TerceiroLugar=selecao4Semi
             )

@@ -1,5 +1,6 @@
 from django.contrib import messages
-from django.shortcuts import redirect, render
+from django.http import HttpResponseRedirect
+from django.shortcuts import redirect, render, reverse
 from django.views import View
 from django.views.generic import DetailView, TemplateView
 
@@ -90,6 +91,14 @@ def SalvarTabelaGrupoA(request):
             res12 = form.cleaned_data['res12']
             primeiroColocado = form.cleaned_data['primeiroColocado']
             segundoColocado = form.cleaned_data['segundoColocado']
+            
+            if primeiroColocado == segundoColocado:
+                messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Ooops... Não pode escolher a mesma seleção para primeiro e segundo lugar respectivamente.'
+                )
+                return redirect('main:pagemain') # verificar outra forma de atualizar a página
             
             GrupoA.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,

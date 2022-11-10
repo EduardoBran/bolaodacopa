@@ -8,6 +8,13 @@ from .forms import *
 from .models import *
 
 
+def CondicaoNomeSelecaoEliminatorias(selecao):
+    if selecao == None or selecao == '':
+        return False
+    else:
+        return True
+
+
 class PageIndex(TemplateView):
     template_name='main/index.html'
     
@@ -89,23 +96,57 @@ def SalvarTabelaGrupoA(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
+            
+            GrupoA.objects.filter(usuario=request.user).update(
+                    res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
+                    res6=res6, res7=res7, res8=res8, res9=res9,
+                    res10=res10, res11=res11, res12=res12
+            )
+            
             primeiroColocado = form.cleaned_data['primeiroColocado']
             segundoColocado = form.cleaned_data['segundoColocado']
             
             if primeiroColocado == segundoColocado:
+                if primeiroColocado == None and segundoColocado == None:
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo A foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
                 messages.add_message(
                     request,
                     messages.ERROR,
                     'Ooops... Não pode escolher a mesma seleção para primeiro e segundo lugar respectivamente.'
                 )
-                return redirect('main:pagemain') # verificar outra forma de atualizar a página
+                return redirect('main:pagemain')
+            
+            else:
+                if primeiroColocado == None:
+                    GrupoA.objects.filter(usuario=request.user).update(
+                        primeiroColocado='', segundoColocado=segundoColocado
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo A foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                if segundoColocado == None:
+                    GrupoA.objects.filter(usuario=request.user).update(
+                        primeiroColocado=primeiroColocado, segundoColocado=''
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo A foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
             
             GrupoA.objects.filter(usuario=request.user).update(
-                    res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
-                    res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12,
                     primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
-                )
+            )
+            
             messages.add_message(
                 request,
                 messages.SUCCESS,
@@ -143,15 +184,57 @@ def SalvarTabelaGrupoB(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
-            primeiroColocado = form.cleaned_data['primeiroColocado']
-            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoB.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12,
-                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+                    res10=res10, res11=res11, res12=res12
+            )
+            
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
+            
+            if primeiroColocado == segundoColocado:
+                if primeiroColocado == None and segundoColocado == None:
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo B foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Ooops... Não pode escolher a mesma seleção para primeiro e segundo lugar respectivamente.'
                 )
+                return redirect('main:pagemain')
+            
+            else:
+                if primeiroColocado == None:
+                    GrupoB.objects.filter(usuario=request.user).update(
+                        primeiroColocado='', segundoColocado=segundoColocado
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo B foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                if segundoColocado == None:
+                    GrupoB.objects.filter(usuario=request.user).update(
+                        primeiroColocado=primeiroColocado, segundoColocado=''
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo B foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+            
+            GrupoB.objects.filter(usuario=request.user).update(
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+            )
+            
             messages.add_message(
                 request,
                 messages.SUCCESS,
@@ -189,15 +272,57 @@ def SalvarTabelaGrupoC(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
-            primeiroColocado = form.cleaned_data['primeiroColocado']
-            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoC.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12,
-                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+                    res10=res10, res11=res11, res12=res12
+            )
+            
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
+            
+            if primeiroColocado == segundoColocado:
+                if primeiroColocado == None and segundoColocado == None:
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo C foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Ooops... Não pode escolher a mesma seleção para primeiro e segundo lugar respectivamente.'
                 )
+                return redirect('main:pagemain')
+            
+            else:
+                if primeiroColocado == None:
+                    GrupoC.objects.filter(usuario=request.user).update(
+                        primeiroColocado='', segundoColocado=segundoColocado
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo C foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                if segundoColocado == None:
+                    GrupoC.objects.filter(usuario=request.user).update(
+                        primeiroColocado=primeiroColocado, segundoColocado=''
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo C foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+            
+            GrupoC.objects.filter(usuario=request.user).update(
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+            )
+            
             messages.add_message(
                 request,
                 messages.SUCCESS,
@@ -235,15 +360,57 @@ def SalvarTabelaGrupoD(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
-            primeiroColocado = form.cleaned_data['primeiroColocado']
-            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoD.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12,
-                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+                    res10=res10, res11=res11, res12=res12
+            )
+            
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
+            
+            if primeiroColocado == segundoColocado:
+                if primeiroColocado == None and segundoColocado == None:
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo D foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Ooops... Não pode escolher a mesma seleção para primeiro e segundo lugar respectivamente.'
                 )
+                return redirect('main:pagemain')
+            
+            else:
+                if primeiroColocado == None:
+                    GrupoD.objects.filter(usuario=request.user).update(
+                        primeiroColocado='', segundoColocado=segundoColocado
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo D foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                if segundoColocado == None:
+                    GrupoD.objects.filter(usuario=request.user).update(
+                        primeiroColocado=primeiroColocado, segundoColocado=''
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo D foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+            
+            GrupoD.objects.filter(usuario=request.user).update(
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+            )
+            
             messages.add_message(
                 request,
                 messages.SUCCESS,
@@ -281,15 +448,57 @@ def SalvarTabelaGrupoE(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
-            primeiroColocado = form.cleaned_data['primeiroColocado']
-            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoE.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12,
-                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+                    res10=res10, res11=res11, res12=res12
+            )
+            
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
+            
+            if primeiroColocado == segundoColocado:
+                if primeiroColocado == None and segundoColocado == None:
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo E foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Ooops... Não pode escolher a mesma seleção para primeiro e segundo lugar respectivamente.'
                 )
+                return redirect('main:pagemain')
+            
+            else:
+                if primeiroColocado == None:
+                    GrupoE.objects.filter(usuario=request.user).update(
+                        primeiroColocado='', segundoColocado=segundoColocado
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo E foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                if segundoColocado == None:
+                    GrupoE.objects.filter(usuario=request.user).update(
+                        primeiroColocado=primeiroColocado, segundoColocado=''
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo E foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+            
+            GrupoE.objects.filter(usuario=request.user).update(
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+            )
+            
             messages.add_message(
                 request,
                 messages.SUCCESS,
@@ -327,15 +536,57 @@ def SalvarTabelaGrupoF(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
-            primeiroColocado = form.cleaned_data['primeiroColocado']
-            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoF.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12,
-                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+                    res10=res10, res11=res11, res12=res12
+            )
+            
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
+            
+            if primeiroColocado == segundoColocado:
+                if primeiroColocado == None and segundoColocado == None:
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo F foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Ooops... Não pode escolher a mesma seleção para primeiro e segundo lugar respectivamente.'
                 )
+                return redirect('main:pagemain')
+            
+            else:
+                if primeiroColocado == None:
+                    GrupoF.objects.filter(usuario=request.user).update(
+                        primeiroColocado='', segundoColocado=segundoColocado
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo F foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                if segundoColocado == None:
+                    GrupoF.objects.filter(usuario=request.user).update(
+                        primeiroColocado=primeiroColocado, segundoColocado=''
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo F foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+            
+            GrupoF.objects.filter(usuario=request.user).update(
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+            )
+            
             messages.add_message(
                 request,
                 messages.SUCCESS,
@@ -373,15 +624,57 @@ def SalvarTabelaGrupoG(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
-            primeiroColocado = form.cleaned_data['primeiroColocado']
-            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoG.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12,
-                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+                    res10=res10, res11=res11, res12=res12
+            )
+            
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
+            
+            if primeiroColocado == segundoColocado:
+                if primeiroColocado == None and segundoColocado == None:
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo G foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Ooops... Não pode escolher a mesma seleção para primeiro e segundo lugar respectivamente.'
                 )
+                return redirect('main:pagemain')
+            
+            else:
+                if primeiroColocado == None:
+                    GrupoG.objects.filter(usuario=request.user).update(
+                        primeiroColocado='', segundoColocado=segundoColocado
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo G foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                if segundoColocado == None:
+                    GrupoG.objects.filter(usuario=request.user).update(
+                        primeiroColocado=primeiroColocado, segundoColocado=''
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo G foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+            
+            GrupoG.objects.filter(usuario=request.user).update(
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+            )
+            
             messages.add_message(
                 request,
                 messages.SUCCESS,
@@ -419,15 +712,56 @@ def SalvarTabelaGrupoH(request):
             res10 = form.cleaned_data['res10']
             res11 = form.cleaned_data['res11']
             res12 = form.cleaned_data['res12']
-            primeiroColocado = form.cleaned_data['primeiroColocado']
-            segundoColocado = form.cleaned_data['segundoColocado']
             
             GrupoH.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4, res5=res5,
                     res6=res6, res7=res7, res8=res8, res9=res9,
-                    res10=res10, res11=res11, res12=res12,
-                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+                    res10=res10, res11=res11, res12=res12
+            )
+            
+            primeiroColocado = form.cleaned_data['primeiroColocado']
+            segundoColocado = form.cleaned_data['segundoColocado']
+            
+            if primeiroColocado == segundoColocado:
+                if primeiroColocado == None and segundoColocado == None:
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo H foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Ooops... Não pode escolher a mesma seleção para primeiro e segundo lugar respectivamente.'
                 )
+                return redirect('main:pagemain')
+            
+            else:
+                if primeiroColocado == None:
+                    GrupoH.objects.filter(usuario=request.user).update(
+                        primeiroColocado='', segundoColocado=segundoColocado
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo H foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+                if segundoColocado == None:
+                    GrupoH.objects.filter(usuario=request.user).update(
+                        primeiroColocado=primeiroColocado, segundoColocado=''
+                    )
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Sua tabela do Grupo H foi atualizada.'
+                    )
+                    return redirect('main:pagemain')
+            
+            GrupoH.objects.filter(usuario=request.user).update(
+                    primeiroColocado=primeiroColocado, segundoColocado=segundoColocado
+            )
             messages.add_message(
                 request,
                 messages.SUCCESS,
@@ -553,13 +887,6 @@ class PageEliminatoriasOitavas(DispatchLoginRequiredMixin, DetailView):
                 )
         
         return context
-
-
-def CondicaoNomeSelecaoEliminatorias(selecao):
-    if selecao == None or selecao == '':
-        return False
-    else:
-        return True
 
 
 def SalvarEliminatoriasOitavas(request):

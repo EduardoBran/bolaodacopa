@@ -451,59 +451,99 @@ class PageEliminatoriasOitavas(DispatchLoginRequiredMixin, DetailView):
         
         primeiroColocadoA = list(GrupoA.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoA = primeiroColocadoA[0]['primeiroColocado']
-        context['primeiroColocadoA'] = primeiroColocadoA
+        context['primeiroColocadoA'] = 'Primeiro Lugar Grupo A'
+        if CondicaoNomeSelecaoEliminatorias(primeiroColocadoA):
+            context['primeiroColocadoA'] = primeiroColocadoA
+        
         segundoColocadoA = list(GrupoA.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoA = segundoColocadoA[0]['segundoColocado']
-        context['segundoColocadoA'] = segundoColocadoA
+        context['segundoColocadoA'] = 'Segundo Lugar Grupo A'
+        if CondicaoNomeSelecaoEliminatorias(segundoColocadoA):
+            context['segundoColocadoA'] = segundoColocadoA
         
         primeiroColocadoB = list(GrupoB.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoB = primeiroColocadoB[0]['primeiroColocado']
-        context['primeiroColocadoB'] = primeiroColocadoB
+        context['primeiroColocadoB'] = 'Primeiro Lugar Grupo B'
+        if CondicaoNomeSelecaoEliminatorias(primeiroColocadoB):
+            context['primeiroColocadoB'] = primeiroColocadoB
+        
         segundoColocadoB = list(GrupoB.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoB = segundoColocadoB[0]['segundoColocado']
-        context['segundoColocadoB'] = segundoColocadoB
+        context['segundoColocadoB'] = 'Segundo Lugar Grupo B'
+        if CondicaoNomeSelecaoEliminatorias(segundoColocadoB):
+            context['segundoColocadoB'] = segundoColocadoB
         
         primeiroColocadoC = list(GrupoC.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoC = primeiroColocadoC[0]['primeiroColocado']
-        context['primeiroColocadoC'] = primeiroColocadoC
+        context['primeiroColocadoC'] = 'Primeiro Lugar Grupo C'
+        if CondicaoNomeSelecaoEliminatorias(primeiroColocadoC):
+            context['primeiroColocadoC'] = primeiroColocadoC
+        
         segundoColocadoC = list(GrupoC.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoC = segundoColocadoC[0]['segundoColocado']
-        context['segundoColocadoC'] = segundoColocadoC
+        context['segundoColocadoC'] = 'Segundo Lugar Grupo C'
+        if CondicaoNomeSelecaoEliminatorias(segundoColocadoC):
+            context['segundoColocadoC'] = segundoColocadoC
         
         primeiroColocadoD = list(GrupoD.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoD = primeiroColocadoD[0]['primeiroColocado']
-        context['primeiroColocadoD'] = primeiroColocadoD
+        context['primeiroColocadoD'] = 'Primeiro Lugar Grupo D'
+        if CondicaoNomeSelecaoEliminatorias(primeiroColocadoD):
+            context['primeiroColocadoD'] = primeiroColocadoD
+        
         segundoColocadoD = list(GrupoD.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoD = segundoColocadoD[0]['segundoColocado']
-        context['segundoColocadoD'] = segundoColocadoD
+        context['segundoColocadoD'] = 'Segundo Lugar Grupo D'
+        if CondicaoNomeSelecaoEliminatorias(segundoColocadoD):
+            context['segundoColocadoD'] = segundoColocadoD
         
         primeiroColocadoE = list(GrupoE.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoE = primeiroColocadoE[0]['primeiroColocado']
-        context['primeiroColocadoE'] = primeiroColocadoE
+        context['primeiroColocadoE'] = 'Primeiro Lugar Grupo E'
+        if CondicaoNomeSelecaoEliminatorias(primeiroColocadoE):
+            context['primeiroColocadoE'] = primeiroColocadoE
+        
         segundoColocadoE = list(GrupoE.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoE = segundoColocadoE[0]['segundoColocado']
-        context['segundoColocadoE'] = segundoColocadoE
+        context['segundoColocadoE'] = 'Segundo Lugar Grupo E'
+        if CondicaoNomeSelecaoEliminatorias(segundoColocadoE):
+            context['segundoColocadoE'] = segundoColocadoE
         
         primeiroColocadoF = list(GrupoF.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoF = primeiroColocadoF[0]['primeiroColocado']
-        context['primeiroColocadoF'] = primeiroColocadoF
+        context['primeiroColocadoF'] = 'Primeiro Lugar Grupo F'
+        if CondicaoNomeSelecaoEliminatorias(primeiroColocadoF):
+            context['primeiroColocadoF'] = primeiroColocadoF
+        
         segundoColocadoF = list(GrupoF.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoF = segundoColocadoF[0]['segundoColocado']
-        context['segundoColocadoF'] = segundoColocadoF
+        context['segundoColocadoF'] = 'Segundo Lugar Grupo F'
+        if CondicaoNomeSelecaoEliminatorias(segundoColocadoF):
+            context['segundoColocadoF'] = segundoColocadoF
         
         primeiroColocadoG = list(GrupoG.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoG = primeiroColocadoG[0]['primeiroColocado']
-        context['primeiroColocadoG'] = primeiroColocadoG
+        context['primeiroColocadoG'] = 'Primeiro Lugar Grupo G'
+        if CondicaoNomeSelecaoEliminatorias(primeiroColocadoG):
+            context['primeiroColocadoG'] = primeiroColocadoG
+        
         segundoColocadoG = list(GrupoG.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoG = segundoColocadoG[0]['segundoColocado']
-        context['segundoColocadoG'] = segundoColocadoG
+        context['segundoColocadoG'] = 'Segundo Lugar Grupo G'
+        if CondicaoNomeSelecaoEliminatorias(segundoColocadoG):
+            context['segundoColocadoG'] = segundoColocadoG
         
         primeiroColocadoH = list(GrupoH.objects.filter(usuario=self.request.user).values('primeiroColocado'))
         primeiroColocadoH = primeiroColocadoH[0]['primeiroColocado']
-        context['primeiroColocadoH'] = primeiroColocadoH
+        context['primeiroColocadoH'] = 'Primeiro Lugar Grupo H'
+        if CondicaoNomeSelecaoEliminatorias(primeiroColocadoH):
+            context['primeiroColocadoH'] = primeiroColocadoH
+        
         segundoColocadoH = list(GrupoH.objects.filter(usuario=self.request.user).values('segundoColocado'))
         segundoColocadoH = segundoColocadoH[0]['segundoColocado']
-        context['segundoColocadoH'] = segundoColocadoH
+        context['segundoColocadoH'] = 'Segundo Lugar Grupo H'
+        if CondicaoNomeSelecaoEliminatorias(segundoColocadoH):
+            context['segundoColocadoH'] = segundoColocadoH
         
         Eliminatorias.objects.filter(usuario=self.request.user).update(
                     primeiroA=primeiroColocadoA, segundoB=segundoColocadoB, primeiroC=primeiroColocadoC, segundoD=segundoColocadoD,
@@ -513,7 +553,14 @@ class PageEliminatoriasOitavas(DispatchLoginRequiredMixin, DetailView):
                 )
         
         return context
-    
+
+
+def CondicaoNomeSelecaoEliminatorias(selecao):
+    if selecao == None or selecao == '':
+        return False
+    else:
+        return True
+
 
 def SalvarEliminatoriasOitavas(request):
     form = ResultadosEliminatoriasOitavasForm()
@@ -629,6 +676,10 @@ class PageEliminatoriasQuartas(DispatchLoginRequiredMixin, DetailView):
             primeiroA = Eliminatorias.objects.filter(usuario=self.request.user).values('primeiroA')
             primeiroA = list(primeiroA)
             primeiroA = primeiroA[0]['primeiroA']
+            
+            if primeiroA == None:
+                primeiroA = 'Vencedor Jogo 49'
+            
             Eliminatorias.objects.filter(usuario=self.request.user).update(
                     selecao1Quartas=primeiroA
                 )

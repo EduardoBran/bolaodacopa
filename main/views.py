@@ -913,6 +913,103 @@ def SalvarEliminatoriasOitavas(request):
             res15 = form.cleaned_data['res15']
             res16 = form.cleaned_data['res16']
             
+            if not res1 == None or not res2 == None:
+                if res1 == res2:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res1=res1, res2=res2
+                )
+            
+            if not res3 == None or not res4 == None: 
+                if res3 == res4:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res3=res3, res4=res4
+                )
+            
+            if not res5 == None or not res6 == None: 
+                if res5 == res6:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res5=res5, res6=res6
+                )
+            
+            if not res7 == None or not res8 == None: 
+                if res7 == res8:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res7=res7, res8=res8
+                )
+            
+            if not res9 == None or not res10 == None: 
+                if res9 == res10:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res9=res9, res10=res10
+                )
+            
+            if not res11 == None or not res12 == None: 
+                if res11 == res12:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res11=res11, res12=res12
+                )
+            
+            if not res13 == None or not res14 == None: 
+                if res13 == res14:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res13=res13, res14=res14
+                )
+            
+            if not res15 == None or not res16 == None: 
+                if res15 == res16:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res15=res15, res16=res16
+                )
+            
             Eliminatorias.objects.filter(usuario=request.user).update(
                     res1=res1, res2=res2, res3=res3, res4=res4,
                     res5=res5, res6=res6, res7=res7, res8=res8, 
@@ -1171,6 +1268,58 @@ def SalvarEliminatoriasQuartas(request):
             res23 = form.cleaned_data['res23']
             res24 = form.cleaned_data['res24']
             
+            if not res17 == None or not res18 == None:
+                if res17 == res18:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res17=res17, res18=res18
+                )
+            
+            if not res19 == None or not res20 == None:
+                if res19 == res20:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res19=res19, res20=res20
+                )
+            
+            if not res21 == None or not res22 == None:
+                if res21 == res22:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res21=res21, res22=res22
+                )
+            
+            if not res23 == None or not res24 == None:
+                if res23 == res24:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res23=res23, res24=res24
+                )
+            
             Eliminatorias.objects.filter(usuario=request.user).update(
                     res17=res17, res18=res18, res19=res19, res20=res20,
                     res21=res21, res22=res22, res23=res23, res24=res24
@@ -1298,6 +1447,33 @@ def SalvarEliminatoriasSemi(request):
             res27 = form.cleaned_data['res27']
             res28 = form.cleaned_data['res28']
             
+            if not res25 == None or not res26 == None:
+                if res25 == res26:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res25=res25, res26=res26
+                )
+            
+            if not res27 == None or not res28 == None:
+                if res27 == res28:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res27=res27, res28=res28
+                )
+            
+            
             Eliminatorias.objects.filter(usuario=request.user).update(
                     res25=res25, res26=res26, res27=res27, res28=res28
                 )
@@ -1387,6 +1563,32 @@ def SalvarEliminatoriasFinal(request):
             res30 = form.cleaned_data['res30']
             res31 = form.cleaned_data['res31']
             res32 = form.cleaned_data['res32']
+            
+            if not res29 == None or not res30 == None:
+                if res29 == res30:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res29=res29, res30=res30
+                )
+            
+            if not res31 == None or not res32 == None:
+                if res31 == res32:
+                    messages.add_message(
+                        request,
+                        messages.ERROR,
+                        'Este jogo precisa ter um ganhador.'
+                    )
+                    return redirect('main:pagemain')
+            
+            Eliminatorias.objects.filter(usuario=request.user).update(
+                    res31=res31, res32=res32
+                )
             
             Eliminatorias.objects.filter(usuario=request.user).update(
                     res29=res29, res30=res30, res31=res31, res32=res32

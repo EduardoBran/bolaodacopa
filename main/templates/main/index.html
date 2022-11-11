@@ -13,7 +13,7 @@
     }
 
     .titulo-dias-para-copa {
-        font-size: 1.8em;
+        font-size: 1.7em;
         font-weight: bold;
     }
 
@@ -33,13 +33,13 @@
     }
 
     .lead-dias-para-copa {
-        font-size: 1.75rem;
+        font-size: 1.4rem;
     }
 
     .secao-entrar {
         background-color: #fff;
         padding-top: 20px;
-        padding-bottom: 60px;
+        padding-bottom: 20px;
     }
 
     @media (max-width: 450px) {
@@ -97,7 +97,7 @@
     </div>
 </div>
 
-<div class="secao-entrar mt-4">
+<div class="secao-entrar mt-4 mb-4">
     <div class="col-12">
 
         <div class="row">
@@ -109,25 +109,26 @@
                 <p class="lead">1) Se cadastre para efetuar seu login</p>
                 <p class="lead">2) Salve seus palpites</p>
                 <p class="lead">3) Imprima ou envie seus palpites por e-mail</p>
+
+                <div class="botao-entrar text-center mr-2 mb-4 mt-4">
+                    {% if request.user.is_authenticated %}
+                    <a class="nav-link" href="{% url 'main:pagemain' %}">
+                        <button class="btn btn-warning btn-sm"
+                            style="width: 170px; height: 45px; font-size: 17px;"><strong>Entrar</strong></button>
+                    </a>
+                    {% else %}
+                    <a class="nav-link" href="{% url 'perfil:login' %}">
+                        <button class="btn btn-warning btn-sm"
+                            style="width: 170px; height: 45px; font-size: 17px;"><strong>Entrar</strong></button>
+                    </a>
+                    {% endif %}
+                </div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mx-auto text-center">
-
-                <img class="img-responsive img-fluid" src="https://www.resultadosdefutebol.com/images/2022.jpg" alt="">
-
-
+                <img class="img-responsive img-fluid" src="https://i.postimg.cc/Sj0VDJwR/copa-do-mundoedit.jpg" alt="">
             </div>
         </div>
-
     </div>
 </div>
-
-<div class="mt-5 mb-5">
-    <a class="btn btn-link" href="{% url 'main:pagemain' %}">MAIN</a>
-</div>
-
-<div class="mt-5 mb-5">
-    <a class="btn btn-link" href="{% url 'main:pagemain' %}">MAIN</a>
-</div>
-
 
 {% endblock %}

@@ -1,8 +1,73 @@
 {% load static %}
 
+{% load static %}
 
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'main:pageindex' %}">
-        Home
-    </a>
-</li>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="{% url 'main:pageindex' %}">Bolão</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav" style="padding-left: 10px;">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'main:pageindex' %}">
+                    Home
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" href="#">
+                    Sobre
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Projetos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                    <a class="dropdown-item" href="#" name="buscar">Projeto 1</a>
+                    <a class="dropdown-item" href="#" name="buscar">Projeto 2</a>
+                    <a class="dropdown-item" href="#" name="buscar">Projeto 3</a>
+                    <a class="dropdown-item" href="#" name="buscar">Projeto 4</a>
+
+                </div>
+            </li>
+        </ul>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive" style="margin-right: 128px;">
+            <ul class="navbar-nav dropdown">
+
+                {% if request.user.is_authenticated %}
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Conta
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <span class="dropdown-item"><strong>Olá, <i>{{ request.user }}</i></strong></span>
+                        <div class="linha"></div>
+                        <a class="dropdown-item" href="{% url 'perfil:logout' %}">Sair</a>
+                        <!-- <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Outras coisas...</a> -->
+                    </div>
+                </li>
+
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'perfil:login' %}">
+                        <button class="btn btn-warning btn-sm"
+                            style="width: 70px; font-size: 17px;"><strong>Login</strong></button>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+
+
+        </div>
+    </div>
+</nav>

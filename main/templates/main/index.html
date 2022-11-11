@@ -8,8 +8,8 @@
     .secao-dias-para-copa {
         text-align: center;
         background-color: #fff;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
     .titulo-dias-para-copa {
@@ -29,8 +29,17 @@
 
     .lead {
         font-weight: bold;
-        font-size: 1.75rem;
         line-height: 1.2;
+    }
+
+    .lead-dias-para-copa {
+        font-size: 1.75rem;
+    }
+
+    .secao-entrar {
+        background-color: #fff;
+        padding-top: 20px;
+        padding-bottom: 60px;
     }
 
     @media (max-width: 450px) {
@@ -53,7 +62,7 @@
                     <div class="card">
                         <div class="card-block">
                             <div class="card-title">
-                                <p class="lead" id="dias">{{ dia }}</p>
+                                <p class="lead lead-dias-para-copa" id="dias">{{ dia }}</p>
                                 <p style="margin-top: -17px;">dias</p>
                             </div>
                         </div>
@@ -64,7 +73,7 @@
                     <div class="card">
                         <div class="card-block">
                             <div class="card-title">
-                                <p class="lead" id="horas">{{ hora }}</p>
+                                <p class="lead lead-dias-para-copa" id="horas">{{ hora }}</p>
                                 <p style="margin-top: -17px;">horas</p>
                             </div>
                         </div>
@@ -75,7 +84,7 @@
                     <div class="card">
                         <div class="card-block">
                             <div class="card-title">
-                                <p class="lead" id="minutos">{{ minuto }}</p>
+                                <p class="lead lead-dias-para-copa" id="minutos">{{ minuto }}</p>
                                 <p style="margin-top: -17px;">minutos</p>
                             </div>
                         </div>
@@ -88,6 +97,29 @@
     </div>
 </div>
 
+<div class="secao-entrar mt-4">
+    <div class="col-12">
+
+        <div class="row">
+
+            <div class="col-12 ml-2">
+                <h3>Palpites Copa Do Mundo</h3>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-5" style="padding-left: 30px;">
+                <p class="lead">1) Se cadastre para efetuar seu login</p>
+                <p class="lead">2) Salve seus palpites</p>
+                <p class="lead">3) Imprima ou envie seus palpites por e-mail</p>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mx-auto text-center">
+
+                <img class="img-responsive img-fluid" src="https://www.resultadosdefutebol.com/images/2022.jpg" alt="">
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
 
 <div class="mt-5 mb-5">
     <a class="btn btn-link" href="{% url 'main:pagemain' %}">MAIN</a>

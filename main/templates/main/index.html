@@ -4,21 +4,98 @@
 
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
-<div>
-    <p class="lead">INDEX!</p>
+<style>
+    .secao-dias-para-copa {
+        text-align: center;
+        background-color: #fff;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .titulo-dias-para-copa {
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+
+    .card {
+        background-color: #F1F1F1;
+        border: 1.5px solid #000000;
+    }
+
+    .card-title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .lead {
+        font-weight: bold;
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+
+    @media (max-width: 450px) {
+        .card {
+            width: 80px;
+        }
+    }
+</style>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="secao-dias-para-copa">
+
+            <div class="titulo-dias-para-copa mb-4">
+                A COPA DO MUNDO COMEÇA EM:
+            </div>
+
+            <div class="row align-items-center justify-content-center">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="card-title">
+                                <p class="lead" id="dias">{{ dia }}</p>
+                                <p style="margin-top: -17px;">dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="card-title">
+                                <p class="lead" id="horas">{{ hora }}</p>
+                                <p style="margin-top: -17px;">horas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="card-title">
+                                <p class="lead" id="minutos">{{ minuto }}</p>
+                                <p style="margin-top: -17px;">minutos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="mt-5 mb-5">
+    <a class="btn btn-link" href="{% url 'main:pagemain' %}">MAIN</a>
 </div>
 
 <div class="mt-5 mb-5">
     <a class="btn btn-link" href="{% url 'main:pagemain' %}">MAIN</a>
 </div>
 
-<div>
-    <a class="btn btn-link" href="{% url 'perfil:login' %}">LOGIN</a>
-</div>
-
-
-<div class="mt-5">
-    <a class="btn btn-link" href="{% url 'perfil:logout' %}">LOGOUT</a>
-</div>
 
 {% endblock %}

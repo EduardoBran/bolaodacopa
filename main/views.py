@@ -1,5 +1,6 @@
+from datetime import date, datetime, timedelta
+
 from django.contrib import messages
-from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render, reverse
 from django.views import View
 from django.views.generic import DetailView, TemplateView
@@ -17,6 +18,27 @@ def CondicaoNomeSelecaoEliminatorias(selecao):
 
 class PageIndex(TemplateView):
     template_name='main/index.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        dia_hoje = datetime.now()
+        dia_hoje = dia_hoje.strftime('%d/%m/%Y %H:%M')
+        dia_hoje = datetime.strptime(dia_hoje, '%d/%m/%Y %H:%M')
+        
+        dia_copa_do_mundo = '20/11/2022 13:00' 
+        dia_copa_do_mundo = datetime.strptime(dia_copa_do_mundo, '%d/%m/%Y %H:%M')
+        
+        tempo_para_copa = dia_copa_do_mundo - dia_hoje
+        tempo_para_copa = str(tempo_para_copa)
+        tempo_para_copa = tempo_para_copa.replace(':', ' ')
+        tempo_para_copa = tempo_para_copa.split()
+        
+        context['dia'] = tempo_para_copa[0]
+        context['hora'] = tempo_para_copa[2]
+        context['minuto'] = tempo_para_copa[3]
+        
+        return context
     
 
 class DispatchLoginRequiredMixin(View):

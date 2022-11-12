@@ -50,6 +50,18 @@
             display: inline-flex;
         }
     }
+
+    @media (max-width: 422px) {
+        .mobile-quartas {
+            letter-spacing: -0.5px;
+        }
+    }
+
+    @media (max-width: 410px) {
+        .mobile-quartas {
+            letter-spacing: 0px;
+        }
+    }
 </style>
 
 <div class="row mt-4 mb-4">
@@ -452,7 +464,7 @@
             {% for usuario in eliminatorias %}
             <a href="{% url 'main:eliminatoriasQuartas' usuario.id %}" style="color: #000;"
                 title="Acessar tabela das Quartas de Final">
-                <p class="lead mt-2"><strong>Quartas de Final</strong></p>
+                <p class="lead mt-2 mobile-quartas"><strong>Quartas de Final</strong></p>
             </a>
             {% endfor %}
         </div>

@@ -1,1 +1,1 @@
-web: gunicorn bolao.wsgi  --log-file -
+web: gunicorn bolao.wsgi --log-file -

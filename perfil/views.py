@@ -69,7 +69,7 @@ def loginPage(request):
                             usuario=user
                         )
                         
-                    return redirect('main:pageindex')
+                    return redirect('main:pagemain')
                 else:
                     return render(request, 'perfil/login.html', {"error": "Sua conta está desabilitada."})
             else:
@@ -165,7 +165,7 @@ def registerPage(request):
                         Eliminatorias.objects.create(
                             usuario=user
                     )
-                    return redirect('main:pageindex')
+                    return redirect('main:pagemain')
             else:
                 messages.add_message(
                     request,

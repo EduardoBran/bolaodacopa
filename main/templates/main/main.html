@@ -4,136 +4,480 @@
 
 {% if request.user.is_authenticated %}
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
+
+<style>
+    .conteudo-mobile {
+        display: none;
+    }
+
+    .bandeiras-main {
+        margin-top: -8px;
+    }
+
+    .bandeira-main {
+        font-size: 20px;
+        border-radius: 20%;
+    }
+
+    .borda {
+        border: 1px solid black;
+    }
+
+    .conteudo-grupos {
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-bottom: 16px;
+    }
+
+    @media (max-width: 992px) {
+        .conteudo-grupos {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .conteudo-grupos-mobile {
+            margin-right: 8px;
+        }
+    }
+
+    @media (max-width: 578px) {
+        .conteudo-desktop {
+            display: none;
+        }
+
+        .conteudo-mobile {
+            display: inline-flex;
+        }
+    }
+</style>
+
 <div class="row mt-4 mb-4">
     <div class="col-12">
         <div class="text-center">
             <h3>Olá <strong>{{ request.user }}</strong></h3>
+            <h5 class="mt-3">Escreva seus palpites</h5>
         </div>
     </div>
 </div>
 
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="ml2">
+<div class="row align-items-center justify-content-center conteudo-desktop">
+
+    <div class="col-sm-5 col-lg-2 borda conteudo-grupos conteudo-grupos-mobile">
+        <div class="mx-auto text-center">
             {% for usuario in bolaousergrupoA %}
-            <a href="{% url 'main:pagegrupoA' usuario.id %}">Clique aqui</a> para começar o seu bolão GRUPO A.
+            <a href="{% url 'main:pagegrupoA' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo A">
+                <p class="lead mt-2"><strong>Grupo A</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoA %}
+            <a href="{% url 'main:pagegrupoA' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo A">
+                <p class="bandeiras-main">
+                    <span class="fi fi-qa bandeira-main"></span>
+                    <span class="fi fi-ec bandeira-main"></span>
+                    <span class="fi fi-sn bandeira-main"></span>
+                    <span class="fi fi-nl bandeira-main"></span>
+                </p>
+            </a>
             {% endfor %}
         </div>
     </div>
-</div>
 
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="ml2">
+    <div class="col-sm-5 col-lg-2 conteudo-grupos borda">
+        <div class="mx-auto text-center">
             {% for usuario in bolaousergrupoB %}
-            <a href="{% url 'main:pagegrupoB' usuario.id %}">Clique aqui</a> para começar o seu bolão GRUPO B.
+            <a href="{% url 'main:pagegrupoB' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo B">
+                <p class="lead mt-2"><strong>Grupo B</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoB %}
+            <a href="{% url 'main:pagegrupoB' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo B">
+                <p class="bandeiras-main">
+                    <span class="fi fi-gb-eng bandeira-main"></span>
+                    <span class="fi fi-ir bandeira-main"></span>
+                    <span class="fi fi-us bandeira-main"></span>
+                    <span class="fi fi-gb-wls bandeira-main"></span>
+                </p>
+            </a>
             {% endfor %}
         </div>
     </div>
-</div>
-
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="ml2">
+    <div class="col-sm-5 col-lg-2 conteudo-grupos conteudo-grupos-mobile borda">
+        <div class="mx-auto text-center">
             {% for usuario in bolaousergrupoC %}
-            <a href="{% url 'main:pagegrupoC' usuario.id %}">Clique aqui</a> para começar o seu bolão GRUPO C.
+            <a href="{% url 'main:pagegrupoC' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo C">
+                <p class="lead mt-2"><strong>Grupo C</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoC %}
+            <a href="{% url 'main:pagegrupoC' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo C">
+                <p class="bandeiras-main">
+                    <span class="fi fi-ar bandeira-main"></span>
+                    <span class="fi fi-sa bandeira-main"></span>
+                    <span class="fi fi-mx bandeira-main"></span>
+                    <span class="fi fi-pl bandeira-main"></span>
+                </p>
+            </a>
             {% endfor %}
         </div>
     </div>
-</div>
-
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="ml2">
+    <div class="col-sm-5 col-lg-2 conteudo-grupos borda">
+        <div class="mx-auto text-center">
             {% for usuario in bolaousergrupoD %}
-            <a href="{% url 'main:pagegrupoD' usuario.id %}">Clique aqui</a> para começar o seu bolão GRUPO D.
+            <a href="{% url 'main:pagegrupoD' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo D">
+                <p class="lead mt-2"><strong>Grupo D</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoD %}
+            <a href="{% url 'main:pagegrupoD' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo D">
+                <p class="bandeiras-main">
+                    <span class="fi fi-fr bandeira-main"></span>
+                    <span class="fi fi-au bandeira-main"></span>
+                    <span class="fi fi-dk bandeira-main"></span>
+                    <span class="fi fi-tn bandeira-main"></span>
+                </p>
+            </a>
             {% endfor %}
         </div>
     </div>
 </div>
 
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="ml2">
+<div class="row align-items-center justify-content-center conteudo-desktop">
+    <div class="col-sm-5 col-lg-2 borda conteudo-grupos conteudo-grupos-mobile">
+        <div class="mx-auto text-center">
             {% for usuario in bolaousergrupoE %}
-            <a href="{% url 'main:pagegrupoE' usuario.id %}">Clique aqui</a> para começar o seu bolão GRUPO E.
+            <a href="{% url 'main:pagegrupoE' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo E">
+                <p class="lead mt-2"><strong>Grupo E</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoE %}
+            <a href="{% url 'main:pagegrupoE' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo E">
+                <p class="bandeiras-main">
+                    <span class="fi fi-es bandeira-main"></span>
+                    <span class="fi fi-cr bandeira-main"></span>
+                    <span class="fi fi-de bandeira-main"></span>
+                    <span class="fi fi-jp bandeira-main"></span>
+                </p>
+            </a>
             {% endfor %}
         </div>
     </div>
-</div>
-
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="ml2">
+    <div class="col-sm-5 col-lg-2 conteudo-grupos borda">
+        <div class="mx-auto text-center">
             {% for usuario in bolaousergrupoF %}
-            <a href="{% url 'main:pagegrupoF' usuario.id %}">Clique aqui</a> para começar o seu bolão GRUPO F.
+            <a href="{% url 'main:pagegrupoF' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo F">
+                <p class="lead mt-2"><strong>Grupo F</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoF %}
+            <a href="{% url 'main:pagegrupoF' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo F">
+                <p class="bandeiras-main">
+                    <span class="fi fi-be bandeira-main"></span>
+                    <span class="fi fi-ca bandeira-main"></span>
+                    <span class="fi fi-ma bandeira-main"></span>
+                    <span class="fi fi-hr bandeira-main"></span>
+                </p>
+            </a>
             {% endfor %}
         </div>
     </div>
-</div>
-
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="ml2">
+    <div class="col-sm-5 col-lg-2 conteudo-grupos conteudo-grupos-mobile borda">
+        <div class="mx-auto text-center">
             {% for usuario in bolaousergrupoG %}
-            <a href="{% url 'main:pagegrupoG' usuario.id %}">Clique aqui</a> para começar o seu bolão GRUPO G.
+            <a href="{% url 'main:pagegrupoG' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo G">
+                <p class="lead mt-2"><strong>Grupo G</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoG %}
+            <a href="{% url 'main:pagegrupoG' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo G">
+                <p class="bandeiras-main">
+                    <span class="fi fi-br bandeira-main"></span>
+                    <span class="fi fi-rs bandeira-main"></span>
+                    <span class="fi fi-ch bandeira-main"></span>
+                    <span class="fi fi-cm bandeira-main"></span>
+                </p>
+            </a>
             {% endfor %}
         </div>
     </div>
-</div>
-
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="ml2">
+    <div class="col-sm-5 col-lg-2 conteudo-grupos borda">
+        <div class="mx-auto text-center">
             {% for usuario in bolaousergrupoH %}
-            <a href="{% url 'main:pagegrupoH' usuario.id %}">Clique aqui</a> para começar o seu bolão GRUPO H.
+            <a href="{% url 'main:pagegrupoH' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo H">
+                <p class="lead mt-2"><strong>Grupo H</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoH %}
+            <a href="{% url 'main:pagegrupoH' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo H">
+                <p class="bandeiras-main">
+                    <span class="fi fi-pt bandeira-main"></span>
+                    <span class="fi fi-gh bandeira-main"></span>
+                    <span class="fi fi-uy bandeira-main"></span>
+                    <span class="fi fi-kr bandeira-main"></span>
+                </p>
+            </a>
             {% endfor %}
         </div>
     </div>
 </div>
 
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="ml2">
+<div class="row align-items-center justify-content-center conteudo-desktop mb-4">
+    <div class="col-sm-5 col-lg-2 borda conteudo-grupos conteudo-grupos-mobile">
+        <div class="mx-auto text-center">
             {% for usuario in eliminatorias %}
-            <a href="{% url 'main:eliminatoriasOitavas' usuario.id %}">Clique aqui</a> para as eliminatórias das oitavas
-            de final.
+            <a href="{% url 'main:eliminatoriasOitavas' usuario.id %}" style="color: #000;"
+                title="Acessar tabela das Oitavas de Final">
+                <p class="lead mt-2"><strong>Oitavas de Final</strong></p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-5 col-lg-2 conteudo-grupos borda">
+        <div class="mx-auto text-center">
+            {% for usuario in eliminatorias %}
+            <a href="{% url 'main:eliminatoriasQuartas' usuario.id %}" style="color: #000;"
+                title="Acessar tabela das Quartas de Final">
+                <p class="lead mt-2"><strong>Quartas de Final</strong></p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-5 col-lg-2 conteudo-grupos conteudo-grupos-mobile borda">
+        <div class="mx-auto text-center">
+            {% for usuario in eliminatorias %}
+            <a href="{% url 'main:eliminatoriasSemi' usuario.id %}" style="color: #000;"
+                title="Acessar tabela das Semifinais">
+                <p class="lead mt-2"><strong>Semfinais</strong></p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-5 col-lg-2 conteudo-grupos borda">
+        <div class="mx-auto text-center">
+            {% for usuario in eliminatorias %}
+            <a href="{% url 'main:eliminatoriasFinal' usuario.id %}" style="color: #000;"
+                title="Acessar tabela Final e 3º Lugar">
+                <p class="lead mt-2"><strong>Final</strong></p>
+            </a>
             {% endfor %}
         </div>
     </div>
 </div>
 
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="ml2">
-            {% for usuario in eliminatorias %}
-            <a href="{% url 'main:eliminatoriasQuartas' usuario.id %}">Clique aqui</a> para as eliminatórias das quartas
-            de final.
-            {% endfor %}
-        </div>
-    </div>
-</div>
 
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="ml2">
-            {% for usuario in eliminatorias %}
-            <a href="{% url 'main:eliminatoriasSemi' usuario.id %}">Clique aqui</a> para as eliminatórias da semi
-            final.
+<!-- conteudo-mobile -->
+<div class="row align-items-center justify-content-center conteudo-mobile mb-4">
+    <div class="col-5 conteudo-grupos conteudo-grupos-mobile borda">
+        <div class="mx-auto text-center">
+            {% for usuario in bolaousergrupoA %}
+            <a href="{% url 'main:pagegrupoA' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo A">
+                <p class="lead mt-2"><strong>Grupo A</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoA %}
+            <a href="{% url 'main:pagegrupoA' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo A">
+                <p class="bandeiras-main">
+                    <span class="fi fi-qa bandeira-main"></span>
+                    <span class="fi fi-ec bandeira-main"></span>
+                    <span class="fi fi-sn bandeira-main"></span>
+                    <span class="fi fi-nl bandeira-main"></span>
+                </p>
+            </a>
             {% endfor %}
         </div>
     </div>
-</div>
+    <div class="col-5 conteudo-grupos borda">
+        <div class="mx-auto text-center">
+            {% for usuario in bolaousergrupoB %}
+            <a href="{% url 'main:pagegrupoB' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo B">
+                <p class="lead mt-2"><strong>Grupo B</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoB %}
+            <a href="{% url 'main:pagegrupoB' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo B">
+                <p class="bandeiras-main">
+                    <span class="fi fi-gb-eng bandeira-main"></span>
+                    <span class="fi fi-ir bandeira-main"></span>
+                    <span class="fi fi-us bandeira-main"></span>
+                    <span class="fi fi-gb-wls bandeira-main"></span>
+                </p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-5 conteudo-grupos conteudo-grupos-mobile borda">
+        <div class="mx-auto text-center">
+            {% for usuario in bolaousergrupoC %}
+            <a href="{% url 'main:pagegrupoC' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo C">
+                <p class="lead mt-2"><strong>Grupo C</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoC %}
+            <a href="{% url 'main:pagegrupoC' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo C">
+                <p class="bandeiras-main">
+                    <span class="fi fi-ar bandeira-main"></span>
+                    <span class="fi fi-sa bandeira-main"></span>
+                    <span class="fi fi-mx bandeira-main"></span>
+                    <span class="fi fi-pl bandeira-main"></span>
+                </p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-5 conteudo-grupos borda">
+        <div class="mx-auto text-center">
+            {% for usuario in bolaousergrupoD %}
+            <a href="{% url 'main:pagegrupoD' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo D">
+                <p class="lead mt-2"><strong>Grupo D</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoD %}
+            <a href="{% url 'main:pagegrupoD' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo D">
+                <p class="bandeiras-main">
+                    <span class="fi fi-fr bandeira-main"></span>
+                    <span class="fi fi-au bandeira-main"></span>
+                    <span class="fi fi-dk bandeira-main"></span>
+                    <span class="fi fi-tn bandeira-main"></span>
+                </p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
 
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="ml2">
-            {% for usuario in eliminatorias %}
-            <a href="{% url 'main:eliminatoriasFinal' usuario.id %}">Clique aqui</a> para a disputa de 3 lugar e
-            final.
+    <div class="col-5 conteudo-grupos conteudo-grupos-mobile borda">
+        <div class="mx-auto text-center">
+            {% for usuario in bolaousergrupoE %}
+            <a href="{% url 'main:pagegrupoE' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo E">
+                <p class="lead mt-2"><strong>Grupo E</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoE %}
+            <a href="{% url 'main:pagegrupoE' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo E">
+                <p class="bandeiras-main">
+                    <span class="fi fi-es bandeira-main"></span>
+                    <span class="fi fi-cr bandeira-main"></span>
+                    <span class="fi fi-de bandeira-main"></span>
+                    <span class="fi fi-jp bandeira-main"></span>
+                </p>
+            </a>
             {% endfor %}
         </div>
     </div>
+    <div class="col-5 conteudo-grupos borda">
+        <div class="mx-auto text-center">
+            {% for usuario in bolaousergrupoF %}
+            <a href="{% url 'main:pagegrupoF' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo F">
+                <p class="lead mt-2"><strong>Grupo F</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoF %}
+            <a href="{% url 'main:pagegrupoF' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo F">
+                <p class="bandeiras-main">
+                    <span class="fi fi-be bandeira-main"></span>
+                    <span class="fi fi-ca bandeira-main"></span>
+                    <span class="fi fi-ma bandeira-main"></span>
+                    <span class="fi fi-hr bandeira-main"></span>
+                </p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-5 conteudo-grupos conteudo-grupos-mobile borda">
+        <div class="mx-auto text-center">
+            {% for usuario in bolaousergrupoG %}
+            <a href="{% url 'main:pagegrupoG' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo G">
+                <p class="lead mt-2"><strong>Grupo G</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoG %}
+            <a href="{% url 'main:pagegrupoG' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo G">
+                <p class="bandeiras-main">
+                    <span class="fi fi-br bandeira-main"></span>
+                    <span class="fi fi-rs bandeira-main"></span>
+                    <span class="fi fi-ch bandeira-main"></span>
+                    <span class="fi fi-cm bandeira-main"></span>
+                </p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-5 conteudo-grupos borda">
+        <div class="mx-auto text-center">
+            {% for usuario in bolaousergrupoH %}
+            <a href="{% url 'main:pagegrupoH' usuario.id %}" style="color: #000;" title="Acessar tabela do Grupo H">
+                <p class="lead mt-2"><strong>Grupo H</strong></p>
+            </a>
+            {% endfor %}
+            {% for usuario in bolaousergrupoH %}
+            <a href="{% url 'main:pagegrupoH' usuario.id %}" style="color: #000; text-decoration: none;"
+                title="Acessar tabela do Grupo H">
+                <p class="bandeiras-main">
+                    <span class="fi fi-pt bandeira-main"></span>
+                    <span class="fi fi-gh bandeira-main"></span>
+                    <span class="fi fi-uy bandeira-main"></span>
+                    <span class="fi fi-kr bandeira-main"></span>
+                </p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="col-5 conteudo-grupos conteudo-grupos-mobile borda">
+        <div class="mx-auto text-center">
+            {% for usuario in eliminatorias %}
+            <a href="{% url 'main:eliminatoriasOitavas' usuario.id %}" style="color: #000;"
+                title="Acessar tabela das Oitavas de Final">
+                <p class="lead mt-2"><strong>Oitavas de Final</strong></p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-5 conteudo-grupos borda">
+        <div class="mx-auto text-center">
+            {% for usuario in eliminatorias %}
+            <a href="{% url 'main:eliminatoriasQuartas' usuario.id %}" style="color: #000;"
+                title="Acessar tabela das Quartas de Final">
+                <p class="lead mt-2"><strong>Quartas de Final</strong></p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-5 conteudo-grupos conteudo-grupos-mobile borda">
+        <div class="mx-auto text-center">
+            {% for usuario in eliminatorias %}
+            <a href="{% url 'main:eliminatoriasSemi' usuario.id %}" style="color: #000;"
+                title="Acessar tabela das Semifinais">
+                <p class="lead mt-2"><strong>Semfinais</strong></p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-5 conteudo-grupos borda">
+        <div class="mx-auto text-center">
+            {% for usuario in eliminatorias %}
+            <a href="{% url 'main:eliminatoriasFinal' usuario.id %}" style="color: #000;"
+                title="Acessar tabela Final e 3º Lugar">
+                <p class="lead mt-2"><strong>Final</strong></p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
 </div>
 
 {% endif %}

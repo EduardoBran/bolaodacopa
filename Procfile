@@ -1,0 +1,1 @@
+web: gunicorn bolao.wsgi  --log-file -

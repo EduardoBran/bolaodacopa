@@ -5,15 +5,23 @@
 {% block content %}
 
 <style>
+    /* .conteudo-jogos {
+        text-align: justify-all;
+    } */
+
     .data-jogos {
         font-size: .9rem;
         font-weight: 500;
         margin-top: 16px;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
 
     hr {
         margin-top: 24px;
+    }
+
+    input {
+        width: 35px;
     }
 </style>
 
@@ -27,7 +35,7 @@
 
 <div class="row mt-3">
     <div class="col-12">
-        <div class="text-center">
+        <div class="text-center conteudo-jogos">
             {% block urlForm %}
             <form action="{% url 'main:salvartabelagrupoA' %}" method="POST">
                 {% endblock %}
@@ -39,20 +47,36 @@
                 {% block data-primeira-rodada-1 %}
                 <p class="lead data-jogos">DOM, 20/11/2022 às 13:00</p>
                 {% endblock %}
-                <span class="nome-selecoes">{{ info.selecao1 }}</span>
-                <input type="number" min="0" max="10" id="res1" name="res1" value="{{ info.res1 }}"> x
-                <input type="number" min="0" max="10" id="res2" name="res2" value="{{ info.res2 }}">
-                <span class="nome-selecoes">{{ info.selecao2 }}</span>
+                <div class="row">
+                    <div class="col-4 text-right">
+                        <span class="nome-selecoes">{{ info.selecao1 }}</span>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" min="0" max="10" id="res1" name="res1" value="{{ info.res1 }}"> X
+                        <input type="number" min="0" max="10" id="res2" name="res2" value="{{ info.res2 }}">
+                    </div>
+                    <div class="col-4 text-left">
+                        <span class="nome-selecoes">{{ info.selecao2 }}</span>
+                    </div>
+                </div>
 
                 <div class="mt-4 mb-4"></div>
 
                 {% block data-primeira-rodada-2 %}
                 <p class="lead data-jogos">SEG, 21/11/2022 às 13:00</p>
                 {% endblock %}
-                <span class="nome-selecoes">{{ info.selecao3 }}</span>
-                <input type="number" min="0" max="10" id="res3" name="res3" value="{{ info.res3 }}"> x
-                <input type="number" min="0" max="10" id="res4" name="res4" value="{{ info.res4 }}">
-                <span class="nome-selecoes">{{ info.selecao4 }}</span>
+                <div class="row">
+                    <div class="col-4 text-right">
+                        <span class="nome-selecoes">{{ info.selecao3 }}</span>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" min="0" max="10" id="res3" name="res3" value="{{ info.res3 }}"> X
+                        <input type="number" min="0" max="10" id="res4" name="res4" value="{{ info.res4 }}">
+                    </div>
+                    <div class="col-4 text-left">
+                        <span class="nome-selecoes">{{ info.selecao4 }}</span>
+                    </div>
+                </div>
 
                 <hr />
 
@@ -61,20 +85,36 @@
                 {% block data-segunda-rodada-1 %}
                 <p class="lead data-jogos">SEXTA, 25/11/2022 às 10:00</p>
                 {% endblock %}
-                <span class="nome-selecoes">{{ info.selecao1 }}</span>
-                <input type="number" min="0" max="10" id="res5" name="res5" value="{{ info.res5 }}"> x
-                <input type="number" min="0" max="10" id="res6" name="res6" value="{{ info.res6 }}">
-                <span class="nome-selecoes">{{ info.selecao3 }}</span>
+                <div class="row">
+                    <div class="col-4 text-right">
+                        <span class="nome-selecoes">{{ info.selecao1 }}</span>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" min="0" max="10" id="res5" name="res5" value="{{ info.res5 }}"> X
+                        <input type="number" min="0" max="10" id="res6" name="res6" value="{{ info.res6 }}">
+                    </div>
+                    <div class="col-4 text-left">
+                        <span class="nome-selecoes">{{ info.selecao3 }}</span>
+                    </div>
+                </div>
 
                 <div class="mt-4 mb-4"></div>
 
                 {% block data-segunda-rodada-2 %}
                 <p class="lead data-jogos">SEXTA, 25/11/2022 às 13:00</p>
                 {% endblock %}
-                <span class="nome-selecoes">{{ info.selecao4 }}</span>
-                <input type="number" min="0" max="10" id="res7" name="res7" value="{{ info.res7 }}"> x
-                <input type="number" min="0" max="10" id="res8" name="res8" value="{{ info.res8 }}">
-                <span class="nome-selecoes">{{ info.selecao2 }}</span>
+                <div class="row">
+                    <div class="col-4 text-right">
+                        <span class="nome-selecoes">{{ info.selecao4 }}</span>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" min="0" max="10" id="res7" name="res7" value="{{ info.res7 }}"> X
+                        <input type="number" min="0" max="10" id="res8" name="res8" value="{{ info.res8 }}">
+                    </div>
+                    <div class="col-4 text-left">
+                        <span class="nome-selecoes">{{ info.selecao2 }}</span>
+                    </div>
+                </div>
 
                 <hr />
 
@@ -83,20 +123,36 @@
                 {% block data-terceira-rodada-1 %}
                 <p class="lead data-jogos">TER, 29/11/2022 às 12:00</p>
                 {% endblock %}
-                <span class="nome-selecoes">{{ info.selecao4 }}</span>
-                <input type="number" min="0" max="10" id="res9" name="res9" value="{{ info.res9 }}"> x
-                <input type="number" min="0" max="10" id="res10" name="res10" value="{{ info.res10 }}">
-                <span class="nome-selecoes">{{ info.selecao1 }}</span>
+                <div class="row">
+                    <div class="col-4 text-right">
+                        <span class="nome-selecoes">{{ info.selecao4 }}</span>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" min="0" max="10" id="res9" name="res9" value="{{ info.res9 }}"> X
+                        <input type="number" min="0" max="10" id="res10" name="res10" value="{{ info.res10 }}">
+                    </div>
+                    <div class="col-4 text-left">
+                        <span class="nome-selecoes">{{ info.selecao1 }}</span>
+                    </div>
+                </div>
 
                 <div class="mt-4 mb-4"></div>
 
                 {% block data-terceira-rodada-2 %}
                 <p class="lead data-jogos">TER, 29/11/2022 às 12:00</p>
                 {% endblock %}
-                <span class="nome-selecoes">{{ info.selecao2 }}</span>
-                <input type="number" min="0" max="10" id="res11" name="res11" value="{{ info.res11 }}"> x
-                <input type="number" min="0" max="10" id="res12" name="res12" value="{{ info.res12 }}">
-                <span class="nome-selecoes">{{ info.selecao3 }}</span>
+                <div class="row">
+                    <div class="col-4 text-right">
+                        <span class="nome-selecoes">{{ info.selecao2 }}</span>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" min="0" max="10" id="res11" name="res11" value="{{ info.res11 }}"> X
+                        <input type="number" min="0" max="10" id="res12" name="res12" value="{{ info.res12 }}">
+                    </div>
+                    <div class="col-4 text-left">
+                        <span class="nome-selecoes">{{ info.selecao3 }}</span>
+                    </div>
+                </div>
 
                 <hr />
 
@@ -135,9 +191,16 @@
 
                 <br />
 
-                <button type="submit" class="btn btn-info btn-lg">
-                    <span class="ml-2">Salvar resultados</span>
-                </button>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-info btn-lg mr-2">
+                        <span class="">Salvar</span>
+                    </button>
+                    <a href="{% url 'main:pagemain' %}">
+                        <button type="button" class="btn btn-info btn-lg">
+                            <span class="">Voltar</span>
+                        </button>
+                    </a>
+                </div>
 
             </form>
         </div>

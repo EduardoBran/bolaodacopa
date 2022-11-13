@@ -7,11 +7,15 @@
         font-size: .9rem;
         font-weight: 500;
         margin-top: 16px;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
 
     hr {
         margin-top: 24px;
+    }
+
+    input {
+        width: 35px;
     }
 </style>
 
@@ -32,48 +36,90 @@
                 <h5>Jogo 57</h5>
 
                 <p class="lead data-jogos">SEX, 09/12/2022 às 16:00</p>
-                <span id="selecao1quartas">{{ selecao1quartas }}</span>
-                <input type="number" min="0" max="10" id="res17" name="res17" value="{{ info.res17 }}" required> x
-                <input type="number" min="0" max="10" id="res18" name="res18" value="{{ info.res18 }}" required>
-                <span id="selecao2quartas">{{ selecao2quartas }}</span>
+                <div class="row">
+                    <div class="col-4 text-right">
+                        <span id="selecao1quartas" class="nome-selecoes">{{ selecao1quartas }}</span>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" min="0" max="10" id="res17" name="res17" value="{{ info.res17 }}" required>
+                        X
+                        <input type="number" min="0" max="10" id="res18" name="res18" value="{{ info.res18 }}" required>
+                    </div>
+                    <div class="col-4 text-left">
+                        <span id="selecao2quartas" class="nome-selecoes">{{ selecao2quartas }}</span>
+                    </div>
+                </div>
 
                 <hr />
 
                 <h5>Jogo 58</h5>
 
                 <p class="lead data-jogos">SEX, 09/12/2022 às 12:00</p>
-                <span id="selecao3quartas">{{ selecao3quartas }}</span>
-                <input type="number" min="0" max="10" id="res19" name="res19" value="{{ info.res19 }}" required> x
-                <input type="number" min="0" max="10" id="res20" name="res20" value="{{ info.res20 }}" required>
-                <span id="selecao4quartas">{{ selecao4quartas }}</span>
+                <div class="row">
+                    <div class="col-4 text-right">
+                        <span id="selecao3quartas" class="nome-selecoes">{{ selecao3quartas }}</span>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" min="0" max="10" id="res19" name="res19" value="{{ info.res19 }}" required>
+                        X
+                        <input type="number" min="0" max="10" id="res20" name="res20" value="{{ info.res20 }}" required>
+                    </div>
+                    <div class="col-4 text-left">
+                        <span id="selecao4quartas" class="nome-selecoes">{{ selecao4quartas }}</span>
+                    </div>
+                </div>
 
                 <hr />
 
                 <h5>Jogo 59</h5>
 
                 <p class="lead data-jogos">SAB, 10/12/2022 às 16:00</p>
-                <span id="selecao5quartas">{{ selecao5quartas }}</span>
-                <input type="number" min="0" max="10" id="res21" name="res21" value="{{ info.res21 }}" required> x
-                <input type="number" min="0" max="10" id="res22" name="res22" value="{{ info.res22 }}" required>
-                <span id="selecao6quartas">{{ selecao6quartas }}</span>
+                <div class="row">
+                    <div class="col-4 text-right">
+                        <span id="selecao5quartas" class="nome-selecoes">{{ selecao5quartas }}</span>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" min="0" max="10" id="res21" name="res21" value="{{ info.res21 }}" required>
+                        X
+                        <input type="number" min="0" max="10" id="res22" name="res22" value="{{ info.res22 }}" required>
+                    </div>
+                    <div class="col-4 text-left">
+                        <span id="selecao6quartas" class="nome-selecoes">{{ selecao6quartas }}</span>
+                    </div>
+                </div>
 
                 <hr />
 
                 <h5>Jogo 60</h5>
 
                 <p class="lead data-jogos">SAB, 10/12/2022 às 10:00</p>
-                <span id="selecao7quartas">{{ selecao7quartas }}</span>
-                <input type="number" min="0" max="10" id="res23" name="res23" value="{{ info.res23 }}" required> x
-                <input type="number" min="0" max="10" id="res24" name="res24" value="{{ info.res24 }}" required>
-                <span id="selecao8quartas">{{ selecao8quartas }}</span>
+                <div class="row">
+                    <div class="col-4 text-right">
+                        <span id="selecao7quartas" class="nome-selecoes">{{ selecao7quartas }}</span>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" min="0" max="10" id="res23" name="res23" value="{{ info.res23 }}" required>
+                        X
+                        <input type="number" min="0" max="10" id="res24" name="res24" value="{{ info.res24 }}" required>
+                    </div>
+                    <div class="col-4 text-left">
+                        <span id="selecao8quartas" class="nome-selecoes">{{ selecao8quartas }}</span>
+                    </div>
+                </div>
 
                 <hr />
 
                 <div class="mt-4">
-                    <button type="submit" class="btn btn-info btn-lg">
-                        <span class="ml-2">Salvar resultados</span>
+                    <button type="submit" class="btn btn-info btn-lg mr-2">
+                        <span class="">Salvar</span>
                     </button>
+                    <a href="{% url 'main:pagemain' %}">
+                        <button type="button" class="btn btn-info btn-lg">
+                            <span class="">Voltar</span>
+                        </button>
+                    </a>
                 </div>
+
             </form>
         </div>
     </div>

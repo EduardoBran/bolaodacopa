@@ -2,18 +2,23 @@
 
 {% block content %}
 
-<div class="row">
-    <div class="col">
-        <div class="text-center">
-            <h3>Eliminatórias</h3>
-        </div>
-    </div>
-</div>
+<style>
+    .data-jogos {
+        font-size: .9rem;
+        font-weight: 500;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+
+    hr {
+        margin-top: 24px;
+    }
+</style>
 
 <div class="row">
-    <div class="col">
+    <div class="col mt-4">
         <div class="text-center">
-            <h5>Disputa 3º Lugar</h5>
+            <h3>Disputa 3º Lugar</h3>
         </div>
     </div>
 </div>
@@ -24,37 +29,40 @@
             <form action="{% url 'main:salvareliminatoriasfinal' %}" method="POST">
                 {% csrf_token %}
 
-                <p class="lead"><strong>Jogo 63</strong></p>
+                <h5>Jogo 63</h5>
 
+                <p class="lead data-jogos">SAB, 17/12/2022 às 12:00</p>
                 <span id="selecao1TerceiroLugar">{{ selecao1TerceiroLugar }}</span>
                 <input type="number" min="0" max="10" id="res29" name="res29" value="{{ info.res29 }}" required> x
                 <input type="number" min="0" max="10" id="res30" name="res30" value="{{ info.res30 }}" required>
                 <span id="selecao2TerceiroLugar">{{ selecao2TerceiroLugar }}</span>
 
-                <br />
-                <br />
+                <hr />
 
-                <div class="row mt-4">
-                    <div class="col">
+                <div class="row">
+                    <div class="col mt-2 mb-4">
                         <div class="text-center">
-                            <h5>Final</h5>
+                            <h3>FINAL</h3>
                         </div>
                     </div>
                 </div>
 
-                <p class="lead"><strong>Jogo 64</strong></p>
+                <h5>Jogo 64</h5>
 
+                <p class="lead data-jogos">DOM, 18/12/2022 às 12:00</p>
                 <span id="selecao1Final">{{ selecao1Final }}</span>
                 <input type="number" min="0" max="10" id="res31" name="res31" value="{{ info.res31 }}" required> x
                 <input type="number" min="0" max="10" id="res32" name="res32" value="{{ info.res32 }}" required>
                 <span id="selecao2Final">{{ selecao2Final }}</span>
 
-                <br />
-                <br />
+                <hr />
 
-                <button type="submit" class="btn btn-info btn-lg">
-                    <span class="ml-2">Salvar resultados</span>
-                </button>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-info btn-lg">
+                        <span class="ml-2">Salvar resultados</span>
+                    </button>
+                </div>
+
             </form>
         </div>
     </div>

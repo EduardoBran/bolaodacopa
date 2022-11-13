@@ -2,18 +2,23 @@
 
 {% block content %}
 
-<div class="row">
-    <div class="col">
-        <div class="text-center">
-            <h3>Eliminatórias</h3>
-        </div>
-    </div>
-</div>
+<style>
+    .data-jogos {
+        font-size: .9rem;
+        font-weight: 500;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+
+    hr {
+        margin-top: 24px;
+    }
+</style>
 
 <div class="row">
-    <div class="col">
+    <div class="col mt-4">
         <div class="text-center">
-            <h5>Semi Final</h5>
+            <h3>Semi Final</h3>
         </div>
     </div>
 </div>
@@ -24,29 +29,31 @@
             <form action="{% url 'main:salvareliminatoriassemi' %}" method="POST">
                 {% csrf_token %}
 
-                <p class="lead"><strong>Jogo 61</strong></p>
+                <h5>Jogo 61</h5>
 
+                <p class="lead data-jogos">TER, 13/12/2022 às 16:00</p>
                 <span id="selecao1Semi">{{ selecao1Semi }}</span>
                 <input type="number" min="0" max="10" id="res25" name="res25" value="{{ info.res25 }}" required> x
                 <input type="number" min="0" max="10" id="res26" name="res26" value="{{ info.res26 }}" required>
                 <span id="selecao2Semi">{{ selecao2Semi }}</span>
 
-                <br />
-                <br />
+                <hr />
 
-                <p class="lead"><strong>Jogo 62</strong></p>
+                <h5>Jogo 58</h5>
 
+                <p class="lead data-jogos">QUA, 14/12/2022 às 16:00</p>
                 <span id="selecao3Semi">{{ selecao3Semi }}</span>
                 <input type="number" min="0" max="10" id="res27" name="res27" value="{{ info.res27 }}" required> x
                 <input type="number" min="0" max="10" id="res28" name="res28" value="{{ info.res28 }}" required>
                 <span id="selecao4Semi">{{ selecao4Semi }}</span>
 
-                <br />
-                <br />
+                <hr />
 
-                <button type="submit" class="btn btn-info btn-lg">
-                    <span class="ml-2">Salvar resultados</span>
-                </button>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-info btn-lg">
+                        <span class="ml-2">Salvar resultados</span>
+                    </button>
+                </div>
             </form>
         </div>
     </div>

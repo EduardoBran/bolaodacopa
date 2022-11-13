@@ -1,72 +1,138 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 
+<style>
+    .data-jogos {
+        font-size: .9rem;
+        font-weight: 500;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+
+    hr {
+        margin-top: 24px;
+    }
+</style>
+
 <div class="row">
-    <div class="col">
+    <div class="col mt-3">
         <div class="text-center">
-            <h3>GRUPO A</h3>
+            <h3>GRUPO {% block letraGrupo %}A{% endblock %}</h3>
         </div>
     </div>
 </div>
 
-<div class="row mt-4">
+<div class="row mt-3">
     <div class="col-12">
         <div class="text-center">
+            {% block urlForm %}
             <form action="{% url 'main:salvartabelagrupoA' %}" method="POST">
+                {% endblock %}
+
                 {% csrf_token %}
-                <span>{{ info.selecao1 }} <input type="number" min="0" max="10" id="res1" name="res1"
-                        value="{{ info.res1 }}"> x
-                    <input type="number" min="0" max="10" id="res2" name="res2" value="{{ info.res2 }}">
-                    {{ info.selecao2 }}
-                </span>
-                <br />
-                <br />
-                <span>{{ info.selecao3 }} <input type="number" min="0" max="10" id="res3" name="res3"
-                        value="{{ info.res3 }}"> x <input type="number" min="0" max="10" id="res4" name="res4"
-                        value="{{ info.res4 }}"> {{ info.selecao4 }} </span>
-                <br />
-                <br />
-                <span>{{ info.selecao1 }} <input type="number" min="0" max="10" id="res5" name="res5"
-                        value="{{ info.res5 }}"> x <input type="number" min="0" max="10" id="res6" name="res6"
-                        value="{{ info.res6 }}"> {{ info.selecao3 }} </span>
-                <br />
-                <br />
-                <span>{{ info.selecao4 }} <input type="number" min="0" max="10" id="res7" name="res7"
-                        value="{{ info.res7 }}"> x <input type="number" min="0" max="10" id="res8" name="res8"
-                        value="{{ info.res8 }}"> {{ info.selecao2 }} </span>
-                <br />
-                <br />
-                <span>{{ info.selecao4 }} <input type="number" min="0" max="10" id="res9" name="res9"
-                        value="{{ info.res9 }}"> x <input type="number" min="0" max="10" id="res10" name="res10"
-                        value="{{ info.res10 }}"> {{ info.selecao1 }} </span>
-                <br />
-                <br />
-                <span>{{ info.selecao2 }} <input type="number" min="0" max="10" id="res11" name="res11"
-                        value="{{ info.res11 }}"> x <input type="number" min="0" max="10" id="res12" name="res12"
-                        value="{{ info.res12 }}"> {{ info.selecao3 }} </span>
-                <br />
-                <br />
 
-                <span class="lead">1 colocado</span>
-                <select id="primeiroColocado" name="primeiroColocado">
-                    <option selected value="{{ info.primeiroColocado }}">{{ info.primeiroColocado }}</option>
-                    <option value="Qatar">Qatar</option>
-                    <option value="Equador">Equador</option>
-                    <option value="Holanda">Holanda</option>
-                    <option value="Senegal">Senegal</option>
-                </select>
+                <h5>1ª rodada</h5>
 
-                <span class="lead">2 colocado</span>
-                <select id="segundoColocado" name="segundoColocado">
-                    <option selected value="{{ info.segundoColocado }}">{{ info.segundoColocado }}</option>
-                    <option value="Qatar">Qatar</option>
-                    <option value="Equador">Equador</option>
-                    <option value="Holanda">Holanda</option>
-                    <option value="Senegal">Senegal</option>
-                </select>
+                {% block data-primeira-rodada-1 %}
+                <p class="lead data-jogos">DOM, 20/11/2022 às 13:00</p>
+                {% endblock %}
+                <span class="nome-selecoes">{{ info.selecao1 }}</span>
+                <input type="number" min="0" max="10" id="res1" name="res1" value="{{ info.res1 }}"> x
+                <input type="number" min="0" max="10" id="res2" name="res2" value="{{ info.res2 }}">
+                <span class="nome-selecoes">{{ info.selecao2 }}</span>
 
-                <br />
+                <div class="mt-4 mb-4"></div>
+
+                {% block data-primeira-rodada-2 %}
+                <p class="lead data-jogos">SEG, 21/11/2022 às 13:00</p>
+                {% endblock %}
+                <span class="nome-selecoes">{{ info.selecao3 }}</span>
+                <input type="number" min="0" max="10" id="res3" name="res3" value="{{ info.res3 }}"> x
+                <input type="number" min="0" max="10" id="res4" name="res4" value="{{ info.res4 }}">
+                <span class="nome-selecoes">{{ info.selecao4 }}</span>
+
+                <hr />
+
+                <h5>2ª rodada</h5>
+
+                {% block data-segunda-rodada-1 %}
+                <p class="lead data-jogos">SEXTA, 25/11/2022 às 10:00</p>
+                {% endblock %}
+                <span class="nome-selecoes">{{ info.selecao1 }}</span>
+                <input type="number" min="0" max="10" id="res5" name="res5" value="{{ info.res5 }}"> x
+                <input type="number" min="0" max="10" id="res6" name="res6" value="{{ info.res6 }}">
+                <span class="nome-selecoes">{{ info.selecao3 }}</span>
+
+                <div class="mt-4 mb-4"></div>
+
+                {% block data-segunda-rodada-2 %}
+                <p class="lead data-jogos">SEXTA, 25/11/2022 às 13:00</p>
+                {% endblock %}
+                <span class="nome-selecoes">{{ info.selecao4 }}</span>
+                <input type="number" min="0" max="10" id="res7" name="res7" value="{{ info.res7 }}"> x
+                <input type="number" min="0" max="10" id="res8" name="res8" value="{{ info.res8 }}">
+                <span class="nome-selecoes">{{ info.selecao2 }}</span>
+
+                <hr />
+
+                <h5>3ª rodada</h5>
+
+                {% block data-terceira-rodada-1 %}
+                <p class="lead data-jogos">TER, 29/11/2022 às 12:00</p>
+                {% endblock %}
+                <span class="nome-selecoes">{{ info.selecao4 }}</span>
+                <input type="number" min="0" max="10" id="res9" name="res9" value="{{ info.res9 }}"> x
+                <input type="number" min="0" max="10" id="res10" name="res10" value="{{ info.res10 }}">
+                <span class="nome-selecoes">{{ info.selecao1 }}</span>
+
+                <div class="mt-4 mb-4"></div>
+
+                {% block data-terceira-rodada-2 %}
+                <p class="lead data-jogos">TER, 29/11/2022 às 12:00</p>
+                {% endblock %}
+                <span class="nome-selecoes">{{ info.selecao2 }}</span>
+                <input type="number" min="0" max="10" id="res11" name="res11" value="{{ info.res11 }}"> x
+                <input type="number" min="0" max="10" id="res12" name="res12" value="{{ info.res12 }}">
+                <span class="nome-selecoes">{{ info.selecao3 }}</span>
+
+                <hr />
+
+                <h5>Escolha os primeiros colocados</h5>
+
+                {% block primeirosColocados %}
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <span class="lead mr-2">1º colocado</span>
+                        <select id="primeiroColocado" name="primeiroColocado">
+                            <option selected value="{{ info.primeiroColocado }}">{{ info.primeiroColocado }}</option>
+                            <option value="Qatar">Qatar</option>
+                            <option value="Equador">Equador</option>
+                            <option value="Holanda">Holanda</option>
+                            <option value="Senegal">Senegal</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mt-3 mb-3"></div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <span class="lead mr-2">2º colocado</span>
+                        <select id="segundoColocado" name="segundoColocado">
+                            <option selected value="{{ info.segundoColocado }}">{{ info.segundoColocado }}</option>
+                            <option value="Qatar">Qatar</option>
+                            <option value="Equador">Equador</option>
+                            <option value="Holanda">Holanda</option>
+                            <option value="Senegal">Senegal</option>
+                        </select>
+                    </div>
+                </div>
+
+                {% endblock %}
+
                 <br />
 
                 <button type="submit" class="btn btn-info btn-lg">

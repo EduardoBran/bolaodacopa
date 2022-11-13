@@ -1,79 +1,61 @@
-{% extends 'base.html' %}
+{% extends 'main/grupoA.html' %}
 
-{% block content %}
+{% block letraGrupo %}H{% endblock %}
 
-<div class="row">
-    <div class="col">
-        <div class="text-center">
-            <h3>GRUPO H</h3>
+{% block urlForm %}
+<form action="{% url 'main:salvartabelagrupoH' %}" method="POST">
+    {% endblock %}
+
+    {% block data-primeira-rodada-1 %}
+    <p class="lead data-jogos">QUI, 24/11/2022 às 13:00</p>
+    {% endblock %}
+
+    {% block data-primeira-rodada-2 %}
+    <p class="lead data-jogos">QUI, 24/11/2022 às 10:00</p>
+    {% endblock %}
+
+    {% block data-segunda-rodada-1 %}
+    <p class="lead data-jogos">SEG, 28/11/2022 às 16:00</p>
+    {% endblock %}
+
+    {% block data-segunda-rodada-2 %}
+    <p class="lead data-jogos">SEG, 28/11/2022 às 10:00</p>
+    {% endblock %}
+
+    {% block data-terceira-rodada-1 %}
+    <p class="lead data-jogos">SEXTA, 02/12/2022 às 12:00</p>
+    {% endblock %}
+
+    {% block data-terceira-rodada-2 %}
+    <p class="lead data-jogos">SEXTA, 02/12/2022 às 12:00</p>
+    {% endblock %}
+
+    {% block primeirosColocados %}
+    <div class="row">
+        <div class="col-12 mt-3">
+            <span class="lead mr-2">1º colocado</span>
+            <select id="primeiroColocado" name="primeiroColocado">
+                <option selected value="{{ info.primeiroColocado }}">{{ info.primeiroColocado }}</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Gana">Gana</option>
+                <option value="Uruguai">Uruguai</option>
+                <option value="Coréia do Sul">Coréia do Sul</option>
+            </select>
         </div>
     </div>
-</div>
 
-<div class="row mt-4">
-    <div class="col-12">
-        <div class="text-center">
-            <form action="{% url 'main:salvartabelagrupoH' %}" method="POST">
-                {% csrf_token %}
-                <span>{{ info.selecao1 }} <input type="number" min="0" max="10" id="res1" name="res1"
-                        value="{{ info.res1 }}"> x
-                    <input type="number" min="0" max="10" id="res2" name="res2" value="{{ info.res2 }}">
-                    {{ info.selecao2 }}
-                </span>
-                <br />
-                <br />
-                <span>{{ info.selecao3 }} <input type="number" min="0" max="10" id="res3" name="res3"
-                        value="{{ info.res3 }}"> x <input type="number" min="0" max="10" id="res4" name="res4"
-                        value="{{ info.res4 }}"> {{ info.selecao4 }} </span>
-                <br />
-                <br />
-                <span>{{ info.selecao1 }} <input type="number" min="0" max="10" id="res5" name="res5"
-                        value="{{ info.res5 }}"> x <input type="number" min="0" max="10" id="res6" name="res6"
-                        value="{{ info.res6 }}"> {{ info.selecao3 }} </span>
-                <br />
-                <br />
-                <span>{{ info.selecao4 }} <input type="number" min="0" max="10" id="res7" name="res7"
-                        value="{{ info.res7 }}"> x <input type="number" min="0" max="10" id="res8" name="res8"
-                        value="{{ info.res8 }}"> {{ info.selecao2 }} </span>
-                <br />
-                <br />
-                <span>{{ info.selecao4 }} <input type="number" min="0" max="10" id="res9" name="res9"
-                        value="{{ info.res9 }}"> x <input type="number" min="0" max="10" id="res10" name="res10"
-                        value="{{ info.res10 }}"> {{ info.selecao1 }} </span>
-                <br />
-                <br />
-                <span>{{ info.selecao2 }} <input type="number" min="0" max="10" id="res11" name="res11"
-                        value="{{ info.res11 }}"> x <input type="number" min="0" max="10" id="res12" name="res12"
-                        value="{{ info.res12 }}"> {{ info.selecao3 }} </span>
-                <br />
-                <br />
+    <div class="mt-3 mb-3"></div>
 
-                <span class="lead">1 colocado</span>
-                <select id="primeiroColocado" name="primeiroColocado">
-                    <option selected value="{{ info.primeiroColocado }}">{{ info.primeiroColocado }}</option>
-                    <option value="Portugal">Portugal</option>
-                    <option value="Gana">Gana</option>
-                    <option value="Uruguai">Uruguai</option>
-                    <option value="Coréia do Sul">Coréia do Sul</option>
-                </select>
-
-                <span class="lead">2 colocado</span>
-                <select id="segundoColocado" name="segundoColocado">
-                    <option selected value="{{ info.segundoColocado }}">{{ info.segundoColocado }}</option>
-                    <option value="Portugal">Portugal</option>
-                    <option value="Gana">Gana</option>
-                    <option value="Uruguai">Uruguai</option>
-                    <option value="Coréia do Sul">Coréia do Sul</option>
-                </select>
-                <br />
-                <br />
-
-                <button type="submit" class="btn btn-info btn-lg">
-                    <span class="ml-2">Salvar resultados</span>
-                </button>
-            </form>
+    <div class="row">
+        <div class="col-12">
+            <span class="lead mr-2">2º colocado</span>
+            <select id="segundoColocado" name="segundoColocado">
+                <option selected value="{{ info.segundoColocado }}">{{ info.segundoColocado }}</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Gana">Gana</option>
+                <option value="Uruguai">Uruguai</option>
+                <option value="Coréia do Sul">Coréia do Sul</option>
+            </select>
         </div>
     </div>
-</div>
-
-{% endblock %}
+    {% endblock %}

@@ -2,18 +2,23 @@
 
 {% block content %}
 
-<div class="row">
-    <div class="col">
-        <div class="text-center">
-            <h3>Eliminatórias</h3>
-        </div>
-    </div>
-</div>
+<style>
+    .data-jogos {
+        font-size: .9rem;
+        font-weight: 500;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+
+    hr {
+        margin-top: 24px;
+    }
+</style>
 
 <div class="row">
-    <div class="col">
+    <div class="col mt-4">
         <div class="text-center">
-            <h5>Quartas de Final</h5>
+            <h3>Quartas de Final</h3>
         </div>
     </div>
 </div>
@@ -24,49 +29,51 @@
             <form action="{% url 'main:salvareliminatoriasquartas' %}" method="POST">
                 {% csrf_token %}
 
-                <p class="lead"><strong>Jogo 57</strong></p>
+                <h5>Jogo 57</h5>
 
+                <p class="lead data-jogos">SEX, 09/12/2022 às 16:00</p>
                 <span id="selecao1quartas">{{ selecao1quartas }}</span>
                 <input type="number" min="0" max="10" id="res17" name="res17" value="{{ info.res17 }}" required> x
                 <input type="number" min="0" max="10" id="res18" name="res18" value="{{ info.res18 }}" required>
                 <span id="selecao2quartas">{{ selecao2quartas }}</span>
 
-                <br />
-                <br />
+                <hr />
 
-                <p class="lead"><strong>Jogo 58</strong></p>
+                <h5>Jogo 58</h5>
 
+                <p class="lead data-jogos">SEX, 09/12/2022 às 12:00</p>
                 <span id="selecao3quartas">{{ selecao3quartas }}</span>
                 <input type="number" min="0" max="10" id="res19" name="res19" value="{{ info.res19 }}" required> x
                 <input type="number" min="0" max="10" id="res20" name="res20" value="{{ info.res20 }}" required>
                 <span id="selecao4quartas">{{ selecao4quartas }}</span>
 
-                <br />
-                <br />
+                <hr />
 
-                <p class="lead"><strong>Jogo 59</strong></p>
+                <h5>Jogo 59</h5>
 
+                <p class="lead data-jogos">SAB, 10/12/2022 às 16:00</p>
                 <span id="selecao5quartas">{{ selecao5quartas }}</span>
                 <input type="number" min="0" max="10" id="res21" name="res21" value="{{ info.res21 }}" required> x
                 <input type="number" min="0" max="10" id="res22" name="res22" value="{{ info.res22 }}" required>
                 <span id="selecao6quartas">{{ selecao6quartas }}</span>
 
-                <br />
-                <br />
+                <hr />
 
-                <p class="lead"><strong>Jogo 60</strong></p>
+                <h5>Jogo 60</h5>
 
+                <p class="lead data-jogos">SAB, 10/12/2022 às 10:00</p>
                 <span id="selecao7quartas">{{ selecao7quartas }}</span>
                 <input type="number" min="0" max="10" id="res23" name="res23" value="{{ info.res23 }}" required> x
                 <input type="number" min="0" max="10" id="res24" name="res24" value="{{ info.res24 }}" required>
                 <span id="selecao8quartas">{{ selecao8quartas }}</span>
 
-                <br />
-                <br />
+                <hr />
 
-                <button type="submit" class="btn btn-info btn-lg">
-                    <span class="ml-2">Salvar resultados</span>
-                </button>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-info btn-lg">
+                        <span class="ml-2">Salvar resultados</span>
+                    </button>
+                </div>
             </form>
         </div>
     </div>

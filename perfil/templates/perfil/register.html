@@ -4,17 +4,23 @@
 
 {% block content %}
 
-<div class="card">
+<div class="card mt-4 mb-4">
     <div class="card-body">
+
         <h3 class="text-center">
             Login
         </h3>
+
         <form action="" method="POST">
+
             {% csrf_token %}
             {{ form|crispy }}
+
             <input type="submit" value="Registrar" class="btn btn-danger">
+
         </form>
-    </div>
-</div>
+
+    </div> <!-- end card-body -->
+</div> <!-- end card -->
 
 {% endblock %}

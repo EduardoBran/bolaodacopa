@@ -2,8 +2,9 @@
 
 {% block content %}
 
-<div class="card">
+<div class="card mt-4 mb-4">
     <div class="card-body">
+
         <h2 class="text-center">Login</h2>
         <form action="" method="POST">
 
@@ -26,11 +27,12 @@
         <h5 class="text-center">Ainda não é cadastrado? Clique abaixo.</h5>
         <p class="text-center"><a href="{% url 'perfil:register' %}">Criar um novo usuário</a></p>
 
-    </div>
-    <div style="margin-bottom: 20px; margin-left: 10px;">
+    </div> <!-- end card-body -->
+
+    <div class="text-center" style="margin-bottom: 20px; margin-left: 10px;">
         <a class="btn btn-secondary btnVoltarEnquetes" href="{% url 'main:pageindex' %}">Voltar</a>
     </div>
-</div>
 
+</div> <!-- end card -->
 
 {% endblock %}

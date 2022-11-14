@@ -1,19 +1,99 @@
 {% load static %}
 
-<footer class="page-footer font-small bg-dark">
+<style>
+    /* estrutura */
+    .site-footer {
+        padding: 10px 0px;
+        font-size: .9rem;
+        line-height: 30px;
+        box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.1);
+    }
 
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3 text-white" style="background-color:#343a40;">Made by Eduardo brandão
-        <a href="https://www.linkedin.com/in/eduardombrandao/">
-            <img style="width: 30px; height: 30px;"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDsN5i8bCjqal079EJP4B4RgUs1EtyXB8lgRyXFjV9e3Q4Sox-cSljFQ7YeHbyrGTjh5k&usqp=CAU">
-        </a>
-        <a href="https://github.com/EduardoBran?tab=repositories">
-            <img style="width: 29px; height: 28px;"
-                src="https://www.pikpng.com/pngl/m/256-2562286_github-logo-png-github-clipart.png">
-        </a>
+    .mTop {
+        margin-top: 5px;
+    }
+
+    /* texto */
+    .copyright-text {
+        margin: 0;
+    }
+
+    .copyright-text label a {
+        font-size: 1.2rem;
+        color: #fff;
+        margin-right: 10px;
+        font-weight: 499;
+    }
+
+    /* icone rede social */
+    .copyright-text a {
+        font-size: 1.25rem;
+        color: #fff;
+        margin: 0px 7px;
+    }
+
+    .copyright-text a:active,
+    .copyright-text a:focus,
+    .copyright-text a:hover {
+        color: #8A847F;
+        text-decoration: none;
+    }
+
+    /* responsivo */
+    @media (max-width:991px) {
+        .site-footer [class^=col-] {
+            margin-bottom: 30px
+        }
+    }
+
+    @media (max-width:767px) {
+        .site-footer {
+            padding-bottom: 0
+        }
+
+        .site-footer .copyright-text {
+            text-align: center
+        }
+    }
+
+    @media (max-width:500px) {
+        .site-footer {
+            padding-top: 2px;
+            font-size: 1.1rem;
+        }
+
+        .mTop {
+            margin-top: 28px;
+        }
+
+        .copyright-text label {
+            font-size: 1.2rem;
+        }
+
+        .copyright-text a {
+            font-size: 1.15rem;
+            margin: 0px 7px;
+        }
+    }
+</style>
+
+<footer class="site-footer bg-dark">
+
+    <div class="container">
+        <div class="row mTop">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="copyright-text text-center">
+                    <label><a href="{% url 'main:pageindex' %}">By Eduardo Brandão</a></label>
+                    <a href="#" target="_blank" title="">
+                        <i class="fa-brands fa-github fa-lg"></i>
+                    </a>
+                    <a href="#" target="_blank" title="">
+                        <i class="fa-brands fa-linkedin fa-lg"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
     </div>
-    <!-- Copyright -->
 
 </footer>
 

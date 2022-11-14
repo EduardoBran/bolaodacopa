@@ -51,86 +51,86 @@
     }
 </style>
 
-<div class="row mt-4">
-    <div class="col-12">
-        <div class="secao-dias-para-copa">
+<div class="secao-dias-para-copa mt-4">
+    <div class="row align-items-center justify-content-center">
 
+        <div class="col-12">
             <div class="titulo-dias-para-copa mb-4">
                 A COPA DO MUNDO COMEÇA EM:
             </div>
-
-            <div class="row align-items-center justify-content-center">
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-block">
-                            <div class="card-title">
-                                <p class="lead lead-dias-para-copa" id="dias">{{ dia }}</p>
-                                <p style="margin-top: -17px;">dias</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-block">
-                            <div class="card-title">
-                                <p class="lead lead-dias-para-copa" id="horas">{{ hora }}</p>
-                                <p style="margin-top: -17px;">horas</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-block">
-                            <div class="card-title">
-                                <p class="lead lead-dias-para-copa" id="minutos">{{ minuto }}</p>
-                                <p style="margin-top: -17px;">minutos</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
-    </div>
-</div>
+
+        <div class="col-3">
+            <div class="card">
+                <div class="card-block">
+                    <div class="card-title">
+                        <p class="lead lead-dias-para-copa" id="dias">{{ dia }}</p>
+                        <p style="margin-top: -17px;">dias</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="card">
+                <div class="card-block">
+                    <div class="card-title">
+                        <p class="lead lead-dias-para-copa" id="horas">{{ hora }}</p>
+                        <p style="margin-top: -17px;">horas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="card">
+                <div class="card-block">
+                    <div class="card-title">
+                        <p class="lead lead-dias-para-copa" id="minutos">{{ minuto }}</p>
+                        <p style="margin-top: -17px;">minutos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- end row -->
+</div> <!-- end secao-dias-para-copa -->
+
 
 <div class="secao-entrar mt-4 mb-4">
-    <div class="col-12">
+    <div class="row">
 
-        <div class="row">
+        <div class="text-center col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <h3>Palpites Copa Do Mundo</h3>
+        </div>
 
-            <div class="col-12 ml-2">
-                <h3>Palpites Copa Do Mundo</h3>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-5" style="padding-left: 30px;">
-                <p class="lead">1) Faça seu cadastro.</p>
-                <p class="lead">2) Já tem cadastro? Faça seu login.</p>
-                <p class="lead">3) Salve seus palpites.</p>
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6"></div>
 
-                <div class="botao-entrar text-center mr-2 mb-4 mt-5">
-                    {% if request.user.is_authenticated %}
-                    <a class="nav-link" href="{% url 'main:pagemain' %}">
-                        <button class="btn btn-warning btn-sm"
-                            style="width: 170px; height: 45px; font-size: 17px;"><strong>Entrar</strong></button>
-                    </a>
-                    {% else %}
-                    <a class="nav-link" href="{% url 'perfil:login' %}">
-                        <button class="btn btn-warning btn-sm"
-                            style="width: 170px; height: 45px; font-size: 17px;"><strong>Entrar</strong></button>
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mx-auto text-center">
-                <img class="img-responsive img-fluid" src="https://i.postimg.cc/Sj0VDJwR/copa-do-mundoedit.jpg" alt="">
+        <div class="text-center col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-5" style="padding-left: 30px;">
+            <p class="lead">1) Faça seu cadastro.</p>
+            <p class="lead">2) Já tem cadastro? Faça seu login.</p>
+            <p class="lead">3) Salve seus palpites.</p>
+
+            <div class="botao-entrar text-center mr-2 mb-4 mt-5">
+                {% if request.user.is_authenticated %}
+                <a class="nav-link" href="{% url 'main:pagemain' %}">
+                    <button class="btn btn-warning btn-sm"
+                        style="width: 170px; height: 45px; font-size: 17px;"><strong>Entrar</strong></button>
+                </a>
+                {% else %}
+                <a class="nav-link" href="{% url 'perfil:login' %}">
+                    <button class="btn btn-warning btn-sm"
+                        style="width: 170px; height: 45px; font-size: 17px;"><strong>Entrar</strong></button>
+                </a>
+                {% endif %}
             </div>
         </div>
-    </div>
-</div>
+
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mx-auto text-center">
+            <img class="img-responsive img-fluid" src="https://i.postimg.cc/Sj0VDJwR/copa-do-mundoedit.jpg" alt="">
+        </div>
+
+    </div> <!-- end row -->
+</div> <!-- end secao-entrar -->
 
 {% endblock %}

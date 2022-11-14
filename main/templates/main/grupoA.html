@@ -8,8 +8,8 @@
     .data-jogos {
         font-size: .9rem;
         font-weight: 500;
-        margin-top: 16px;
-        margin-bottom: 10px;
+        margin-top: 24px;
+        margin-bottom: 20px;
     }
 
     hr {
@@ -17,8 +17,30 @@
     }
 
     input {
-        width: 35px;
+        width: 55px;
         text-align: center;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        opacity: 1;
+    }
+
+    @media (max-width: 475px) {
+        input {
+            width: 40px;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            opacity: 0;
+        }
+    }
+
+    @media (max-width: 386px) {
+        input {
+            width: 32px;
+        }
     }
 </style>
 

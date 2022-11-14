@@ -4,6 +4,8 @@
 
 {% block content %}
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
+
 <style>
     .data-jogos {
         font-size: .9rem;
@@ -16,24 +18,34 @@
         margin-top: 24px;
     }
 
+    .nome-selecoes {
+        font-size: 1.1rem;
+    }
+
+    .bandeira-main {
+        font-size: 26px;
+        border-radius: 10%;
+    }
+
     input {
         width: 55px;
         text-align: center;
+        border: 2px solid #84CAD5;
+        margin-top: 20px;
     }
 
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-        opacity: 1;
+    input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+        appearance: textfield;
     }
 
     @media (max-width: 475px) {
         input {
             width: 40px;
-        }
-
-        input[type=number]::-webkit-inner-spin-button,
-        input[type=number]::-webkit-outer-spin-button {
-            opacity: 0;
         }
     }
 
@@ -65,37 +77,41 @@
 
                 {% block data-primeira-rodada-1 %}
                 <p class="lead data-jogos">DOM, 20/11/2022 às 13:00</p>
-                {% endblock %}
                 <div class="row">
                     <div class="col-4 text-right">
-                        <span class="nome-selecoes">{{ info.selecao1 }}</span>
+                        <p class="nome-selecoes">{{ info.selecao1 }}</p>
+                        <p class="fi fi-qa bandeira-main"></p>
                     </div>
                     <div class="col-4">
                         <input type="number" min="0" max="10" id="res1" name="res1" value="{{ info.res1 }}"> X
                         <input type="number" min="0" max="10" id="res2" name="res2" value="{{ info.res2 }}">
                     </div>
                     <div class="col-4 text-left">
-                        <span class="nome-selecoes">{{ info.selecao2 }}</span>
+                        <p class="nome-selecoes">{{ info.selecao2 }}</p>
+                        <p class="fi fi-ec bandeira-main"></p>
                     </div>
                 </div>
+                {% endblock %}
 
                 <div class="mt-4 mb-4"></div>
 
                 {% block data-primeira-rodada-2 %}
                 <p class="lead data-jogos">SEG, 21/11/2022 às 13:00</p>
-                {% endblock %}
                 <div class="row">
                     <div class="col-4 text-right">
-                        <span class="nome-selecoes">{{ info.selecao3 }}</span>
+                        <p class="nome-selecoes">{{ info.selecao3 }}</p>
+                        <p class="fi fi-sn bandeira-main"></p>
                     </div>
                     <div class="col-4">
                         <input type="number" min="0" max="10" id="res3" name="res3" value="{{ info.res3 }}"> X
                         <input type="number" min="0" max="10" id="res4" name="res4" value="{{ info.res4 }}">
                     </div>
                     <div class="col-4 text-left">
-                        <span class="nome-selecoes">{{ info.selecao4 }}</span>
+                        <p class="nome-selecoes">{{ info.selecao4 }}</p>
+                        <p class="fi fi-nl bandeira-main"></p>
                     </div>
                 </div>
+                {% endblock %}
 
                 <hr />
 
@@ -103,37 +119,41 @@
 
                 {% block data-segunda-rodada-1 %}
                 <p class="lead data-jogos">SEXTA, 25/11/2022 às 10:00</p>
-                {% endblock %}
                 <div class="row">
                     <div class="col-4 text-right">
-                        <span class="nome-selecoes">{{ info.selecao1 }}</span>
+                        <p class="nome-selecoes">{{ info.selecao1 }}</p>
+                        <p class="fi fi-qa bandeira-main"></p>
                     </div>
                     <div class="col-4">
                         <input type="number" min="0" max="10" id="res5" name="res5" value="{{ info.res5 }}"> X
                         <input type="number" min="0" max="10" id="res6" name="res6" value="{{ info.res6 }}">
                     </div>
                     <div class="col-4 text-left">
-                        <span class="nome-selecoes">{{ info.selecao3 }}</span>
+                        <p class="nome-selecoes">{{ info.selecao3 }}</p>
+                        <p class="fi fi-sn bandeira-main"></p>
                     </div>
                 </div>
+                {% endblock %}
 
                 <div class="mt-4 mb-4"></div>
 
                 {% block data-segunda-rodada-2 %}
                 <p class="lead data-jogos">SEXTA, 25/11/2022 às 13:00</p>
-                {% endblock %}
                 <div class="row">
                     <div class="col-4 text-right">
-                        <span class="nome-selecoes">{{ info.selecao4 }}</span>
+                        <p class="nome-selecoes">{{ info.selecao4 }}</p>
+                        <p class="fi fi-nl bandeira-main"></p>
                     </div>
                     <div class="col-4">
                         <input type="number" min="0" max="10" id="res7" name="res7" value="{{ info.res7 }}"> X
                         <input type="number" min="0" max="10" id="res8" name="res8" value="{{ info.res8 }}">
                     </div>
                     <div class="col-4 text-left">
-                        <span class="nome-selecoes">{{ info.selecao2 }}</span>
+                        <p class="nome-selecoes">{{ info.selecao2 }}</p>
+                        <p class="fi fi-ec bandeira-main"></p>
                     </div>
                 </div>
+                {% endblock %}
 
                 <hr />
 
@@ -141,37 +161,41 @@
 
                 {% block data-terceira-rodada-1 %}
                 <p class="lead data-jogos">TER, 29/11/2022 às 12:00</p>
-                {% endblock %}
                 <div class="row">
                     <div class="col-4 text-right">
-                        <span class="nome-selecoes">{{ info.selecao4 }}</span>
+                        <p class="nome-selecoes">{{ info.selecao4 }}</p>
+                        <p class="fi fi-nl bandeira-main"></p>
                     </div>
                     <div class="col-4">
                         <input type="number" min="0" max="10" id="res9" name="res9" value="{{ info.res9 }}"> X
                         <input type="number" min="0" max="10" id="res10" name="res10" value="{{ info.res10 }}">
                     </div>
                     <div class="col-4 text-left">
-                        <span class="nome-selecoes">{{ info.selecao1 }}</span>
+                        <p class="nome-selecoes">{{ info.selecao1 }}</p>
+                        <p class="fi fi-qa bandeira-main"></p>
                     </div>
                 </div>
+                {% endblock %}
 
                 <div class="mt-4 mb-4"></div>
 
                 {% block data-terceira-rodada-2 %}
                 <p class="lead data-jogos">TER, 29/11/2022 às 12:00</p>
-                {% endblock %}
                 <div class="row">
                     <div class="col-4 text-right">
-                        <span class="nome-selecoes">{{ info.selecao2 }}</span>
+                        <p class="nome-selecoes">{{ info.selecao2 }}</p>
+                        <p class="fi fi-ec bandeira-main"></p>
                     </div>
                     <div class="col-4">
                         <input type="number" min="0" max="10" id="res11" name="res11" value="{{ info.res11 }}"> X
                         <input type="number" min="0" max="10" id="res12" name="res12" value="{{ info.res12 }}">
                     </div>
                     <div class="col-4 text-left">
-                        <span class="nome-selecoes">{{ info.selecao3 }}</span>
+                        <p class="nome-selecoes">{{ info.selecao3 }}</p>
+                        <p class="fi fi-sn bandeira-main"></p>
                     </div>
                 </div>
+                {% endblock %}
 
                 <hr />
 
@@ -209,7 +233,7 @@
 
                 <br />
 
-                <div class="mt-4">
+                <div class="mt-3 mb-4">
                     <button type="submit" class="btn btn-info btn-lg mr-2">
                         <span class="">Salvar</span>
                     </button>

@@ -8,26 +8,110 @@
 
     {% block data-primeira-rodada-1 %}
     <p class="lead data-jogos">TER, 22/11/2022 às 07:00</p>
+    <div class="row">
+        <div class="col-4 text-right">
+            <p class="nome-selecoes">{{ info.selecao1 }}</p>
+            <p class="fi fi-ar bandeira-main"></p>
+        </div>
+        <div class="col-4">
+            <input type="number" min="0" max="10" id="res1" name="res1" value="{{ info.res1 }}"> X
+            <input type="number" min="0" max="10" id="res2" name="res2" value="{{ info.res2 }}">
+        </div>
+        <div class="col-4 text-left">
+            <p class="nome-selecoes">{{ info.selecao2 }}</p>
+            <p class="fi fi-sa bandeira-main"></p>
+        </div>
+    </div>
     {% endblock %}
 
     {% block data-primeira-rodada-2 %}
     <p class="lead data-jogos">TER, 22/11/2022 às 13:00</p>
+    <div class="row">
+        <div class="col-4 text-right">
+            <p class="nome-selecoes">{{ info.selecao3 }}</p>
+            <p class="fi fi-mx bandeira-main"></p>
+        </div>
+        <div class="col-4">
+            <input type="number" min="0" max="10" id="res3" name="res3" value="{{ info.res3 }}"> X
+            <input type="number" min="0" max="10" id="res4" name="res4" value="{{ info.res4 }}">
+        </div>
+        <div class="col-4 text-left">
+            <p class="nome-selecoes">{{ info.selecao4 }}</p>
+            <p class="fi fi-pl bandeira-main"></p>
+        </div>
+    </div>
     {% endblock %}
 
     {% block data-segunda-rodada-1 %}
     <p class="lead data-jogos">SAB, 26/11/2022 às 16:00</p>
+    <div class="row">
+        <div class="col-4 text-right">
+            <p class="nome-selecoes">{{ info.selecao1 }}</p>
+            <p class="fi fi-ar bandeira-main"></p>
+        </div>
+        <div class="col-4">
+            <input type="number" min="0" max="10" id="res5" name="res5" value="{{ info.res5 }}"> X
+            <input type="number" min="0" max="10" id="res6" name="res6" value="{{ info.res6 }}">
+        </div>
+        <div class="col-4 text-left">
+            <p class="nome-selecoes">{{ info.selecao3 }}</p>
+            <p class="fi fi-mx bandeira-main"></p>
+        </div>
+    </div>
     {% endblock %}
 
     {% block data-segunda-rodada-2 %}
     <p class="lead data-jogos">SAB, 26/11/2022 às 10:00</p>
+    <div class="row">
+        <div class="col-4 text-right">
+            <p class="nome-selecoes">{{ info.selecao4 }}</p>
+            <p class="fi fi-pl bandeira-main"></p>
+        </div>
+        <div class="col-4">
+            <input type="number" min="0" max="10" id="res7" name="res7" value="{{ info.res7 }}"> X
+            <input type="number" min="0" max="10" id="res8" name="res8" value="{{ info.res8 }}">
+        </div>
+        <div class="col-4 text-left">
+            <p class="nome-selecoes">{{ info.selecao2 }}</p>
+            <p class="fi fi-sa bandeira-main"></p>
+        </div>
+    </div>
     {% endblock %}
 
     {% block data-terceira-rodada-1 %}
     <p class="lead data-jogos">QUA, 30/11/2022 às 16:00</p>
+    <div class="row">
+        <div class="col-4 text-right">
+            <p class="nome-selecoes">{{ info.selecao4 }}</p>
+            <p class="fi fi-pl bandeira-main"></p>
+        </div>
+        <div class="col-4">
+            <input type="number" min="0" max="10" id="res9" name="res9" value="{{ info.res9 }}"> X
+            <input type="number" min="0" max="10" id="res10" name="res10" value="{{ info.res10 }}">
+        </div>
+        <div class="col-4 text-left">
+            <p class="nome-selecoes">{{ info.selecao1 }}</p>
+            <p class="fi fi-ar bandeira-main"></p>
+        </div>
+    </div>
     {% endblock %}
 
     {% block data-terceira-rodada-2 %}
     <p class="lead data-jogos">QUA, 30/11/2022 às 16:00</p>
+    <div class="row">
+        <div class="col-4 text-right">
+            <p class="nome-selecoes">{{ info.selecao2 }}</p>
+            <p class="fi fi-sa bandeira-main"></p>
+        </div>
+        <div class="col-4">
+            <input type="number" min="0" max="10" id="res11" name="res11" value="{{ info.res11 }}"> X
+            <input type="number" min="0" max="10" id="res12" name="res12" value="{{ info.res12 }}">
+        </div>
+        <div class="col-4 text-left">
+            <p class="nome-selecoes">{{ info.selecao3 }}</p>
+            <p class="fi fi-mx bandeira-main"></p>
+        </div>
+    </div>
     {% endblock %}
 
     {% block primeirosColocados %}
@@ -38,7 +122,7 @@
             <select id="primeiroColocado" name="primeiroColocado">
                 <option selected value="{{ info.primeiroColocado }}">{{ info.primeiroColocado }}</option>
                 <option value="Argentina">Argentina</option>
-                <option value="Arábia Saudita">Arábia Saudita</option>
+                <option value="A. Saudita">A. Saudita</option>
                 <option value="México">México</option>
                 <option value="Polônia">Polônia</option>
             </select>
@@ -53,7 +137,7 @@
             <select id="segundoColocado" name="segundoColocado">
                 <option selected value="{{ info.segundoColocado }}">{{ info.segundoColocado }}</option>
                 <option value="Argentina">Argentina</option>
-                <option value="Arábia Saudita">Arábia Saudita</option>
+                <option value="A. Saudita">A. Saudita</option>
                 <option value="México">México</option>
                 <option value="Polônia">Polônia</option>
             </select>

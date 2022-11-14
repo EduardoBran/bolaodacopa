@@ -355,3 +355,17 @@ class PremioIndividual(Base):
 
     def __str__(self):
         return f'Premiação Individual'
+
+
+class PontuacaoUsuarios(Base):
+    usuario = models.ForeignKey(
+        User, on_delete=models.CASCADE, verbose_name='Usuário')
+    
+    pontos = models.SmallIntegerField(verbose_name='Pontos', default=0)
+    
+    class Meta:
+        verbose_name = 'Tabela Pts Usuários'
+        verbose_name_plural = 'Tabela Pts Usuários'
+
+    def __str__(self):
+        return f'Tabela Pts Usuários'

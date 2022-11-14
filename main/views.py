@@ -44,6 +44,8 @@ class PageIndex(TemplateView):
         context['hora'] = tempo_para_copa[2]
         context['minuto'] = tempo_para_copa[3]
         
+        context['usuarios'] = PontuacaoUsuarios.objects.all()
+        
         return context
 
 

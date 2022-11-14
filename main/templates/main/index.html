@@ -44,6 +44,35 @@
         padding-bottom: 20px;
     }
 
+    .secao-tabela-usuarios {
+        background-color: #fff;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    @media (max-width: 1000px) {
+        .secao-tabela-usuarios {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+
+    @media (max-width: 750px) {
+        .secao-tabela-usuarios {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .secao-tabela-usuarios {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
     @media (max-width: 450px) {
         .card {
             width: 80px;
@@ -131,6 +160,39 @@
         </div>
 
     </div> <!-- end row -->
+</div> <!-- end secao-entrar -->
+
+<div class="secao-tabela-usuarios mt-4 mb-4">
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="text-center">
+                <h3>Tabela Pontuação Usuários</h3>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-bordered">
+
+        <thead>
+            <tr>
+                <th scope="col">Usuário</th>
+                <th scope="col">Pontos</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.usuario }}</td>
+                <td>{{ usuario.pontos }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+
+    </table> <!-- end table -->
 </div> <!-- end secao-entrar -->
 
 {% endblock %}

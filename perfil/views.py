@@ -72,6 +72,10 @@ def loginPage(request):
                         PremioIndividual.objects.create(
                             usuario=user
                         )
+                    if not PontuacaoUsuarios.objects.filter(usuario=request.user).exists():
+                        PontuacaoUsuarios.objects.create(
+                            usuario=user
+                        )
                         
                     return redirect('main:pagemain')
                 else:
@@ -171,6 +175,10 @@ def registerPage(request):
                     )
                     if not PremioIndividual.objects.filter(usuario=request.user).exists():
                         PremioIndividual.objects.create(
+                            usuario=user
+                        )
+                    if not PontuacaoUsuarios.objects.filter(usuario=request.user).exists():
+                        PontuacaoUsuarios.objects.create(
                             usuario=user
                         )
                     return redirect('main:pagemain')

@@ -66,6 +66,12 @@ class EliminatoriasAdmin(admin.ModelAdmin):
         'usuario',
     )
     
+class PremioIndividualAdmin(admin.ModelAdmin):
+    list_display = ('usuario',)
+    
+    list_display_links = (
+        'usuario',
+    )
 
 admin.site.register(GrupoA, GrupoAAdmin)
 admin.site.register(GrupoB, GrupoBAdmin)
@@ -76,3 +82,4 @@ admin.site.register(GrupoF, GrupoFAdmin)
 admin.site.register(GrupoG, GrupoGAdmin)
 admin.site.register(GrupoH, GrupoHAdmin)
 admin.site.register(Eliminatorias, EliminatoriasAdmin)
+admin.site.register(PremioIndividual, PremioIndividualAdmin)

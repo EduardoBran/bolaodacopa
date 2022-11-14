@@ -338,3 +338,20 @@ class Eliminatorias(Base):
 
     def __str__(self):
         return f'Eliminatórias'
+    
+    
+class PremioIndividual(Base):
+    usuario = models.ForeignKey(
+        User, on_delete=models.CASCADE, verbose_name='Usuário')
+    
+    melhorJogador = models.CharField(max_length=50, verbose_name='Melhor Jogador', blank=True, null=True, default='')
+    artilheiro = models.CharField(max_length=50, verbose_name='Melhor Jogador', blank=True, null=True, default='')
+    artilheiroGols = models.SmallIntegerField(blank=True, null=True, verbose_name='Gols Artilheiro', default=0)
+    melhorJogadorJovem = models.CharField(max_length=50, verbose_name='Melhor Jogador Jovem', blank=True, null=True, default='')
+    
+    class Meta:
+        verbose_name = 'Premiação Individual'
+        verbose_name_plural = 'Premiação Individual'
+
+    def __str__(self):
+        return f'Premiação Individual'

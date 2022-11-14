@@ -110,6 +110,11 @@ class ResultadosEliminatoriasFinaisForm(forms.ModelForm):
         model = Eliminatorias
         fields = ('res29', 'res30', 'res31', 'res32')
 
+class ResultadosPremioIndividualForm(forms.ModelForm):
+    class Meta:
+        model = PremioIndividual
+        fields = ('melhorJogador', 'artilheiro', 'artilheiroGols', 'melhorJogadorJovem')
+
 
 class ContatoForm(forms.Form):
     nome = forms.CharField(label="Nome", max_length=100)

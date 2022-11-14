@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .conteudo-page-premiacao-texto {
+        text-align: right;
+    }
+
+    .conteudo-page-premiacao-input {
+        text-align: left;
+    }
+
+    hr {
+        margin-top: 24px;
+    }
+
+    input[type=text] {
+        width: 160px;
+        text-align: center;
+        border: 2px solid #84CAD5;
+    }
+
+    input[type=number] {
+        width: 55px;
+        text-align: center;
+        border: 2px solid #84CAD5;
+    }
+
+    input[type=number]::-webkit-inner-spin-button {
+        opacity: 1;
+    }
+
+
+    @media (max-width: 1000px) {
+        .conteudo-page-premiacao-texto {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .conteudo-page-premiacao-input {
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 600px) {
+        input[type=text] {
+            width: 95%;
+        }
+
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+            padding-right: 5px;
+        }
+    }
+</style>
+
+<div class="row">
+    <div class="col mt-4">
+        <div class="text-center">
+            <h3>Premiações Individuais</h3>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="text-center">
+            <form action="{% url 'main:salvarpremiacaoindividual' %}" method="POST">
+                {% csrf_token %}
+
+                <h5>Melhor Jogador</h5>
+                <div class="row mt-4">
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 conteudo-page-premiacao-texto">
+                        <span class="nome-selecoes">Digite o nome do jogador:</span>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 conteudo-page-premiacao-input">
+                        <input type="text" id="melhorJogador" name="melhorJogador" value="{{ info.melhorJogador }}">
+                    </div>
+                </div>
+
+                <hr />
+
+                <h5>Artilheiro</h5>
+                <div class="row mt-4">
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 conteudo-page-premiacao-texto">
+                        <span class="nome-selecoes">Digite o nome do jogador:</span>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 conteudo-page-premiacao-input">
+                        <input type="text" id="artilheiro" name="artilheiro" value="{{ info.artilheiro }}">
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 conteudo-page-premiacao-texto mt-4">
+                        <span class="nome-selecoes">Digite a quantidade de gols:</span>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 conteudo-page-premiacao-input mt-4">
+                        <input type="number" id="artilheiroGols" name="artilheiroGols"
+                            value="{{ info.artilheiroGols }}">
+                    </div>
+                </div>
+
+                <hr />
+
+                <h5>Melhor Jogador Jovem</h5>
+                <div class="row mt-4">
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 conteudo-page-premiacao-texto">
+                        <span class="nome-selecoes">Digite o nome do jogador:</span>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 conteudo-page-premiacao-input">
+                        <input type="text" id="melhorJogadorJovem" name="melhorJogadorJovem"
+                            value="{{ info.melhorJogadorJovem }}">
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-info btn-lg mr-2">
+                        <span class="">Salvar</span>
+                    </button>
+                    <a href="{% url 'main:pagemain' %}">
+                        <button type="button" class="btn btn-info btn-lg">
+                            <span class="">Voltar</span>
+                        </button>
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

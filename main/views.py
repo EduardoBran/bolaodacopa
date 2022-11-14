@@ -105,6 +105,10 @@ class DispatchLoginRequiredMixin(View):
         context["eliminatorias"] = Eliminatorias.objects.all().filter(
             usuario=self.request.user
         )
+        context["premiacao"] = PremioIndividual.objects.all().filter(
+            usuario=self.request.user
+        )
+        
         return context
     
     def get_queryset(self, *args, **kwargs):
@@ -937,6 +941,36 @@ class PageMain(DispatchLoginRequiredMixin, TemplateView):
             context['resultados_final'] = False
         else:
             context['resultados_final'] = True
+        
+        # premiacao individual
+        melhorJogador = PremioIndividual.objects.all().filter(
+            usuario=self.request.user
+        ).values('melhorJogador')
+        melhorJogador = resultadosNone(melhorJogador, res='melhorJogador')
+        artilheiro = PremioIndividual.objects.all().filter(
+            usuario=self.request.user
+        ).values('artilheiro')
+        artilheiro = resultadosNone(artilheiro, res='artilheiro')
+        artilheiroGols = PremioIndividual.objects.all().filter(
+            usuario=self.request.user
+        ).values('artilheiroGols')
+        artilheiroGols = resultadosNone(artilheiroGols, res='artilheiroGols')
+        melhorJogadorJovem = PremioIndividual.objects.all().filter(
+            usuario=self.request.user
+        ).values('melhorJogadorJovem')
+        melhorJogadorJovem = resultadosNone(melhorJogadorJovem, res='melhorJogadorJovem')
+        
+        dict_res = []
+        dict_res.append(melhorJogador)
+        dict_res.append(artilheiro)
+        dict_res.append(artilheiroGols)
+        dict_res.append(melhorJogadorJovem)
+        
+        if None in dict_res or '' in dict_res:
+            context['resultados_premiacao'] = False
+        else:
+            context['resultados_premiacao'] = True
+        
         
         return context
     
@@ -2473,3 +2507,39 @@ def SalvarEliminatoriasFinal(request):
         
     elif request.method == 'GET':
         return render(request, 'main/eliminatoriasFinal.html', {'form': form})
+    
+
+class PagePremiacaoIndividual(DispatchLoginRequiredMixin, DetailView):
+    model = PremioIndividual
+    template_name = 'main/premiacaoIndividual.html'
+    context_object_name = 'info'
+    pk_url_kwarg = 'pk'
+    
+
+def SalvarPremiacaoIndividual(request):
+    form = ResultadosPremioIndividualForm()
+    
+    if request.method == 'POST':
+        form = ResultadosPremioIndividualForm(request.POST)
+        
+        if form.is_valid():
+            melhorJogador = form.cleaned_data['melhorJogador']
+            artilheiro = form.cleaned_data['artilheiro']
+            artilheiroGols = form.cleaned_data['artilheiroGols']
+            melhorJogadorJovem = form.cleaned_data['melhorJogadorJovem']
+
+            PremioIndividual.objects.filter(usuario=request.user).update(
+                    melhorJogador=melhorJogador, artilheiro=artilheiro,
+                    artilheiroGols=artilheiroGols, melhorJogadorJovem=melhorJogadorJovem
+                )
+            
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Sua tabela de premiações individuais foi atualizada.'
+            )
+            return redirect('main:pagemain')
+        
+    elif request.method == 'GET':
+        return render(request, 'main/premiacaoIndividual.html', {'form': form})
+    

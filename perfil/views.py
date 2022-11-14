@@ -68,6 +68,10 @@ def loginPage(request):
                         Eliminatorias.objects.create(
                             usuario=user
                         )
+                    if not PremioIndividual.objects.filter(usuario=request.user).exists():
+                        PremioIndividual.objects.create(
+                            usuario=user
+                        )
                         
                     return redirect('main:pagemain')
                 else:
@@ -165,6 +169,10 @@ def registerPage(request):
                         Eliminatorias.objects.create(
                             usuario=user
                     )
+                    if not PremioIndividual.objects.filter(usuario=request.user).exists():
+                        PremioIndividual.objects.create(
+                            usuario=user
+                        )
                     return redirect('main:pagemain')
             else:
                 messages.add_message(

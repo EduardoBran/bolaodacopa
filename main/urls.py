@@ -20,6 +20,7 @@ urlpatterns = [
     path('main/eliminatoriasQuartas/<int:pk>', views.PageEliminatoriasQuartas.as_view(), name='eliminatoriasQuartas'),
     path('main/eliminatoriasSemi/<int:pk>', views.PageEliminatoriasSemi.as_view(), name='eliminatoriasSemi'),
     path('main/eliminatoriasFinal/<int:pk>', views.PageEliminatoriasFinal.as_view(), name='eliminatoriasFinal'),
+    path('main/premiacaoIndividual/<int:pk>', views.PagePremiacaoIndividual.as_view(), name='premiacaoIndividual'),
     path('salvartabelagrupoa/', views.SalvarTabelaGrupoA, name='salvartabelagrupoA'),
     path('salvartabelagrupob/', views.SalvarTabelaGrupoB, name='salvartabelagrupoB'),
     path('salvartabelagrupoc/', views.SalvarTabelaGrupoC, name='salvartabelagrupoC'),
@@ -32,4 +33,5 @@ urlpatterns = [
     path('salvareliminatoriasquartas/', views.SalvarEliminatoriasQuartas, name='salvareliminatoriasquartas'),
     path('salvareliminatoriassemi/', views.SalvarEliminatoriasSemi, name='salvareliminatoriassemi'),
     path('salvareliminatoriasfinal/', views.SalvarEliminatoriasFinal, name='salvareliminatoriasfinal'),
+    path('salvarpremiacoesindividuais/', views.SalvarPremiacaoIndividual, name='salvarpremiacaoindividual'),
 ]

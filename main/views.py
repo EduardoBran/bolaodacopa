@@ -15,6 +15,12 @@ def CondicaoNomeSelecaoEliminatorias(selecao):
     else:
         return True
 
+def resultadosNone(grupoResultado,res):
+    grupoResultado = list(grupoResultado)
+    grupoResultado = grupoResultado[0]
+    grupoResultado = grupoResultado[res]
+            
+    return grupoResultado
 
 class PageIndex(TemplateView):
     template_name='main/index.html'
@@ -58,6 +64,7 @@ def sobreView(request):
         'form':form
     }
     return render(request, 'main/sobre.html', context)    
+
 
 class DispatchLoginRequiredMixin(View):
     def dispatch(self, *args, **kwargs):
@@ -108,6 +115,830 @@ class DispatchLoginRequiredMixin(View):
 
 class PageMain(DispatchLoginRequiredMixin, TemplateView):
     template_name='main/main.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        grupoRes1 = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('res1')
+        grupoRes1 = resultadosNone(grupoRes1, res='res1')
+        grupoRes2 = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('res2')
+        grupoRes2 = resultadosNone(grupoRes2, res='res2')
+        grupoRes3 = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('res3')
+        grupoRes3 = resultadosNone(grupoRes3, res='res3')
+        grupoRes4 = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('res4')
+        grupoRes4 = resultadosNone(grupoRes4, res='res4')
+        grupoRes5 = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('res5')
+        grupoRes5 = resultadosNone(grupoRes5, res='res5')
+        grupoRes6 = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('res6')
+        grupoRes6 = resultadosNone(grupoRes6, res='res6')
+        grupoRes7 = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('res7')
+        grupoRes7 = resultadosNone(grupoRes7, res='res7')
+        grupoRes8 = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('res8')
+        grupoRes8 = resultadosNone(grupoRes8, res='res8')
+        grupoRes9 = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('res9')
+        grupoRes9 = resultadosNone(grupoRes9, res='res9')
+        grupoRes10 = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('res10')
+        grupoRes10 = resultadosNone(grupoRes10, res='res10')
+        grupoRes11 = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('res11')
+        grupoRes11 = resultadosNone(grupoRes11, res='res11')
+        grupoRes12 = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('res12')
+        grupoRes12 = resultadosNone(grupoRes12, res='res12')
+        grupoPrimeiroColocado = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('primeiroColocado')
+        grupoPrimeiroColocado = resultadosNone(grupoPrimeiroColocado, res='primeiroColocado')
+        grupoSegundoColocado = GrupoA.objects.all().filter(
+            usuario=self.request.user
+        ).values('segundoColocado')
+        grupoSegundoColocado = resultadosNone(grupoSegundoColocado, res='segundoColocado')
+        
+        dict_res = []
+        dict_res.append(grupoRes1)
+        dict_res.append(grupoRes2)
+        dict_res.append(grupoRes3)
+        dict_res.append(grupoRes4)
+        dict_res.append(grupoRes5)
+        dict_res.append(grupoRes6)
+        dict_res.append(grupoRes7)
+        dict_res.append(grupoRes8)
+        dict_res.append(grupoRes9)
+        dict_res.append(grupoRes10)
+        dict_res.append(grupoRes11)
+        dict_res.append(grupoRes12)
+        dict_res.append(grupoPrimeiroColocado)
+        dict_res.append(grupoSegundoColocado)
+        
+        if None in dict_res or '' in dict_res:
+            context['resultados_a'] = False
+        else:
+            context['resultados_a'] = True
+        
+        grupoRes1 = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('res1')
+        grupoRes1 = resultadosNone(grupoRes1, res='res1')
+        grupoRes2 = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('res2')
+        grupoRes2 = resultadosNone(grupoRes2, res='res2')
+        grupoRes3 = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('res3')
+        grupoRes3 = resultadosNone(grupoRes3, res='res3')
+        grupoRes4 = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('res4')
+        grupoRes4 = resultadosNone(grupoRes4, res='res4')
+        grupoRes5 = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('res5')
+        grupoRes5 = resultadosNone(grupoRes5, res='res5')
+        grupoRes6 = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('res6')
+        grupoRes6 = resultadosNone(grupoRes6, res='res6')
+        grupoRes7 = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('res7')
+        grupoRes7 = resultadosNone(grupoRes7, res='res7')
+        grupoRes8 = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('res8')
+        grupoRes8 = resultadosNone(grupoRes8, res='res8')
+        grupoRes9 = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('res9')
+        grupoRes9 = resultadosNone(grupoRes9, res='res9')
+        grupoRes10 = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('res10')
+        grupoRes10 = resultadosNone(grupoRes10, res='res10')
+        grupoRes11 = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('res11')
+        grupoRes11 = resultadosNone(grupoRes11, res='res11')
+        grupoRes12 = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('res12')
+        grupoRes12 = resultadosNone(grupoRes12, res='res12')
+        grupoPrimeiroColocado = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('primeiroColocado')
+        grupoPrimeiroColocado = resultadosNone(grupoPrimeiroColocado, res='primeiroColocado')
+        grupoSegundoColocado = GrupoB.objects.all().filter(
+            usuario=self.request.user
+        ).values('segundoColocado')
+        grupoSegundoColocado = resultadosNone(grupoSegundoColocado, res='segundoColocado')
+        
+        dict_res = []
+        dict_res.append(grupoRes1)
+        dict_res.append(grupoRes2)
+        dict_res.append(grupoRes3)
+        dict_res.append(grupoRes4)
+        dict_res.append(grupoRes5)
+        dict_res.append(grupoRes6)
+        dict_res.append(grupoRes7)
+        dict_res.append(grupoRes8)
+        dict_res.append(grupoRes9)
+        dict_res.append(grupoRes10)
+        dict_res.append(grupoRes11)
+        dict_res.append(grupoRes12)
+        dict_res.append(grupoPrimeiroColocado)
+        dict_res.append(grupoSegundoColocado)
+        
+        if None in dict_res:
+            context['resultados_b'] = False
+        else:
+            context['resultados_b'] = True
+        
+        grupoRes1 = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('res1')
+        grupoRes1 = resultadosNone(grupoRes1, res='res1')
+        grupoRes2 = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('res2')
+        grupoRes2 = resultadosNone(grupoRes2, res='res2')
+        grupoRes3 = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('res3')
+        grupoRes3 = resultadosNone(grupoRes3, res='res3')
+        grupoRes4 = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('res4')
+        grupoRes4 = resultadosNone(grupoRes4, res='res4')
+        grupoRes5 = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('res5')
+        grupoRes5 = resultadosNone(grupoRes5, res='res5')
+        grupoRes6 = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('res6')
+        grupoRes6 = resultadosNone(grupoRes6, res='res6')
+        grupoRes7 = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('res7')
+        grupoRes7 = resultadosNone(grupoRes7, res='res7')
+        grupoRes8 = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('res8')
+        grupoRes8 = resultadosNone(grupoRes8, res='res8')
+        grupoRes9 = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('res9')
+        grupoRes9 = resultadosNone(grupoRes9, res='res9')
+        grupoRes10 = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('res10')
+        grupoRes10 = resultadosNone(grupoRes10, res='res10')
+        grupoRes11 = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('res11')
+        grupoRes11 = resultadosNone(grupoRes11, res='res11')
+        grupoRes12 = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('res12')
+        grupoRes12 = resultadosNone(grupoRes12, res='res12')
+        grupoPrimeiroColocado = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('primeiroColocado')
+        grupoPrimeiroColocado = resultadosNone(grupoPrimeiroColocado, res='primeiroColocado')
+        grupoSegundoColocado = GrupoC.objects.all().filter(
+            usuario=self.request.user
+        ).values('segundoColocado')
+        grupoSegundoColocado = resultadosNone(grupoSegundoColocado, res='segundoColocado')
+        
+        dict_res = []
+        dict_res.append(grupoRes1)
+        dict_res.append(grupoRes2)
+        dict_res.append(grupoRes3)
+        dict_res.append(grupoRes4)
+        dict_res.append(grupoRes5)
+        dict_res.append(grupoRes6)
+        dict_res.append(grupoRes7)
+        dict_res.append(grupoRes8)
+        dict_res.append(grupoRes9)
+        dict_res.append(grupoRes10)
+        dict_res.append(grupoRes11)
+        dict_res.append(grupoRes12)
+        dict_res.append(grupoPrimeiroColocado)
+        dict_res.append(grupoSegundoColocado)
+        
+        if None in dict_res:
+            context['resultados_c'] = False
+        else:
+            context['resultados_c'] = True
+            
+        grupoRes1 = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('res1')
+        grupoRes1 = resultadosNone(grupoRes1, res='res1')
+        grupoRes2 = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('res2')
+        grupoRes2 = resultadosNone(grupoRes2, res='res2')
+        grupoRes3 = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('res3')
+        grupoRes3 = resultadosNone(grupoRes3, res='res3')
+        grupoRes4 = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('res4')
+        grupoRes4 = resultadosNone(grupoRes4, res='res4')
+        grupoRes5 = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('res5')
+        grupoRes5 = resultadosNone(grupoRes5, res='res5')
+        grupoRes6 = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('res6')
+        grupoRes6 = resultadosNone(grupoRes6, res='res6')
+        grupoRes7 = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('res7')
+        grupoRes7 = resultadosNone(grupoRes7, res='res7')
+        grupoRes8 = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('res8')
+        grupoRes8 = resultadosNone(grupoRes8, res='res8')
+        grupoRes9 = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('res9')
+        grupoRes9 = resultadosNone(grupoRes9, res='res9')
+        grupoRes10 = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('res10')
+        grupoRes10 = resultadosNone(grupoRes10, res='res10')
+        grupoRes11 = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('res11')
+        grupoRes11 = resultadosNone(grupoRes11, res='res11')
+        grupoRes12 = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('res12')
+        grupoRes12 = resultadosNone(grupoRes12, res='res12')
+        grupoPrimeiroColocado = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('primeiroColocado')
+        grupoPrimeiroColocado = resultadosNone(grupoPrimeiroColocado, res='primeiroColocado')
+        grupoSegundoColocado = GrupoD.objects.all().filter(
+            usuario=self.request.user
+        ).values('segundoColocado')
+        grupoSegundoColocado = resultadosNone(grupoSegundoColocado, res='segundoColocado')
+        
+        dict_res = []
+        dict_res.append(grupoRes1)
+        dict_res.append(grupoRes2)
+        dict_res.append(grupoRes3)
+        dict_res.append(grupoRes4)
+        dict_res.append(grupoRes5)
+        dict_res.append(grupoRes6)
+        dict_res.append(grupoRes7)
+        dict_res.append(grupoRes8)
+        dict_res.append(grupoRes9)
+        dict_res.append(grupoRes10)
+        dict_res.append(grupoRes11)
+        dict_res.append(grupoRes12)
+        dict_res.append(grupoPrimeiroColocado)
+        dict_res.append(grupoSegundoColocado)
+        
+        if None in dict_res:
+            context['resultados_d'] = False
+        else:
+            context['resultados_d'] = True
+        
+        grupoRes1 = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('res1')
+        grupoRes1 = resultadosNone(grupoRes1, res='res1')
+        grupoRes2 = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('res2')
+        grupoRes2 = resultadosNone(grupoRes2, res='res2')
+        grupoRes3 = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('res3')
+        grupoRes3 = resultadosNone(grupoRes3, res='res3')
+        grupoRes4 = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('res4')
+        grupoRes4 = resultadosNone(grupoRes4, res='res4')
+        grupoRes5 = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('res5')
+        grupoRes5 = resultadosNone(grupoRes5, res='res5')
+        grupoRes6 = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('res6')
+        grupoRes6 = resultadosNone(grupoRes6, res='res6')
+        grupoRes7 = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('res7')
+        grupoRes7 = resultadosNone(grupoRes7, res='res7')
+        grupoRes8 = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('res8')
+        grupoRes8 = resultadosNone(grupoRes8, res='res8')
+        grupoRes9 = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('res9')
+        grupoRes9 = resultadosNone(grupoRes9, res='res9')
+        grupoRes10 = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('res10')
+        grupoRes10 = resultadosNone(grupoRes10, res='res10')
+        grupoRes11 = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('res11')
+        grupoRes11 = resultadosNone(grupoRes11, res='res11')
+        grupoRes12 = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('res12')
+        grupoRes12 = resultadosNone(grupoRes12, res='res12')
+        grupoPrimeiroColocado = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('primeiroColocado')
+        grupoPrimeiroColocado = resultadosNone(grupoPrimeiroColocado, res='primeiroColocado')
+        grupoSegundoColocado = GrupoE.objects.all().filter(
+            usuario=self.request.user
+        ).values('segundoColocado')
+        grupoSegundoColocado = resultadosNone(grupoSegundoColocado, res='segundoColocado')
+        
+        dict_res = []
+        dict_res.append(grupoRes1)
+        dict_res.append(grupoRes2)
+        dict_res.append(grupoRes3)
+        dict_res.append(grupoRes4)
+        dict_res.append(grupoRes5)
+        dict_res.append(grupoRes6)
+        dict_res.append(grupoRes7)
+        dict_res.append(grupoRes8)
+        dict_res.append(grupoRes9)
+        dict_res.append(grupoRes10)
+        dict_res.append(grupoRes11)
+        dict_res.append(grupoRes12)
+        dict_res.append(grupoPrimeiroColocado)
+        dict_res.append(grupoSegundoColocado)
+        
+        if None in dict_res:
+            context['resultados_e'] = False
+        else:
+            context['resultados_e'] = True
+        
+        grupoRes1 = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('res1')
+        grupoRes1 = resultadosNone(grupoRes1, res='res1')
+        grupoRes2 = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('res2')
+        grupoRes2 = resultadosNone(grupoRes2, res='res2')
+        grupoRes3 = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('res3')
+        grupoRes3 = resultadosNone(grupoRes3, res='res3')
+        grupoRes4 = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('res4')
+        grupoRes4 = resultadosNone(grupoRes4, res='res4')
+        grupoRes5 = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('res5')
+        grupoRes5 = resultadosNone(grupoRes5, res='res5')
+        grupoRes6 = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('res6')
+        grupoRes6 = resultadosNone(grupoRes6, res='res6')
+        grupoRes7 = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('res7')
+        grupoRes7 = resultadosNone(grupoRes7, res='res7')
+        grupoRes8 = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('res8')
+        grupoRes8 = resultadosNone(grupoRes8, res='res8')
+        grupoRes9 = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('res9')
+        grupoRes9 = resultadosNone(grupoRes9, res='res9')
+        grupoRes10 = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('res10')
+        grupoRes10 = resultadosNone(grupoRes10, res='res10')
+        grupoRes11 = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('res11')
+        grupoRes11 = resultadosNone(grupoRes11, res='res11')
+        grupoRes12 = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('res12')
+        grupoRes12 = resultadosNone(grupoRes12, res='res12')
+        grupoPrimeiroColocado = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('primeiroColocado')
+        grupoPrimeiroColocado = resultadosNone(grupoPrimeiroColocado, res='primeiroColocado')
+        grupoSegundoColocado = GrupoF.objects.all().filter(
+            usuario=self.request.user
+        ).values('segundoColocado')
+        grupoSegundoColocado = resultadosNone(grupoSegundoColocado, res='segundoColocado')
+        
+        dict_res = []
+        dict_res.append(grupoRes1)
+        dict_res.append(grupoRes2)
+        dict_res.append(grupoRes3)
+        dict_res.append(grupoRes4)
+        dict_res.append(grupoRes5)
+        dict_res.append(grupoRes6)
+        dict_res.append(grupoRes7)
+        dict_res.append(grupoRes8)
+        dict_res.append(grupoRes9)
+        dict_res.append(grupoRes10)
+        dict_res.append(grupoRes11)
+        dict_res.append(grupoRes12)
+        dict_res.append(grupoPrimeiroColocado)
+        dict_res.append(grupoSegundoColocado)
+        
+        if None in dict_res:
+            context['resultados_f'] = False
+        else:
+            context['resultados_f'] = True
+        
+        grupoRes1 = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('res1')
+        grupoRes1 = resultadosNone(grupoRes1, res='res1')
+        grupoRes2 = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('res2')
+        grupoRes2 = resultadosNone(grupoRes2, res='res2')
+        grupoRes3 = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('res3')
+        grupoRes3 = resultadosNone(grupoRes3, res='res3')
+        grupoRes4 = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('res4')
+        grupoRes4 = resultadosNone(grupoRes4, res='res4')
+        grupoRes5 = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('res5')
+        grupoRes5 = resultadosNone(grupoRes5, res='res5')
+        grupoRes6 = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('res6')
+        grupoRes6 = resultadosNone(grupoRes6, res='res6')
+        grupoRes7 = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('res7')
+        grupoRes7 = resultadosNone(grupoRes7, res='res7')
+        grupoRes8 = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('res8')
+        grupoRes8 = resultadosNone(grupoRes8, res='res8')
+        grupoRes9 = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('res9')
+        grupoRes9 = resultadosNone(grupoRes9, res='res9')
+        grupoRes10 = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('res10')
+        grupoRes10 = resultadosNone(grupoRes10, res='res10')
+        grupoRes11 = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('res11')
+        grupoRes11 = resultadosNone(grupoRes11, res='res11')
+        grupoRes12 = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('res12')
+        grupoRes12 = resultadosNone(grupoRes12, res='res12')
+        grupoPrimeiroColocado = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('primeiroColocado')
+        grupoPrimeiroColocado = resultadosNone(grupoPrimeiroColocado, res='primeiroColocado')
+        grupoSegundoColocado = GrupoG.objects.all().filter(
+            usuario=self.request.user
+        ).values('segundoColocado')
+        grupoSegundoColocado = resultadosNone(grupoSegundoColocado, res='segundoColocado')
+        
+        dict_res = []
+        dict_res.append(grupoRes1)
+        dict_res.append(grupoRes2)
+        dict_res.append(grupoRes3)
+        dict_res.append(grupoRes4)
+        dict_res.append(grupoRes5)
+        dict_res.append(grupoRes6)
+        dict_res.append(grupoRes7)
+        dict_res.append(grupoRes8)
+        dict_res.append(grupoRes9)
+        dict_res.append(grupoRes10)
+        dict_res.append(grupoRes11)
+        dict_res.append(grupoRes12)
+        dict_res.append(grupoPrimeiroColocado)
+        dict_res.append(grupoSegundoColocado)
+        
+        if None in dict_res:
+            context['resultados_g'] = False
+        else:
+            context['resultados_g'] = True
+        
+        grupoRes1 = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('res1')
+        grupoRes1 = resultadosNone(grupoRes1, res='res1')
+        grupoRes2 = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('res2')
+        grupoRes2 = resultadosNone(grupoRes2, res='res2')
+        grupoRes3 = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('res3')
+        grupoRes3 = resultadosNone(grupoRes3, res='res3')
+        grupoRes4 = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('res4')
+        grupoRes4 = resultadosNone(grupoRes4, res='res4')
+        grupoRes5 = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('res5')
+        grupoRes5 = resultadosNone(grupoRes5, res='res5')
+        grupoRes6 = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('res6')
+        grupoRes6 = resultadosNone(grupoRes6, res='res6')
+        grupoRes7 = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('res7')
+        grupoRes7 = resultadosNone(grupoRes7, res='res7')
+        grupoRes8 = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('res8')
+        grupoRes8 = resultadosNone(grupoRes8, res='res8')
+        grupoRes9 = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('res9')
+        grupoRes9 = resultadosNone(grupoRes9, res='res9')
+        grupoRes10 = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('res10')
+        grupoRes10 = resultadosNone(grupoRes10, res='res10')
+        grupoRes11 = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('res11')
+        grupoRes11 = resultadosNone(grupoRes11, res='res11')
+        grupoRes12 = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('res12')
+        grupoRes12 = resultadosNone(grupoRes12, res='res12')
+        grupoPrimeiroColocado = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('primeiroColocado')
+        grupoPrimeiroColocado = resultadosNone(grupoPrimeiroColocado, res='primeiroColocado')
+        grupoSegundoColocado = GrupoH.objects.all().filter(
+            usuario=self.request.user
+        ).values('segundoColocado')
+        grupoSegundoColocado = resultadosNone(grupoSegundoColocado, res='segundoColocado')
+        
+        dict_res = []
+        dict_res.append(grupoRes1)
+        dict_res.append(grupoRes2)
+        dict_res.append(grupoRes3)
+        dict_res.append(grupoRes4)
+        dict_res.append(grupoRes5)
+        dict_res.append(grupoRes6)
+        dict_res.append(grupoRes7)
+        dict_res.append(grupoRes8)
+        dict_res.append(grupoRes9)
+        dict_res.append(grupoRes10)
+        dict_res.append(grupoRes11)
+        dict_res.append(grupoRes12)
+        dict_res.append(grupoPrimeiroColocado)
+        dict_res.append(grupoSegundoColocado)
+        
+        if None in dict_res:
+            context['resultados_h'] = False
+        else:
+            context['resultados_h'] = True
+        
+        oitavasRes1 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res1')
+        oitavasRes1 = resultadosNone(oitavasRes1, res='res1')
+        oitavasRes2 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res2')
+        oitavasRes2 = resultadosNone(oitavasRes2, res='res2')
+        oitavasRes3 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res3')
+        oitavasRes3 = resultadosNone(oitavasRes3, res='res3')
+        oitavasRes4 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res4')
+        oitavasRes4 = resultadosNone(oitavasRes4, res='res4')
+        oitavasRes5 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res5')
+        oitavasRes5 = resultadosNone(oitavasRes5, res='res5')
+        oitavasRes6 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res6')
+        oitavasRes6 = resultadosNone(oitavasRes6, res='res6')
+        oitavasRes7 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res7')
+        oitavasRes7 = resultadosNone(oitavasRes7, res='res7')
+        oitavasRes8 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res8')
+        oitavasRes8 = resultadosNone(oitavasRes8, res='res8')
+        oitavasRes9 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res9')
+        oitavasRes9 = resultadosNone(oitavasRes9, res='res9')
+        oitavasRes10 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res10')
+        oitavasRes10 = resultadosNone(oitavasRes10, res='res10')
+        oitavasRes11 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res11')
+        oitavasRes11 = resultadosNone(oitavasRes11, res='res11')
+        oitavasRes12 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res12')
+        oitavasRes12 = resultadosNone(oitavasRes12, res='res12')
+        oitavasRes13 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res13')
+        oitavasRes13 = resultadosNone(oitavasRes13, res='res13')
+        oitavasRes14 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res14')
+        oitavasRes14 = resultadosNone(oitavasRes14, res='res14')
+        oitavasRes15 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res15')
+        oitavasRes15 = resultadosNone(oitavasRes15, res='res15')
+        oitavasRes16 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res16')
+        oitavasRes16 = resultadosNone(oitavasRes16, res='res16')
+        
+        dict_res = []
+        dict_res.append(oitavasRes1)
+        dict_res.append(oitavasRes2)
+        dict_res.append(oitavasRes3)
+        dict_res.append(oitavasRes4)
+        dict_res.append(oitavasRes5)
+        dict_res.append(oitavasRes6)
+        dict_res.append(oitavasRes7)
+        dict_res.append(oitavasRes8)
+        dict_res.append(oitavasRes9)
+        dict_res.append(oitavasRes10)
+        dict_res.append(oitavasRes11)
+        dict_res.append(oitavasRes12)
+        dict_res.append(oitavasRes13)
+        dict_res.append(oitavasRes14)
+        dict_res.append(oitavasRes15)
+        dict_res.append(oitavasRes16)
+        
+        if None in dict_res:
+            context['resultados_oitavas'] = False
+        else:
+            context['resultados_oitavas'] = True
+         
+        # quartas de final    
+        oitavasRes1 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res17')
+        oitavasRes1 = resultadosNone(oitavasRes1, res='res17')
+        oitavasRes2 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res18')
+        oitavasRes2 = resultadosNone(oitavasRes2, res='res18')
+        oitavasRes3 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res19')
+        oitavasRes3 = resultadosNone(oitavasRes3, res='res19')
+        oitavasRes4 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res20')
+        oitavasRes4 = resultadosNone(oitavasRes4, res='res20')
+        oitavasRes5 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res21')
+        oitavasRes5 = resultadosNone(oitavasRes5, res='res21')
+        oitavasRes6 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res22')
+        oitavasRes6 = resultadosNone(oitavasRes6, res='res22')
+        oitavasRes7 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res23')
+        oitavasRes7 = resultadosNone(oitavasRes7, res='res23')
+        oitavasRes8 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res24')
+        oitavasRes8 = resultadosNone(oitavasRes8, res='res24')
+        
+        dict_res = []
+        dict_res.append(oitavasRes1)
+        dict_res.append(oitavasRes2)
+        dict_res.append(oitavasRes3)
+        dict_res.append(oitavasRes4)
+        dict_res.append(oitavasRes5)
+        dict_res.append(oitavasRes6)
+        dict_res.append(oitavasRes7)
+        dict_res.append(oitavasRes8)
+        
+        if None in dict_res:
+            context['resultados_quartas'] = False
+        else:
+            context['resultados_quartas'] = True
+        
+        # semi final
+        oitavasRes1 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res25')
+        oitavasRes1 = resultadosNone(oitavasRes1, res='res25')
+        oitavasRes2 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res26')
+        oitavasRes2 = resultadosNone(oitavasRes2, res='res26')
+        oitavasRes3 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res27')
+        oitavasRes3 = resultadosNone(oitavasRes3, res='res27')
+        oitavasRes4 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res28')
+        oitavasRes4 = resultadosNone(oitavasRes4, res='res28')
+        
+        dict_res = []
+        dict_res.append(oitavasRes1)
+        dict_res.append(oitavasRes2)
+        dict_res.append(oitavasRes3)
+        dict_res.append(oitavasRes4)
+        
+        if None in dict_res:
+            context['resultados_semi'] = False
+        else:
+            context['resultados_semi'] = True
+            
+        # final
+        oitavasRes1 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res29')
+        oitavasRes1 = resultadosNone(oitavasRes1, res='res29')
+        oitavasRes2 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res30')
+        oitavasRes2 = resultadosNone(oitavasRes2, res='res30')
+        oitavasRes3 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res31')
+        oitavasRes3 = resultadosNone(oitavasRes3, res='res31')
+        oitavasRes4 = Eliminatorias.objects.all().filter(
+            usuario=self.request.user
+        ).values('res32')
+        oitavasRes4 = resultadosNone(oitavasRes4, res='res32')
+        
+        dict_res = []
+        dict_res.append(oitavasRes1)
+        dict_res.append(oitavasRes2)
+        dict_res.append(oitavasRes3)
+        dict_res.append(oitavasRes4)
+        
+        if None in dict_res:
+            context['resultados_final'] = False
+        else:
+            context['resultados_final'] = True
+        
+        return context
     
     
 class PageGrupoA(DispatchLoginRequiredMixin, DetailView):

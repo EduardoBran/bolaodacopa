@@ -142,7 +142,12 @@ MESSAGE_TAGS = {
     constants.DEBUG: 'alert-info',
     constants.SUCCESS: 'alert-success',
     constants.INFO: 'alert-info',
-	}
+}
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '247ca2f127bf72'
+EMAIL_HOST_PASSWORD = '5b737ec359c8a2'
+EMAIL_PORT = '2525'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Sobre |{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% include 'parciais/_messages.html' %}
+
+<style>
+    .espaco {
+        margin-top: 45px;
+    }
+
+    .conteudo-sobre-mobile {
+        text-align: right;
+    }
+
+    @media (max-width:800px) {
+        .conteudo-sobre-mobile {
+            padding-right: 20px;
+        }
+    }
+</style>
+
+<div class="card shadow border mt-4 mb-4">
+    <div class="card-body d-flex flex-column">
+        <h3 class="card-title text-center">Sobre</h3>
+        <p class="lead text-center">Esta aplicação foi feita utilizando as tecnologias:</p>
+
+        <div class="row mt-2">
+            <div class="col-6 conteudo-sobre-mobile">
+                <p class="lead" style="margin-top: 16px;"><i class="fa-solid fa-bolt fa-2xs"></i></p>
+                <p class="lead espaco"><i class="fa-solid fa-bolt fa-2xs"></i></p>
+                <p class="lead espaco"><i class="fa-solid fa-bolt fa-2xs"></i></p>
+                <p class="lead espaco"><i class="fa-solid fa-bolt fa-2xs"></i></p>
+                <p class="lead espaco"><i class="fa-solid fa-bolt fa-2xs"></i></p>
+                <p class="lead espaco"><i class="fa-solid fa-bolt fa-2xs"></i></p>
+                <p class="lead espaco"><i class="fa-solid fa-bolt fa-2xs"></i></p>
+
+            </div>
+            <div class="col-6">
+                <p class="lead">Python</p>
+                <p class="lead">Django</p>
+                <p class="lead">Html</p>
+                <p class="lead">Css</p>
+                <p class="lead">JavaScript</p>
+                <p class="lead">Bootstrap</p>
+                <p class="lead">Sqlite</p>
+            </div>
+        </div>
+
+        <p class="lead text-center mt-4" style="font-size: 1.5rem;">Veja mais
+            <a href="https://github.com/EduardoBran/bolaodacopa" style="color: #000; font-weight: 400;" target="_blank"
+                title="acessar github">clicando
+                aqui
+            </a>
+        </p>
+
+    </div> <!-- end card-body -->
+</div> <!-- end card -->
+
+<div class="card shadow border mt-4 mb-4">
+    <div class="card-body d-flex flex-column">
+        <h3 class="text-center">Enviar e-mail</h3>
+        <p class="lead text-center mt-2">
+            Você pode me enviar um e-mail com críticas e/ou sugestões através do formulário abaixo.
+        </p>
+        <br>
+        <form action="{% url 'main:pagesobre' %}" method="POST" class="form">
+            {% csrf_token %}
+            {{ form|crispy }}
+
+            <button type="submit" class="btn btn-dark">Enviar</button>
+        </form>
+        <br>
+        <strong>
+            <p class="card-text text-center">Desenvolvido por Eduardo Brandão</p>
+            <p class="card-text text-center">Versão 1.0</p>
+        </strong>
+        <br>
+        <div class="text-center" style="margin-bottom: 20px;">
+            <a class="btn btn-secondary btnVoltarSobre" href="/">Voltar</a>
+        </div>
+
+    </div> <!-- end card-body -->
+</div> <!-- end card -->
+
+{% endblock %}

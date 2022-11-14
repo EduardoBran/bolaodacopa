@@ -7,6 +7,7 @@ app_name = 'main'
 urlpatterns = [
     path('', views.PageIndex.as_view(), name='pageindex'),
     path('main/', views.PageMain.as_view(), name='pagemain'),
+    path('sobre/', views.sobreView, name='pagesobre'),
     path('main/grupoA/<int:pk>', views.PageGrupoA.as_view(), name='pagegrupoA'),
     path('main/grupoB/<int:pk>', views.PageGrupoB.as_view(), name='pagegrupoB'),
     path('main/grupoC/<int:pk>', views.PageGrupoC.as_view(), name='pagegrupoC'),

@@ -39,7 +39,25 @@ class PageIndex(TemplateView):
         context['minuto'] = tempo_para_copa[3]
         
         return context
-    
+
+
+def sobreView(request):
+    if str(request.method) == 'POST':
+        form = ContatoForm(request.POST)
+        if form.is_valid():
+            #chamando método de envio de email
+            form.send_email()
+            messages.success(request, 'Email enviado com sucesso.')
+            form = ContatoForm()
+        else:
+            messages.error(request, 'Email NÃO FOI enviado com sucesso.')
+    else:
+        form = ContatoForm()
+
+    context = {
+        'form':form
+    }
+    return render(request, 'main/sobre.html', context)    
 
 class DispatchLoginRequiredMixin(View):
     def dispatch(self, *args, **kwargs):

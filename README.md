@@ -21,11 +21,11 @@ Aplicação de conceitos em:
 
 # SCREENSHOTS DO PROJETO
 
-![Screenshot](./screenshot/screen1.jpg)
+![Screenshot](./screenshot/screen1.png)
 
-![Screenshot](./screenshot/screen2.jpg)
+![Screenshot](./screenshot/screen2.png)
 
-![Screenshot](./screenshot/screen3.jpg)
+![Screenshot](./screenshot/screen3.png)
 
 # LINK DO PROJETO
 Para visualizar o projeto no seu navegador utilize o link abaixo:

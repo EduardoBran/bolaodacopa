@@ -29,7 +29,7 @@ def loginPage(request):
                     messages.add_message(
                         request,
                         messages.SUCCESS,
-                        f"Bem vindo(a) {username}, você agora está logado e pode..."
+                        f"Bem vindo(a) {username}, você agora está logado e pode salvar seus palpites"
                     )
                     
                     if not GrupoA.objects.filter(usuario=request.user).exists():
@@ -135,7 +135,7 @@ def registerPage(request):
                     messages.add_message(
                         request,
                         messages.SUCCESS,
-                        f"Bem vindo(a) {username}, você agora está cadastrado(a) e pode salvar seus resultados."
+                        f"Bem vindo(a) {username}, você está logado e pode salvar seus palpites."
                     )
                     if not GrupoA.objects.filter(usuario=request.user).exists():
                         GrupoA.objects.create(
